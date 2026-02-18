@@ -7,6 +7,7 @@ struct GameAddrs {
   uintptr_t add_soul_call = 0;
   uintptr_t map_item_man_ptr = 0;
   uintptr_t item_give_func = 0;
+  uintptr_t chr_dbg_flags = 0;
   bool initialized = false;
 };
 

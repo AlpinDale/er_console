@@ -341,6 +341,10 @@ bool resolve_game_addrs(GameAddrs *addrs) {
 
   const unsigned char add_soul_pat[] = {0x44, 0x8B, 0x49, 0x6C,
                                         0x45, 0x33, 0xDB};
+  const unsigned char chr_dbg_flags_pat[] = {0x80, 0x3D, 0x00, 0x00, 0x00, 0x00,
+                                             0x00, 0x0F, 0x85, 0x00, 0x00, 0x00,
+                                             0x00, 0x32, 0xC0, 0x48};
+  const char chr_dbg_flags_mask[] = "xx????xxx????xxx";
 
   uintptr_t world_chr_man_scan =
       pattern_scan(base, size, world_chr_man_pat, world_chr_man_mask);
@@ -352,6 +356,12 @@ bool resolve_game_addrs(GameAddrs *addrs) {
       pattern_scan_exact(base, size, add_soul_pat, sizeof(add_soul_pat));
   if (add_soul_scan) {
     addrs->add_soul_call = add_soul_scan;
+  }
+
+  uintptr_t chr_dbg_flags_scan =
+      pattern_scan(base, size, chr_dbg_flags_pat, chr_dbg_flags_mask);
+  if (chr_dbg_flags_scan) {
+    addrs->chr_dbg_flags = resolve_relative(chr_dbg_flags_scan, 2, 7);
   }
 
   addrs->map_item_man_ptr = base + 0x3d67a50;
@@ -463,6 +473,30 @@ bool add_item_impl(GameAddrs *addrs, int item_id, int quantity,
   return true;
 }
 
+bool toggle_god_mode(GameAddrs *addrs, bool &enabled, std::string &error) {
+  if (!addrs) {
+    error = "Missing game addresses.";
+    return false;
+  }
+  if (!resolve_game_addrs(addrs)) {
+    error = "Failed to resolve game addresses.";
+    return false;
+  }
+  if (!addrs->chr_dbg_flags) {
+    error = "CHR_DBG_FLAGS not found.";
+    return false;
+  }
+
+  auto flags = reinterpret_cast<uint8_t *>(addrs->chr_dbg_flags);
+  uint8_t value = flags[0];
+  value = value ? 0 : 1;
+  flags[0] = value;
+  flags[4] = value;
+  flags[5] = value;
+  enabled = (value != 0);
+  return true;
+}
+
 struct ItemTask {
   int item_id = 0;
   int quantity = 0;
@@ -532,6 +566,15 @@ std::string handle_command(const std::string &command) {
           return "Added runes: " + std::to_string(amount);
         }
       }
+    }
+
+    if (verb_lower == "tgm") {
+      bool enabled = false;
+      std::string error;
+      if (!toggle_god_mode(&g_game_addrs, enabled, error)) {
+        return "Failed: " + error;
+      }
+      return enabled ? "God mode: on" : "God mode: off";
     }
   }
 
