@@ -14,6 +14,7 @@
 #include "commands/command_context.h"
 #include "commands/command_registry.h"
 #include "commands/help.h"
+#include "commands/items.h"
 #include "commands/runes.h"
 
 #if defined(ER_CONSOLE_BUILD)
@@ -212,6 +213,7 @@ bool g_input_blocked = false;
 bool g_input_hooks_installed = false;
 bool g_input_hooks_attempted = false;
 std::string g_input;
+std::string g_last_command;
 std::vector<std::string> g_log = {
     "Elden Ring Console",
     "Type a command and press Enter",
@@ -265,6 +267,16 @@ uintptr_t pattern_scan(uintptr_t base, size_t size, const unsigned char *pattern
   return 0;
 }
 
+uintptr_t pattern_scan_exact(uintptr_t base, size_t size,
+                             const unsigned char *pattern, size_t pattern_len) {
+  for (size_t i = 0; i + pattern_len <= size; ++i) {
+    if (std::memcmp(reinterpret_cast<void *>(base + i), pattern, pattern_len) == 0) {
+      return base + i;
+    }
+  }
+  return 0;
+}
+
 uintptr_t resolve_relative(uintptr_t addr, int offset, int addend) {
   int32_t rel = *reinterpret_cast<int32_t *>(addr + offset);
   return addr + rel + addend;
@@ -291,7 +303,7 @@ bool resolve_game_addrs(GameAddrs *addrs) {
   const char world_chr_man_mask[] = "xxx????xxxxxxx";
 
   const unsigned char add_soul_pat[] = {0x44, 0x8B, 0x49, 0x6C, 0x45, 0x33, 0xDB};
-  const char add_soul_mask[] = "xxxxxxx";
+
 
   uintptr_t world_chr_man_scan =
       pattern_scan(base, size, world_chr_man_pat, world_chr_man_mask);
@@ -299,15 +311,17 @@ bool resolve_game_addrs(GameAddrs *addrs) {
     addrs->world_chr_man = resolve_relative(world_chr_man_scan, 3, 7);
   }
 
-  uintptr_t add_soul_scan = pattern_scan(base, size, add_soul_pat, add_soul_mask);
+  uintptr_t add_soul_scan =
+      pattern_scan_exact(base, size, add_soul_pat, sizeof(add_soul_pat));
   if (add_soul_scan) {
     addrs->add_soul_call = add_soul_scan;
   }
 
+  addrs->map_item_man_ptr = base + 0x3d67a50;
+  addrs->item_give_func = base + 0x560670;
+
   addrs->initialized = true;
-  log_line("Resolved WorldChrMan=0x%p AddSoul=0x%p",
-           reinterpret_cast<void *>(addrs->world_chr_man),
-           reinterpret_cast<void *>(addrs->add_soul_call));
+  (void)addrs;
 
   return addrs->world_chr_man && addrs->add_soul_call;
 }
@@ -356,16 +370,99 @@ bool add_runes(GameAddrs *addrs, int amount, std::string &error) {
   add_soul(reinterpret_cast<void *>(player_data), amount);
   return true;
 }
+
+bool add_item_impl(GameAddrs *addrs, int item_id, int quantity, std::string &error) {
+  if (!addrs) {
+    error = "Missing game addresses.";
+    return false;
+  }
+  if (item_id <= 0 || quantity <= 0) {
+    error = "Item id and quantity must be positive.";
+    return false;
+  }
+  if (!resolve_game_addrs(addrs)) {
+    error = "Failed to resolve game addresses.";
+    return false;
+  }
+  if (!addrs->map_item_man_ptr || !addrs->item_give_func) {
+    error = "Item give offsets unavailable.";
+    return false;
+  }
+
+  auto map_item_man_ptr = reinterpret_cast<uintptr_t *>(addrs->map_item_man_ptr);
+  if (!map_item_man_ptr || !*map_item_man_ptr) {
+    error = "MapItemMan is null.";
+    return false;
+  }
+
+  struct ItemEntry {
+    int id;
+    int quantity;
+    int unk;
+    int gem_id;
+  };
+  struct ItemTable {
+    int count;
+    ItemEntry items[10];
+  };
+
+  ItemTable table{};
+  table.count = 1;
+  table.items[0].id = item_id;
+  table.items[0].quantity = quantity;
+  table.items[0].unk = -1;
+  table.items[0].gem_id = -1;
+
+  int status[3] = {-1, 0, 0};
+
+  using ItemGiveFn = void(__fastcall *)(void *map_item_man, void *item_table,
+                                        void *status, uint64_t flags);
+  auto give_fn = reinterpret_cast<ItemGiveFn>(addrs->item_give_func);
+  give_fn(reinterpret_cast<void *>(*map_item_man_ptr), &table, status, 0);
+
+  (void)status;
+  return true;
+}
+
+struct ItemTask {
+  int item_id = 0;
+  int quantity = 0;
+};
+
+std::mutex g_item_queue_mutex;
+std::vector<ItemTask> g_item_queue;
+
+bool add_item(GameAddrs *addrs, int item_id, int quantity, std::string &error) {
+  if (!addrs) {
+    error = "Missing game addresses.";
+    return false;
+  }
+  if (!resolve_game_addrs(addrs)) {
+    error = "Failed to resolve game addresses.";
+    return false;
+  }
+
+  ItemTask task;
+  task.item_id = item_id;
+  task.quantity = quantity;
+  {
+    std::lock_guard<std::mutex> lock(g_item_queue_mutex);
+    g_item_queue.push_back(task);
+  }
+  return true;
+}
 std::string handle_command(const std::string &command) {
   CommandContext ctx;
   ctx.game_addrs = &g_game_addrs;
   ctx.registry = &g_command_registry;
   ctx.resolve_game_addrs = resolve_game_addrs;
   ctx.add_runes = add_runes;
+  ctx.add_item = add_item;
 
   if (g_command_registry.commands.empty()) {
     register_command(g_command_registry, build_help_command());
     register_command(g_command_registry, build_runes_command());
+    register_command(g_command_registry, build_items_command());
   }
 
   return dispatch_command(g_command_registry, ctx, command);
@@ -749,9 +846,15 @@ void render_console() {
 
   if (ImGui::InputText("##console_input", &g_input,
                        ImGuiInputTextFlags_EnterReturnsTrue)) {
-    if (!g_input.empty()) {
-      g_log.push_back("> " + g_input);
-      std::string response = handle_command(g_input);
+    std::string command = g_input;
+    if (command == "!!" || command == "repeat") {
+      command = g_last_command;
+    }
+
+    if (!command.empty()) {
+      g_last_command = command;
+      g_log.push_back("> " + command);
+      std::string response = handle_command(command);
       if (!response.empty()) {
         std::istringstream lines(response);
         std::string line;
@@ -775,10 +878,7 @@ HRESULT __stdcall hk_present_dx12(IDXGISwapChain *swapchain_base, UINT sync,
   auto *swapchain = reinterpret_cast<IDXGISwapChain3 *>(swapchain_base);
 
   g_present_count++;
-  if (g_present_count % 300 == 0) {
-    log_line("Present tick %u (format=%d)", g_present_count,
-             static_cast<int>(g_swapchain_format));
-  }
+  (void)g_swapchain_format;
 
   if (!g_imgui_ready) {
     if (!init_imgui(swapchain)) {
@@ -795,6 +895,18 @@ HRESULT __stdcall hk_present_dx12(IDXGISwapChain *swapchain_base, UINT sync,
     }
     if (!g_command_queue || !g_frame_ctx) {
       return g_present(swapchain_base, sync, flags);
+    }
+
+    {
+      std::lock_guard<std::mutex> lock(g_item_queue_mutex);
+      if (!g_item_queue.empty()) {
+        ItemTask task = g_item_queue.front();
+        g_item_queue.erase(g_item_queue.begin());
+        std::string error;
+        if (!add_item_impl(&g_game_addrs, task.item_id, task.quantity, error)) {
+          log_line("AddItem failed: %s", error.c_str());
+        }
+      }
     }
     ImGui_ImplDX12_NewFrame();
     ImGui_ImplWin32_NewFrame();

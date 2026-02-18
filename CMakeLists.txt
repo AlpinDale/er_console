@@ -78,6 +78,8 @@ add_library(er_console_mod SHARED
   src/commands/command_registry.h
   src/commands/help.cpp
   src/commands/help.h
+  src/commands/items.cpp
+  src/commands/items.h
   src/commands/runes.cpp
   src/commands/runes.h
 )
