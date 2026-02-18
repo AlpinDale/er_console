@@ -73,6 +73,11 @@ target_compile_definitions(kiero PRIVATE
 
 add_library(er_console_mod SHARED
   src/dllmain.cpp
+  src/console_commands.cpp
+  src/game_actions.cpp
+  src/input_hooks.cpp
+  src/item_queue.cpp
+  src/memory_utils.cpp
   src/commands/command_context.h
   src/commands/command_registry.cpp
   src/commands/command_registry.h

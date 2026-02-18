@@ -3,10 +3,8 @@
 #include <dxgi1_4.h>
 #include <windows.h>
 
-#include <algorithm>
 #include <cstdarg>
 #include <cstdio>
-#include <cstring>
 #include <mutex>
 #include <sstream>
 #include <string>
@@ -14,13 +12,12 @@
 
 #include "commands/command_context.h"
 #include "commands/command_registry.h"
-#include "commands/help.h"
-#include "commands/items.h"
-#include "commands/runes.h"
-#include "commands/search.h"
+#include "console_commands.h"
+#include "game_actions.h"
+#include "input_hooks.h"
+#include "item_queue.h"
 
 #if defined(ER_CONSOLE_BUILD)
-#include "MinHook.h"
 #include "imgui.h"
 #include "imgui_impl_dx11.h"
 #include "imgui_impl_dx12.h"
@@ -207,7 +204,6 @@ HRESULT __stdcall hk_resize_buffers_dx11(IDXGISwapChain *swapchain, UINT count,
                                          DXGI_FORMAT format, UINT flags);
 void __stdcall hk_execute_command_lists(ID3D12CommandQueue *queue, UINT num,
                                         ID3D12CommandList *const *lists);
-void install_input_hooks();
 
 PresentFn g_present = nullptr;
 ResizeBuffersFn g_resize_buffers = nullptr;
@@ -244,8 +240,6 @@ std::mutex g_mutex;
 bool g_console_open = false;
 bool g_request_focus = false;
 bool g_input_blocked = false;
-bool g_input_hooks_installed = false;
-bool g_input_hooks_attempted = false;
 HMODULE g_module_handle = nullptr;
 bool g_scroll_to_bottom = true;
 std::string g_input;
@@ -271,549 +265,6 @@ void log_line(const char *fmt, ...) {
   va_end(args);
   std::fputc('\n', f);
   std::fclose(f);
-}
-
-bool get_module_info(const char *name, uintptr_t &base, size_t &size) {
-  HMODULE mod = GetModuleHandleA(name);
-  if (!mod) {
-    return false;
-  }
-  base = reinterpret_cast<uintptr_t>(mod);
-  auto *dos = reinterpret_cast<IMAGE_DOS_HEADER *>(base);
-  auto *nt = reinterpret_cast<IMAGE_NT_HEADERS *>(base + dos->e_lfanew);
-  size = static_cast<size_t>(nt->OptionalHeader.SizeOfImage);
-  return true;
-}
-
-uintptr_t pattern_scan(uintptr_t base, size_t size,
-                       const unsigned char *pattern, const char *mask) {
-  size_t pattern_len = std::strlen(mask);
-  for (size_t i = 0; i + pattern_len <= size; ++i) {
-    bool match = true;
-    for (size_t j = 0; j < pattern_len; ++j) {
-      if (mask[j] == 'x' && pattern[j] != *(unsigned char *)(base + i + j)) {
-        match = false;
-        break;
-      }
-    }
-    if (match) {
-      return base + i;
-    }
-  }
-  return 0;
-}
-
-uintptr_t pattern_scan_exact(uintptr_t base, size_t size,
-                             const unsigned char *pattern, size_t pattern_len) {
-  for (size_t i = 0; i + pattern_len <= size; ++i) {
-    if (std::memcmp(reinterpret_cast<void *>(base + i), pattern, pattern_len) ==
-        0) {
-      return base + i;
-    }
-  }
-  return 0;
-}
-
-uintptr_t resolve_relative(uintptr_t addr, int offset, int addend) {
-  int32_t rel = *reinterpret_cast<int32_t *>(addr + offset);
-  return addr + rel + addend;
-}
-
-bool safe_read_ptr(uintptr_t addr, uintptr_t &out) {
-  __try {
-    out = *reinterpret_cast<uintptr_t *>(addr);
-    return true;
-  } __except (EXCEPTION_EXECUTE_HANDLER) {
-    out = 0;
-    return false;
-  }
-}
-
-bool safe_read_u8(uintptr_t addr, uint8_t &out) {
-  __try {
-    out = *reinterpret_cast<uint8_t *>(addr);
-    return true;
-  } __except (EXCEPTION_EXECUTE_HANDLER) {
-    out = 0;
-    return false;
-  }
-}
-
-bool safe_read_u32(uintptr_t addr, uint32_t &out) {
-  __try {
-    out = *reinterpret_cast<uint32_t *>(addr);
-    return true;
-  } __except (EXCEPTION_EXECUTE_HANDLER) {
-    out = 0;
-    return false;
-  }
-}
-
-bool safe_write_u8(uintptr_t addr, uint8_t value) {
-  __try {
-    *reinterpret_cast<uint8_t *>(addr) = value;
-    return true;
-  } __except (EXCEPTION_EXECUTE_HANDLER) {
-    return false;
-  }
-}
-
-bool safe_write_u32(uintptr_t addr, uint32_t value) {
-  __try {
-    *reinterpret_cast<uint32_t *>(addr) = value;
-    return true;
-  } __except (EXCEPTION_EXECUTE_HANDLER) {
-    return false;
-  }
-}
-
-bool resolve_game_addrs(GameAddrs *addrs) {
-  if (!addrs) {
-    return false;
-  }
-  if (addrs->initialized) {
-    return addrs->world_chr_man && addrs->add_soul_call;
-  }
-
-  uintptr_t base = 0;
-  size_t size = 0;
-  if (!get_module_info("eldenring.exe", base, size)) {
-    log_line("Failed to find eldenring.exe module");
-    return false;
-  }
-
-  const unsigned char world_chr_man_pat[] = {0x48, 0x8B, 0x05, 0x00, 0x00,
-                                             0x00, 0x00, 0x48, 0x85, 0xC0,
-                                             0x74, 0x0F, 0x48, 0x39, 0x88};
-  const char world_chr_man_mask[] = "xxx????xxxxxxx";
-
-  const unsigned char add_soul_pat[] = {0x44, 0x8B, 0x49, 0x6C,
-                                        0x45, 0x33, 0xDB};
-  const unsigned char chr_dbg_flags_pat[] = {0x80, 0x3D, 0x00, 0x00, 0x00, 0x00,
-                                             0x00, 0x0F, 0x85, 0x00, 0x00, 0x00,
-                                             0x00, 0x32, 0xC0, 0x48};
-  const char chr_dbg_flags_mask[] = "xx????xxx????xxx";
-
-  uintptr_t world_chr_man_scan =
-      pattern_scan(base, size, world_chr_man_pat, world_chr_man_mask);
-  if (world_chr_man_scan) {
-    addrs->world_chr_man = resolve_relative(world_chr_man_scan, 3, 7);
-  }
-
-  uintptr_t add_soul_scan =
-      pattern_scan_exact(base, size, add_soul_pat, sizeof(add_soul_pat));
-  if (add_soul_scan) {
-    addrs->add_soul_call = add_soul_scan;
-  }
-
-  uintptr_t chr_dbg_flags_scan =
-      pattern_scan(base, size, chr_dbg_flags_pat, chr_dbg_flags_mask);
-  if (chr_dbg_flags_scan) {
-    addrs->chr_dbg_flags = resolve_relative(chr_dbg_flags_scan, 2, 7);
-  }
-
-  addrs->map_item_man_ptr = base + 0x3d67a50;
-  addrs->item_give_func = base + 0x560670;
-
-  addrs->initialized = true;
-  (void)addrs;
-
-  return addrs->world_chr_man && addrs->add_soul_call;
-}
-
-bool add_runes(GameAddrs *addrs, int amount, std::string &error) {
-  if (!addrs) {
-    error = "Missing game addresses.";
-    return false;
-  }
-  if (amount <= 0) {
-    error = "Amount must be positive.";
-    return false;
-  }
-
-  if (!resolve_game_addrs(addrs)) {
-    error = "Failed to resolve game addresses.";
-    return false;
-  }
-
-  auto world_chr_man = *reinterpret_cast<uintptr_t *>(addrs->world_chr_man);
-  if (!world_chr_man) {
-    error = "WorldChrMan is null.";
-    return false;
-  }
-
-  auto player_list = *reinterpret_cast<uintptr_t *>(world_chr_man + 0x10EF8);
-  if (!player_list) {
-    error = "Player list is null.";
-    return false;
-  }
-
-  auto player = *reinterpret_cast<uintptr_t *>(player_list);
-  if (!player) {
-    error = "Player is null.";
-    return false;
-  }
-
-  auto player_data = *reinterpret_cast<uintptr_t *>(player + 0x580);
-  if (!player_data) {
-    error = "Player data is null.";
-    return false;
-  }
-
-  using AddSoulFn = void(__fastcall *)(void *ctx, int amount);
-  auto add_soul = reinterpret_cast<AddSoulFn>(addrs->add_soul_call);
-  add_soul(reinterpret_cast<void *>(player_data), amount);
-  return true;
-}
-
-bool add_item_impl(GameAddrs *addrs, int item_id, int quantity,
-                   std::string &error) {
-  if (!addrs) {
-    error = "Missing game addresses.";
-    return false;
-  }
-  if (item_id <= 0 || quantity <= 0) {
-    error = "Item id and quantity must be positive.";
-    return false;
-  }
-  if (!resolve_game_addrs(addrs)) {
-    error = "Failed to resolve game addresses.";
-    return false;
-  }
-  if (!addrs->map_item_man_ptr || !addrs->item_give_func) {
-    error = "Item give offsets unavailable.";
-    return false;
-  }
-
-  auto map_item_man_ptr =
-      reinterpret_cast<uintptr_t *>(addrs->map_item_man_ptr);
-  if (!map_item_man_ptr || !*map_item_man_ptr) {
-    error = "MapItemMan is null.";
-    return false;
-  }
-
-  struct ItemEntry {
-    int id;
-    int quantity;
-    int unk;
-    int gem_id;
-  };
-  struct ItemTable {
-    int count;
-    ItemEntry items[10];
-  };
-
-  ItemTable table{};
-  table.count = 1;
-  table.items[0].id = item_id;
-  table.items[0].quantity = quantity;
-  table.items[0].unk = -1;
-  table.items[0].gem_id = -1;
-
-  int status[3] = {-1, 0, 0};
-
-  using ItemGiveFn = void(__fastcall *)(void *map_item_man, void *item_table,
-                                        void *status, uint64_t flags);
-  auto give_fn = reinterpret_cast<ItemGiveFn>(addrs->item_give_func);
-  give_fn(reinterpret_cast<void *>(*map_item_man_ptr), &table, status, 0);
-
-  (void)status;
-  return true;
-}
-
-bool toggle_god_mode(GameAddrs *addrs, bool &enabled, std::string &error) {
-  if (!addrs) {
-    error = "Missing game addresses.";
-    return false;
-  }
-  if (!resolve_game_addrs(addrs)) {
-    error = "Failed to resolve game addresses.";
-    return false;
-  }
-  if (!addrs->chr_dbg_flags) {
-    error = "CHR_DBG_FLAGS not found.";
-    return false;
-  }
-
-  auto flags = reinterpret_cast<uint8_t *>(addrs->chr_dbg_flags);
-  uint8_t value = flags[0];
-  value = value ? 0 : 1;
-  flags[0] = value;
-  flags[4] = value;
-  flags[5] = value;
-  enabled = (value != 0);
-  return true;
-}
-
-bool toggle_no_clip(GameAddrs *addrs, bool &enabled, std::string &error) {
-  if (!addrs) {
-    error = "Missing game addresses.";
-    return false;
-  }
-  if (!resolve_game_addrs(addrs)) {
-    error = "Failed to resolve game addresses.";
-    return false;
-  }
-  if (!addrs->world_chr_man) {
-    error = "WorldChrMan not found.";
-    return false;
-  }
-
-  auto world_chr_man = *reinterpret_cast<uintptr_t *>(addrs->world_chr_man);
-  if (!world_chr_man) {
-    error = "WorldChrMan is null.";
-    return false;
-  }
-
-  auto player_list = *reinterpret_cast<uintptr_t *>(world_chr_man + 0x10EF8);
-  if (!player_list) {
-    error = "Player list is null.";
-    return false;
-  }
-
-  auto player = *reinterpret_cast<uintptr_t *>(player_list);
-  if (!player) {
-    error = "Player is null.";
-    return false;
-  }
-
-  bool map_collision_flag = false;
-  {
-    auto ptr1 = *reinterpret_cast<uintptr_t *>(world_chr_man + 0x1E508);
-    if (!ptr1) {
-      error = "Collision flags pointer is null.";
-      return false;
-    }
-    auto ptr2 = *reinterpret_cast<uintptr_t *>(ptr1 + 0x58);
-    if (!ptr2) {
-      error = "Collision flags buffer is null.";
-      return false;
-    }
-    auto flags = reinterpret_cast<uint8_t *>(ptr2 + 0xF0);
-    map_collision_flag = ((*flags) & (1 << 3)) != 0;
-  }
-
-  bool gravity_flag = false;
-  {
-    auto ptr1 = *reinterpret_cast<uintptr_t *>(player + 0x190);
-    if (!ptr1) {
-      error = "Gravity ptr1 is null.";
-      return false;
-    }
-    auto ptr2 = *reinterpret_cast<uintptr_t *>(ptr1 + 0x68);
-    if (!ptr2) {
-      error = "Gravity ptr2 is null.";
-      return false;
-    }
-    auto flag = reinterpret_cast<uint8_t *>(ptr2 + 0x1D3);
-    gravity_flag = (*flag) != 0;
-  }
-
-  uintptr_t horse = 0;
-  {
-    uintptr_t module_container = 0;
-    if (safe_read_ptr(player + 0x190, module_container) && module_container) {
-      uintptr_t ride_module = 0;
-      if (safe_read_ptr(module_container + 0xE8, ride_module) && ride_module) {
-        uintptr_t last_mounted = 0;
-        safe_read_ptr(ride_module + 0x18, last_mounted);
-        horse = last_mounted;
-      }
-    }
-  }
-
-  bool horse_collision_flag = false;
-  bool horse_gravity_flag = false;
-  if (horse) {
-    uintptr_t horse_ctrl = 0;
-    if (safe_read_ptr(horse + 0x58, horse_ctrl) && horse_ctrl) {
-      uint32_t flags = 0;
-      if (safe_read_u32(horse_ctrl + 0xF0, flags)) {
-        horse_collision_flag =
-            ((flags & (1 << 2)) != 0) || ((flags & (1 << 3)) != 0);
-      }
-    }
-
-    uintptr_t horse_gravity_ptr1 = 0;
-    uintptr_t ptr2 = 0;
-    if (safe_read_ptr(horse + 0x190, horse_gravity_ptr1) &&
-        horse_gravity_ptr1) {
-      safe_read_ptr(horse_gravity_ptr1 + 0x68, ptr2);
-    }
-    if (ptr2) {
-      uint8_t flag = 0;
-      if (safe_read_u8(ptr2 + 0x1D3, flag)) {
-        horse_gravity_flag = (flag != 0);
-      }
-    }
-  }
-
-  bool new_value = !(map_collision_flag || gravity_flag ||
-                     horse_collision_flag || horse_gravity_flag);
-
-  {
-    auto ptr1 = *reinterpret_cast<uintptr_t *>(world_chr_man + 0x1E508);
-    auto ptr2 = ptr1 ? *reinterpret_cast<uintptr_t *>(ptr1 + 0x58) : 0;
-    if (!ptr2) {
-      error = "Collision flags buffer is null.";
-      return false;
-    }
-    auto flags = reinterpret_cast<uint8_t *>(ptr2 + 0xF0);
-    if (new_value) {
-      *flags |= (1 << 3);
-    } else {
-      *flags &= static_cast<uint8_t>(~(1 << 3));
-    }
-  }
-
-  {
-    auto ptr1 = *reinterpret_cast<uintptr_t *>(player + 0x190);
-    auto ptr2 = ptr1 ? *reinterpret_cast<uintptr_t *>(ptr1 + 0x68) : 0;
-    if (!ptr2) {
-      error = "Gravity buffer is null.";
-      return false;
-    }
-    auto flag = reinterpret_cast<uint8_t *>(ptr2 + 0x1D3);
-    *flag = new_value ? 1 : 0;
-  }
-
-  if (horse) {
-    uintptr_t horse_ctrl = 0;
-    if (safe_read_ptr(horse + 0x58, horse_ctrl) && horse_ctrl) {
-      uint32_t flags = 0;
-      if (safe_read_u32(horse_ctrl + 0xF0, flags)) {
-        uint32_t new_flags = flags;
-        if (new_value) {
-          new_flags |= (1 << 2);
-          new_flags |= (1 << 3);
-        } else {
-          new_flags &= ~(1 << 2);
-          new_flags &= ~(1 << 3);
-        }
-        safe_write_u32(horse_ctrl + 0xF0, new_flags);
-      }
-    }
-
-    uintptr_t horse_gravity_ptr1 = 0;
-    uintptr_t ptr2 = 0;
-    if (safe_read_ptr(horse + 0x190, horse_gravity_ptr1) &&
-        horse_gravity_ptr1) {
-      safe_read_ptr(horse_gravity_ptr1 + 0x68, ptr2);
-    }
-    if (ptr2) {
-      safe_write_u8(ptr2 + 0x1D3, new_value ? 1 : 0);
-    }
-  }
-
-  enabled = new_value;
-  return true;
-}
-
-struct ItemTask {
-  int item_id = 0;
-  int quantity = 0;
-};
-
-std::mutex g_item_queue_mutex;
-std::vector<ItemTask> g_item_queue;
-
-bool add_item(GameAddrs *addrs, int item_id, int quantity, std::string &error) {
-  if (!addrs) {
-    error = "Missing game addresses.";
-    return false;
-  }
-  if (!resolve_game_addrs(addrs)) {
-    error = "Failed to resolve game addresses.";
-    return false;
-  }
-
-  ItemTask task;
-  task.item_id = item_id;
-  task.quantity = quantity;
-  {
-    std::lock_guard<std::mutex> lock(g_item_queue_mutex);
-    g_item_queue.push_back(task);
-  }
-  return true;
-}
-std::string handle_command(const std::string &command) {
-  {
-    std::istringstream stream(command);
-    std::string verb;
-    stream >> verb;
-    std::string verb_lower = verb;
-    std::transform(
-        verb_lower.begin(), verb_lower.end(), verb_lower.begin(),
-        [](unsigned char c) { return static_cast<char>(std::tolower(c)); });
-
-    if (verb_lower == "player.additem") {
-      std::string item_hex;
-      long long amount = 0;
-      if (stream >> item_hex >> amount) {
-        std::string hex = item_hex;
-        if (hex.rfind("0x", 0) == 0 || hex.rfind("0X", 0) == 0) {
-          hex = hex.substr(2);
-        }
-        if (hex.size() == 1 && (hex == "f" || hex == "F")) {
-          hex = "0F";
-        }
-        int id = 0;
-        try {
-          id = std::stoi(hex, nullptr, 16);
-        } catch (...) {
-          id = 0;
-        }
-
-        if (id == 0x0F && amount > 0) {
-          CommandContext ctx;
-          ctx.game_addrs = &g_game_addrs;
-          ctx.registry = &g_command_registry;
-          ctx.resolve_game_addrs = resolve_game_addrs;
-          ctx.add_runes = add_runes;
-          ctx.add_item = add_item;
-          std::string error;
-          if (!add_runes(&g_game_addrs, static_cast<int>(amount), error)) {
-            return "Failed: " + error;
-          }
-          return "Added runes: " + std::to_string(amount);
-        }
-      }
-    }
-
-    if (verb_lower == "tgm") {
-      bool enabled = false;
-      std::string error;
-      if (!toggle_god_mode(&g_game_addrs, enabled, error)) {
-        return "Failed: " + error;
-      }
-      return enabled ? "God mode: on" : "God mode: off";
-    }
-
-    if (verb_lower == "tcl") {
-      bool enabled = false;
-      std::string error;
-      if (!toggle_no_clip(&g_game_addrs, enabled, error)) {
-        return "Failed: " + error;
-      }
-      return enabled ? "NoClip: on" : "NoClip: off";
-    }
-  }
-
-  CommandContext ctx;
-  ctx.game_addrs = &g_game_addrs;
-  ctx.registry = &g_command_registry;
-  ctx.resolve_game_addrs = resolve_game_addrs;
-  ctx.add_runes = add_runes;
-  ctx.add_item = add_item;
-
-  if (g_command_registry.commands.empty()) {
-    register_command(g_command_registry, build_help_command());
-    register_command(g_command_registry, build_runes_command());
-    register_command(g_command_registry, build_items_command());
-    register_command(g_command_registry, build_search_command());
-  }
-
-  return dispatch_command(g_command_registry, ctx, command);
 }
 
 bool is_input_message(UINT msg) {
@@ -1228,7 +679,8 @@ void render_console() {
     if (!command.empty()) {
       g_last_command = command;
       g_log.push_back("> " + command);
-      std::string response = handle_command(command);
+      std::string response =
+          handle_console_command(g_command_registry, g_game_addrs, command);
       if (!response.empty()) {
         std::istringstream lines(response);
         std::string line;
@@ -1266,7 +718,7 @@ HRESULT __stdcall hk_present_dx12(IDXGISwapChain *swapchain_base, UINT sync,
   }
 
   if (g_imgui_ready && g_backend_dx12) {
-    if (!g_input_hooks_installed) {
+    if (!input_hooks_installed()) {
       install_input_hooks();
     }
     if (g_present_count < 120) {
@@ -1276,17 +728,7 @@ HRESULT __stdcall hk_present_dx12(IDXGISwapChain *swapchain_base, UINT sync,
       return g_present(swapchain_base, sync, flags);
     }
 
-    {
-      std::lock_guard<std::mutex> lock(g_item_queue_mutex);
-      if (!g_item_queue.empty()) {
-        ItemTask task = g_item_queue.front();
-        g_item_queue.erase(g_item_queue.begin());
-        std::string error;
-        if (!add_item_impl(&g_game_addrs, task.item_id, task.quantity, error)) {
-          log_line("AddItem failed: %s", error.c_str());
-        }
-      }
-    }
+    process_item_queue(&g_game_addrs, log_line);
     ImGui_ImplDX12_NewFrame();
     ImGui_ImplWin32_NewFrame();
     ImGui::NewFrame();
@@ -1459,121 +901,6 @@ DWORD WINAPI init_thread(LPVOID) {
   return 0;
 }
 
-using GetAsyncKeyStateFn = SHORT(WINAPI *)(int);
-using GetKeyStateFn = SHORT(WINAPI *)(int);
-using GetKeyboardStateFn = BOOL(WINAPI *)(PBYTE);
-using GetRawInputDataFn = UINT(WINAPI *)(HRAWINPUT, UINT, LPVOID, PUINT, UINT);
-using GetRawInputBufferFn = UINT(WINAPI *)(PRAWINPUT, PUINT, UINT);
-
-GetAsyncKeyStateFn g_get_async_key_state = nullptr;
-GetKeyStateFn g_get_key_state = nullptr;
-GetKeyboardStateFn g_get_keyboard_state = nullptr;
-GetRawInputDataFn g_get_raw_input_data = nullptr;
-GetRawInputBufferFn g_get_raw_input_buffer = nullptr;
-
-SHORT WINAPI hk_get_async_key_state(int vkey) {
-  if (g_console_open) {
-    return 0;
-  }
-  return g_get_async_key_state ? g_get_async_key_state(vkey) : 0;
-}
-
-SHORT WINAPI hk_get_key_state(int vkey) {
-  if (g_console_open) {
-    return 0;
-  }
-  return g_get_key_state ? g_get_key_state(vkey) : 0;
-}
-
-BOOL WINAPI hk_get_keyboard_state(PBYTE state) {
-  if (g_console_open) {
-    if (state) {
-      std::memset(state, 0, 256);
-    }
-    return TRUE;
-  }
-  return g_get_keyboard_state ? g_get_keyboard_state(state) : FALSE;
-}
-
-UINT WINAPI hk_get_raw_input_data(HRAWINPUT hRawInput, UINT uiCommand,
-                                  LPVOID pData, PUINT pcbSize,
-                                  UINT cbSizeHeader) {
-  if (g_console_open) {
-    if (pcbSize) {
-      *pcbSize = 0;
-    }
-    return 0;
-  }
-  return g_get_raw_input_data
-             ? g_get_raw_input_data(hRawInput, uiCommand, pData, pcbSize,
-                                    cbSizeHeader)
-             : 0;
-}
-
-UINT WINAPI hk_get_raw_input_buffer(PRAWINPUT pData, PUINT pcbSize,
-                                    UINT cbSizeHeader) {
-  if (g_console_open) {
-    if (pcbSize) {
-      *pcbSize = 0;
-    }
-    return 0;
-  }
-  return g_get_raw_input_buffer
-             ? g_get_raw_input_buffer(pData, pcbSize, cbSizeHeader)
-             : 0;
-}
-
-void install_input_hooks() {
-  if (g_input_hooks_installed || g_input_hooks_attempted) {
-    return;
-  }
-
-  g_input_hooks_attempted = true;
-
-  MH_STATUS init_status = MH_Initialize();
-  if (init_status != MH_OK && init_status != MH_ERROR_ALREADY_INITIALIZED) {
-    log_line("MinHook init failed (%s)", MH_StatusToString(init_status));
-    return;
-  }
-
-  if (MH_CreateHook(reinterpret_cast<LPVOID>(GetAsyncKeyState),
-                    reinterpret_cast<LPVOID>(hk_get_async_key_state),
-                    reinterpret_cast<LPVOID *>(&g_get_async_key_state)) ==
-      MH_OK) {
-    MH_EnableHook(reinterpret_cast<LPVOID>(GetAsyncKeyState));
-  }
-
-  if (MH_CreateHook(reinterpret_cast<LPVOID>(GetKeyState),
-                    reinterpret_cast<LPVOID>(hk_get_key_state),
-                    reinterpret_cast<LPVOID *>(&g_get_key_state)) == MH_OK) {
-    MH_EnableHook(reinterpret_cast<LPVOID>(GetKeyState));
-  }
-
-  if (MH_CreateHook(reinterpret_cast<LPVOID>(GetKeyboardState),
-                    reinterpret_cast<LPVOID>(hk_get_keyboard_state),
-                    reinterpret_cast<LPVOID *>(&g_get_keyboard_state)) ==
-      MH_OK) {
-    MH_EnableHook(reinterpret_cast<LPVOID>(GetKeyboardState));
-  }
-
-  if (MH_CreateHook(reinterpret_cast<LPVOID>(GetRawInputData),
-                    reinterpret_cast<LPVOID>(hk_get_raw_input_data),
-                    reinterpret_cast<LPVOID *>(&g_get_raw_input_data)) ==
-      MH_OK) {
-    MH_EnableHook(reinterpret_cast<LPVOID>(GetRawInputData));
-  }
-
-  if (MH_CreateHook(reinterpret_cast<LPVOID>(GetRawInputBuffer),
-                    reinterpret_cast<LPVOID>(hk_get_raw_input_buffer),
-                    reinterpret_cast<LPVOID *>(&g_get_raw_input_buffer)) ==
-      MH_OK) {
-    MH_EnableHook(reinterpret_cast<LPVOID>(GetRawInputBuffer));
-  }
-
-  g_input_hooks_installed = true;
-  log_line("Input hooks installed");
-}
-
 } // namespace
 
 BOOL APIENTRY DllMain(HMODULE hModule, DWORD reason, LPVOID) {
@@ -1588,6 +915,8 @@ BOOL APIENTRY DllMain(HMODULE hModule, DWORD reason, LPVOID) {
         std::snprintf(g_log_path, sizeof(g_log_path), "%s", path.c_str());
       }
     }
+    set_game_actions_logger(log_line);
+    init_input_hooks(&g_console_open, log_line);
     DisableThreadLibraryCalls(hModule);
     CreateThread(nullptr, 0, init_thread, nullptr, 0, nullptr);
     log_line("DllMain attach");
