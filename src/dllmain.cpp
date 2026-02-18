@@ -3,6 +3,7 @@
 #include <dxgi1_4.h>
 #include <windows.h>
 
+#include <algorithm>
 #include <cstdarg>
 #include <cstdio>
 #include <cstring>
@@ -459,6 +460,50 @@ bool add_item(GameAddrs *addrs, int item_id, int quantity, std::string &error) {
   return true;
 }
 std::string handle_command(const std::string &command) {
+  {
+    std::istringstream stream(command);
+    std::string verb;
+    stream >> verb;
+    std::string verb_lower = verb;
+    std::transform(
+        verb_lower.begin(), verb_lower.end(), verb_lower.begin(),
+        [](unsigned char c) { return static_cast<char>(std::tolower(c)); });
+
+    if (verb_lower == "player.additem") {
+      std::string item_hex;
+      long long amount = 0;
+      if (stream >> item_hex >> amount) {
+        std::string hex = item_hex;
+        if (hex.rfind("0x", 0) == 0 || hex.rfind("0X", 0) == 0) {
+          hex = hex.substr(2);
+        }
+        if (hex.size() == 1 && (hex == "f" || hex == "F")) {
+          hex = "0F";
+        }
+        int id = 0;
+        try {
+          id = std::stoi(hex, nullptr, 16);
+        } catch (...) {
+          id = 0;
+        }
+
+        if (id == 0x0F && amount > 0) {
+          CommandContext ctx;
+          ctx.game_addrs = &g_game_addrs;
+          ctx.registry = &g_command_registry;
+          ctx.resolve_game_addrs = resolve_game_addrs;
+          ctx.add_runes = add_runes;
+          ctx.add_item = add_item;
+          std::string error;
+          if (!add_runes(&g_game_addrs, static_cast<int>(amount), error)) {
+            return "Failed: " + error;
+          }
+          return "Added runes: " + std::to_string(amount);
+        }
+      }
+    }
+  }
+
   CommandContext ctx;
   ctx.game_addrs = &g_game_addrs;
   ctx.registry = &g_command_registry;
