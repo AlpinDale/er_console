@@ -1,0 +1,40 @@
+name: build-release
+
+on:
+  push:
+    tags:
+      - "v*"
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Configure
+        run: cmake -S er_console_cpp -B build -G "Visual Studio 17 2022" -A x64
+
+      - name: Build
+        run: cmake --build build --config Release
+
+      - name: Package
+        shell: pwsh
+        run: |
+          $zip = "er_console_me3-${{ github.ref_name }}-win64.zip"
+          if (Test-Path $zip) { Remove-Item $zip }
+          $dll = "build/dist/Release/er_console_mod.dll"
+          $dest = "distribution/me3/natives/er_console_mod.dll"
+          if (!(Test-Path $dll)) { throw "Missing DLL: $dll" }
+          New-Item -ItemType Directory -Force -Path (Split-Path $dest) | Out-Null
+          Copy-Item -Force $dll $dest
+          Compress-Archive -Path "distribution/me3/*" -DestinationPath $zip
+          echo "ZIP_PATH=$zip" >> $env:GITHUB_ENV
+
+      - name: Upload Release Asset
+        uses: softprops/action-gh-release@v2
+        with:
+          files: ${{ env.ZIP_PATH }}

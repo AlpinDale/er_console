@@ -1,0 +1,7 @@
+profileVersion = "v1"
+
+[[supports]]
+game = "elden-ring"
+
+[[natives]]
+path = "natives/er_console_mod.dll"
