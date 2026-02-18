@@ -24,10 +24,41 @@ struct ImVec2 {
   float y;
   ImVec2(float _x = 0.0f, float _y = 0.0f) : x(_x), y(_y) {}
 };
+struct ImVec4 {
+  float x;
+  float y;
+  float z;
+  float w;
+  ImVec4(float _x = 0.0f, float _y = 0.0f, float _z = 0.0f, float _w = 0.0f)
+      : x(_x), y(_y), z(_z), w(_w) {}
+};
+using ImU32 = unsigned int;
+struct ImDrawList {
+  void AddRectFilledMultiColor(ImVec2, ImVec2, ImU32, ImU32, ImU32, ImU32) {}
+};
+enum ImGuiStyleVar_ {
+  ImGuiStyleVar_WindowRounding = 0,
+  ImGuiStyleVar_WindowBorderSize = 1,
+  ImGuiStyleVar_WindowPadding = 2,
+  ImGuiStyleVar_FrameRounding = 3,
+};
+enum ImGuiCol_ { ImGuiCol_FrameBg = 0, ImGuiCol_Text = 1 };
+using ImGuiWindowFlags = int;
+enum {
+  ImGuiWindowFlags_NoTitleBar = 1 << 0,
+  ImGuiWindowFlags_NoResize = 1 << 1,
+  ImGuiWindowFlags_NoMove = 1 << 2,
+  ImGuiWindowFlags_NoScrollbar = 1 << 3,
+  ImGuiWindowFlags_NoScrollWithMouse = 1 << 4,
+  ImGuiWindowFlags_NoCollapse = 1 << 5,
+  ImGuiWindowFlags_NoSavedSettings = 1 << 6,
+};
+enum { ImGuiCond_FirstUseEver = 0, ImGuiCond_Always = 1 };
 enum ImGuiKey { ImGuiKey_GraveAccent = 0 };
 enum ImGuiConfigFlags_ { ImGuiConfigFlags_NavEnableKeyboard = 1 << 0 };
 struct ImGuiIO {
   int ConfigFlags = 0;
+  ImVec2 DisplaySize;
 };
 namespace ImGui {
 inline void CreateContext() {}
@@ -40,6 +71,7 @@ inline void StyleColorsDark() {}
 inline bool IsKeyPressed(ImGuiKey) { return false; }
 inline void SetNextWindowSize(ImVec2, int) {}
 inline void SetNextWindowPos(ImVec2, int) {}
+inline void SetNextWindowBgAlpha(float) {}
 inline bool Begin(const char *, bool *, int) { return true; }
 inline void End() {}
 inline bool BeginChild(const char *, ImVec2, bool) { return true; }
@@ -50,11 +82,20 @@ inline float GetScrollMaxY() { return 0.0f; }
 inline void SetScrollHereY(float) {}
 inline float GetFrameHeightWithSpacing() { return 0.0f; }
 inline bool InputText(const char *, std::string *, int) { return false; }
+inline void PushStyleVar(int, float) {}
+inline void PushStyleVar(int, ImVec2) {}
+inline void PushStyleColor(int, ImVec4) {}
+inline void PopStyleVar(int) {}
+inline void PopStyleColor(int) {}
 inline void NewFrame() {}
 inline void Render() {}
 inline void *GetDrawData() { return nullptr; }
 inline void SetWindowFocus() {}
 inline void SetKeyboardFocusHere() {}
+inline void SetWindowFontScale(float) {}
+inline ImDrawList *GetWindowDrawList() { return nullptr; }
+inline ImVec2 GetWindowPos() { return ImVec2(); }
+inline ImVec2 GetWindowSize() { return ImVec2(); }
 } // namespace ImGui
 
 inline bool ImGui_ImplWin32_WndProcHandler(HWND, UINT, WPARAM, LPARAM) {
@@ -77,9 +118,9 @@ inline void ImGui_ImplDX11_Shutdown() {}
 inline void ImGui_ImplDX11_NewFrame() {}
 inline void ImGui_ImplDX11_RenderDrawData(void *) {}
 #define IMGUI_CHECKVERSION()
-#define ImGuiCond_FirstUseEver 0
 #define ImGuiInputTextFlags_EnterReturnsTrue 0
 #define ImGuiWindowFlags_NoCollapse 0
+#define IM_COL32(R, G, B, A) ((ImU32)0)
 #endif
 
 #if defined(ER_CONSOLE_BUILD)
@@ -511,9 +552,40 @@ void render_console() {
     return;
   }
 
-  ImGui::SetNextWindowSize(ImVec2(720.0f, 360.0f), ImGuiCond_FirstUseEver);
-  ImGui::SetNextWindowPos(ImVec2(40.0f, 40.0f), ImGuiCond_FirstUseEver);
-  ImGui::Begin("Console", &g_console_open, ImGuiWindowFlags_NoCollapse);
+  ImGuiIO &io = ImGui::GetIO();
+  const float width = io.DisplaySize.x;
+  const float height = io.DisplaySize.y;
+  const float console_height = height * 0.5f;
+  const ImVec2 console_pos(0.0f, height - console_height);
+  const ImVec2 console_size(width, console_height);
+
+  ImGui::SetNextWindowPos(console_pos, ImGuiCond_Always);
+  ImGui::SetNextWindowSize(console_size, ImGuiCond_Always);
+  ImGui::SetNextWindowBgAlpha(0.0f);
+
+  ImGuiWindowFlags flags = ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_NoResize |
+                            ImGuiWindowFlags_NoMove | ImGuiWindowFlags_NoScrollbar |
+                            ImGuiWindowFlags_NoScrollWithMouse | ImGuiWindowFlags_NoCollapse |
+                            ImGuiWindowFlags_NoSavedSettings;
+
+  ImGui::PushStyleVar(ImGuiStyleVar_WindowRounding, 0.0f);
+  ImGui::PushStyleVar(ImGuiStyleVar_WindowBorderSize, 0.0f);
+  ImGui::PushStyleVar(ImGuiStyleVar_WindowPadding, ImVec2(16.0f, 12.0f));
+  ImGui::PushStyleVar(ImGuiStyleVar_FrameRounding, 0.0f);
+  ImGui::PushStyleColor(ImGuiCol_FrameBg, ImVec4(0.0f, 0.0f, 0.0f, 0.6f));
+  ImGui::PushStyleColor(ImGuiCol_Text, ImVec4(0.9f, 0.9f, 0.9f, 1.0f));
+
+  ImGui::Begin("Console", &g_console_open, flags);
+  ImGui::SetWindowFontScale(1.4f);
+  ImDrawList *draw_list = ImGui::GetWindowDrawList();
+  ImVec2 win_pos = ImGui::GetWindowPos();
+  ImVec2 win_size = ImGui::GetWindowSize();
+  ImU32 top_col = IM_COL32(0, 0, 0, 0);
+  ImU32 bottom_col = IM_COL32(0, 0, 0, 255);
+  draw_list->AddRectFilledMultiColor(
+      win_pos, ImVec2(win_pos.x + win_size.x, win_pos.y + win_size.y),
+      top_col, top_col, bottom_col, bottom_col);
+
   if (g_request_focus) {
     ImGui::SetWindowFocus();
     ImGui::SetKeyboardFocusHere();
@@ -521,7 +593,7 @@ void render_console() {
   }
 
   ImGui::BeginChild("console_log", ImVec2(0.0f, -ImGui::GetFrameHeightWithSpacing()),
-                    true);
+                    false);
   for (const auto &line : g_log) {
     ImGui::TextUnformatted(line.c_str());
   }
@@ -537,9 +609,12 @@ void render_console() {
       g_log.push_back("Command received (not implemented).");
     }
     g_input.clear();
+    g_request_focus = true;
   }
 
   ImGui::End();
+  ImGui::PopStyleColor(2);
+  ImGui::PopStyleVar(4);
 }
 
 HRESULT __stdcall hk_present_dx12(IDXGISwapChain *swapchain_base, UINT sync,
