@@ -44,6 +44,7 @@ struct ImVec4 {
 using ImU32 = unsigned int;
 struct ImDrawList {
   void AddRectFilledMultiColor(ImVec2, ImVec2, ImU32, ImU32, ImU32, ImU32) {}
+  void AddRectFilled(ImVec2, ImVec2, ImU32) {}
 };
 enum ImGuiStyleVar_ {
   ImGuiStyleVar_WindowRounding = 0,
@@ -51,7 +52,14 @@ enum ImGuiStyleVar_ {
   ImGuiStyleVar_WindowPadding = 2,
   ImGuiStyleVar_FrameRounding = 3,
 };
-enum ImGuiCol_ { ImGuiCol_FrameBg = 0, ImGuiCol_Text = 1 };
+enum ImGuiCol_ {
+  ImGuiCol_FrameBg = 0,
+  ImGuiCol_FrameBgHovered = 1,
+  ImGuiCol_FrameBgActive = 2,
+  ImGuiCol_Border = 3,
+  ImGuiCol_NavHighlight = 4,
+  ImGuiCol_Text = 5
+};
 using ImGuiWindowFlags = int;
 enum {
   ImGuiWindowFlags_NoTitleBar = 1 << 0,
@@ -61,19 +69,32 @@ enum {
   ImGuiWindowFlags_NoScrollWithMouse = 1 << 4,
   ImGuiWindowFlags_NoCollapse = 1 << 5,
   ImGuiWindowFlags_NoSavedSettings = 1 << 6,
+  ImGuiWindowFlags_AlwaysVerticalScrollbar = 1 << 7,
 };
 enum { ImGuiCond_FirstUseEver = 0, ImGuiCond_Always = 1 };
-enum ImGuiKey { ImGuiKey_GraveAccent = 0 };
+enum ImGuiKey {
+  ImGuiKey_GraveAccent = 0,
+  ImGuiKey_UpArrow = 1,
+  ImGuiKey_DownArrow = 2
+};
 enum ImGuiConfigFlags_ { ImGuiConfigFlags_NavEnableKeyboard = 1 << 0 };
 struct ImGuiIO {
   int ConfigFlags = 0;
   ImVec2 DisplaySize;
+  struct ImFontAtlas *Fonts = nullptr;
+};
+struct ImFontAtlas {
+  void *AddFontFromFileTTF(const char *, float) { return nullptr; }
 };
 namespace ImGui {
 inline void CreateContext() {}
 inline void DestroyContext() {}
 inline ImGuiIO &GetIO() {
   static ImGuiIO io;
+  static ImFontAtlas atlas;
+  if (!io.Fonts) {
+    io.Fonts = &atlas;
+  }
   return io;
 }
 inline void StyleColorsDark() {}
@@ -83,19 +104,28 @@ inline void SetNextWindowPos(ImVec2, int) {}
 inline void SetNextWindowBgAlpha(float) {}
 inline bool Begin(const char *, bool *, int) { return true; }
 inline void End() {}
-inline bool BeginChild(const char *, ImVec2, bool) { return true; }
+inline bool BeginChild(const char *, ImVec2, bool, int = 0) { return true; }
 inline void EndChild() {}
 inline void TextUnformatted(const char *) {}
+inline void Separator() {}
+inline void Text(const char *) {}
+inline void SameLine(float = 0.0f, float = -1.0f) {}
+inline void PushItemWidth(float) {}
+inline void PopItemWidth() {}
+inline void AlignTextToFramePadding() {}
+inline float GetCursorPosY() { return 0.0f; }
+inline void SetCursorPosY(float) {}
 inline float GetScrollY() { return 0.0f; }
 inline float GetScrollMaxY() { return 0.0f; }
 inline void SetScrollHereY(float) {}
+inline void SetScrollY(float) {}
 inline float GetFrameHeightWithSpacing() { return 0.0f; }
 inline bool InputText(const char *, std::string *, int) { return false; }
 inline void PushStyleVar(int, float) {}
 inline void PushStyleVar(int, ImVec2) {}
 inline void PushStyleColor(int, ImVec4) {}
 inline void PopStyleVar(int) {}
-inline void PopStyleColor(int) {}
+inline void PopStyleColor(int = 1) {}
 inline void NewFrame() {}
 inline void Render() {}
 inline void *GetDrawData() { return nullptr; }
@@ -217,6 +247,7 @@ bool g_input_blocked = false;
 bool g_input_hooks_installed = false;
 bool g_input_hooks_attempted = false;
 HMODULE g_module_handle = nullptr;
+bool g_scroll_to_bottom = true;
 std::string g_input;
 std::string g_last_command;
 std::vector<std::string> g_log = {
@@ -772,6 +803,7 @@ bool init_imgui(IDXGISwapChain3 *swapchain) {
   ImGuiIO &io = ImGui::GetIO();
   io.ConfigFlags |= ImGuiConfigFlags_NavEnableKeyboard;
   ImGui::StyleColorsDark();
+  io.Fonts->AddFontFromFileTTF("C:\\Windows\\Fonts\\consola.ttf", 18.0f);
 
   ImGui_ImplWin32_Init(g_hwnd);
   ImGui_ImplDX12_Init(g_device, g_frame_count, g_swapchain_format, g_srv_heap,
@@ -819,6 +851,7 @@ bool init_imgui_dx11(IDXGISwapChain *swapchain) {
   ImGuiIO &io = ImGui::GetIO();
   io.ConfigFlags |= ImGuiConfigFlags_NavEnableKeyboard;
   ImGui::StyleColorsDark();
+  io.Fonts->AddFontFromFileTTF("C:\\Windows\\Fonts\\consola.ttf", 18.0f);
 
   ImGui_ImplWin32_Init(g_hwnd);
   ImGui_ImplDX11_Init(g_d3d11_device, g_d3d11_context);
@@ -865,46 +898,62 @@ void render_console() {
   ImGui::SetNextWindowSize(console_size, ImGuiCond_Always);
   ImGui::SetNextWindowBgAlpha(0.0f);
 
-  ImGuiWindowFlags flags =
-      ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_NoResize |
-      ImGuiWindowFlags_NoMove | ImGuiWindowFlags_NoScrollbar |
-      ImGuiWindowFlags_NoScrollWithMouse | ImGuiWindowFlags_NoCollapse |
-      ImGuiWindowFlags_NoSavedSettings;
+  ImGuiWindowFlags flags = ImGuiWindowFlags_NoTitleBar |
+                           ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoMove |
+                           ImGuiWindowFlags_NoCollapse |
+                           ImGuiWindowFlags_NoSavedSettings;
 
   ImGui::PushStyleVar(ImGuiStyleVar_WindowRounding, 0.0f);
   ImGui::PushStyleVar(ImGuiStyleVar_WindowBorderSize, 0.0f);
   ImGui::PushStyleVar(ImGuiStyleVar_WindowPadding, ImVec2(16.0f, 12.0f));
   ImGui::PushStyleVar(ImGuiStyleVar_FrameRounding, 0.0f);
-  ImGui::PushStyleColor(ImGuiCol_FrameBg, ImVec4(0.0f, 0.0f, 0.0f, 0.6f));
+  ImGui::PushStyleColor(ImGuiCol_FrameBg, ImVec4(0.0f, 0.0f, 0.0f, 0.0f));
+  ImGui::PushStyleColor(ImGuiCol_FrameBgHovered,
+                        ImVec4(0.0f, 0.0f, 0.0f, 0.0f));
+  ImGui::PushStyleColor(ImGuiCol_FrameBgActive, ImVec4(0.0f, 0.0f, 0.0f, 0.0f));
+  ImGui::PushStyleColor(ImGuiCol_Border, ImVec4(0.0f, 0.0f, 0.0f, 0.0f));
+  ImGui::PushStyleColor(ImGuiCol_NavHighlight, ImVec4(0.0f, 0.0f, 0.0f, 0.0f));
   ImGui::PushStyleColor(ImGuiCol_Text, ImVec4(0.9f, 0.9f, 0.9f, 1.0f));
 
   ImGui::Begin("Console", &g_console_open, flags);
-  ImGui::SetWindowFontScale(1.4f);
   ImDrawList *draw_list = ImGui::GetWindowDrawList();
   ImVec2 win_pos = ImGui::GetWindowPos();
   ImVec2 win_size = ImGui::GetWindowSize();
-  ImU32 top_col = IM_COL32(0, 0, 0, 0);
-  ImU32 bottom_col = IM_COL32(0, 0, 0, 255);
+  const float fade_height = 6.0f;
+  ImU32 fade_top = IM_COL32(0, 0, 0, 0);
+  ImU32 fade_bottom = IM_COL32(0, 0, 0, 170);
+  ImU32 solid = IM_COL32(0, 0, 0, 170);
+  draw_list->AddRectFilled(
+      ImVec2(win_pos.x, win_pos.y + fade_height),
+      ImVec2(win_pos.x + win_size.x, win_pos.y + win_size.y), solid);
   draw_list->AddRectFilledMultiColor(
-      win_pos, ImVec2(win_pos.x + win_size.x, win_pos.y + win_size.y), top_col,
-      top_col, bottom_col, bottom_col);
+      win_pos, ImVec2(win_pos.x + win_size.x, win_pos.y + fade_height),
+      fade_top, fade_top, fade_bottom, fade_bottom);
 
   if (g_request_focus) {
     ImGui::SetWindowFocus();
-    ImGui::SetKeyboardFocusHere();
-    g_request_focus = false;
   }
 
-  ImGui::BeginChild("console_log",
-                    ImVec2(0.0f, -ImGui::GetFrameHeightWithSpacing()), false);
+  if (ImGui::IsKeyPressed(ImGuiKey_UpArrow)) {
+    ImGui::SetScrollY(ImGui::GetScrollY() - 30.0f);
+  } else if (ImGui::IsKeyPressed(ImGuiKey_DownArrow)) {
+    ImGui::SetScrollY(ImGui::GetScrollY() + 30.0f);
+  }
   for (const auto &line : g_log) {
     ImGui::TextUnformatted(line.c_str());
   }
-  if (ImGui::GetScrollY() >= ImGui::GetScrollMaxY()) {
+  float scroll_y = ImGui::GetScrollY();
+  float scroll_max = ImGui::GetScrollMaxY();
+  if (g_scroll_to_bottom || scroll_y >= (scroll_max - 5.0f)) {
     ImGui::SetScrollHereY(1.0f);
+    g_scroll_to_bottom = false;
   }
-  ImGui::EndChild();
 
+  ImGui::AlignTextToFramePadding();
+  ImGui::TextUnformatted(">");
+  ImGui::SameLine(0.0f, 6.0f);
+  ImGui::PushItemWidth(-1.0f);
+  ImGui::SetKeyboardFocusHere();
   if (ImGui::InputText("##console_input", &g_input,
                        ImGuiInputTextFlags_EnterReturnsTrue)) {
     std::string command = g_input;
@@ -923,13 +972,18 @@ void render_console() {
           g_log.push_back(line);
         }
       }
+      g_scroll_to_bottom = true;
     }
     g_input.clear();
     g_request_focus = true;
   }
+  ImGui::PopItemWidth();
+  if (g_request_focus) {
+    g_request_focus = false;
+  }
 
   ImGui::End();
-  ImGui::PopStyleColor(2);
+  ImGui::PopStyleColor(6);
   ImGui::PopStyleVar(4);
 }
 
