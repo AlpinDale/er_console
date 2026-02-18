@@ -79,6 +79,7 @@ struct ImGuiIO {
   int ConfigFlags = 0;
   ImVec2 DisplaySize;
   struct ImFontAtlas *Fonts = nullptr;
+  float MouseWheel = 0.0f;
 };
 struct ImFontAtlas {
   void *AddFontFromFileTTF(const char *, float) { return nullptr; }
@@ -132,6 +133,7 @@ inline void SetWindowFontScale(float) {}
 inline ImDrawList *GetWindowDrawList() { return nullptr; }
 inline ImVec2 GetWindowPos() { return ImVec2(); }
 inline ImVec2 GetWindowSize() { return ImVec2(); }
+inline bool IsWindowHovered() { return false; }
 } // namespace ImGui
 
 inline bool ImGui_ImplWin32_WndProcHandler(HWND, UINT, WPARAM, LPARAM) {
@@ -242,6 +244,7 @@ bool g_request_focus = false;
 bool g_input_blocked = false;
 HMODULE g_module_handle = nullptr;
 bool g_scroll_to_bottom = true;
+size_t g_last_log_size = 0;
 std::string g_input;
 std::string g_last_command;
 std::vector<std::string> g_log = {
@@ -649,20 +652,34 @@ void render_console() {
     ImGui::SetWindowFocus();
   }
 
+  float log_height = -ImGui::GetFrameHeightWithSpacing();
+  ImGui::BeginChild("ConsoleLog", ImVec2(0.0f, log_height), false,
+                    ImGuiWindowFlags_NoScrollbar);
   if (ImGui::IsKeyPressed(ImGuiKey_UpArrow)) {
     ImGui::SetScrollY(ImGui::GetScrollY() - 30.0f);
+    g_scroll_to_bottom = false;
   } else if (ImGui::IsKeyPressed(ImGuiKey_DownArrow)) {
     ImGui::SetScrollY(ImGui::GetScrollY() + 30.0f);
+    g_scroll_to_bottom = false;
   }
+  if (ImGui::IsWindowHovered() && io.MouseWheel != 0.0f) {
+    g_scroll_to_bottom = false;
+  }
+  bool log_grew = g_log.size() > g_last_log_size;
+  g_last_log_size = g_log.size();
   for (const auto &line : g_log) {
     ImGui::TextUnformatted(line.c_str());
   }
   float scroll_y = ImGui::GetScrollY();
   float scroll_max = ImGui::GetScrollMaxY();
-  if (g_scroll_to_bottom || scroll_y >= (scroll_max - 5.0f)) {
+  bool at_bottom = scroll_y >= (scroll_max - 5.0f);
+  if (log_grew && g_scroll_to_bottom) {
     ImGui::SetScrollHereY(1.0f);
-    g_scroll_to_bottom = false;
   }
+  if (at_bottom) {
+    g_scroll_to_bottom = true;
+  }
+  ImGui::EndChild();
 
   ImGui::AlignTextToFramePadding();
   ImGui::TextUnformatted(">");
@@ -688,7 +705,6 @@ void render_console() {
           g_log.push_back(line);
         }
       }
-      g_scroll_to_bottom = true;
     }
     g_input.clear();
     g_request_focus = true;
