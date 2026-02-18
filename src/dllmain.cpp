@@ -13,6 +13,7 @@
 
 #include "commands/command_context.h"
 #include "commands/command_registry.h"
+#include "commands/help.h"
 #include "commands/runes.h"
 
 #if defined(ER_CONSOLE_BUILD)
@@ -358,11 +359,13 @@ bool add_runes(GameAddrs *addrs, int amount, std::string &error) {
 std::string handle_command(const std::string &command) {
   CommandContext ctx;
   ctx.game_addrs = &g_game_addrs;
+  ctx.registry = &g_command_registry;
   ctx.resolve_game_addrs = resolve_game_addrs;
   ctx.add_runes = add_runes;
 
-  if (!g_command_registry.runes) {
-    g_command_registry.runes = handle_runes_command;
+  if (g_command_registry.commands.empty()) {
+    register_command(g_command_registry, build_help_command());
+    register_command(g_command_registry, build_runes_command());
   }
 
   return dispatch_command(g_command_registry, ctx, command);
@@ -750,7 +753,11 @@ void render_console() {
       g_log.push_back("> " + g_input);
       std::string response = handle_command(g_input);
       if (!response.empty()) {
-        g_log.push_back(response);
+        std::istringstream lines(response);
+        std::string line;
+        while (std::getline(lines, line)) {
+          g_log.push_back(line);
+        }
       }
     }
     g_input.clear();

@@ -8,8 +8,11 @@ struct GameAddrs {
   bool initialized = false;
 };
 
+struct CommandRegistry;
+
 struct CommandContext {
   GameAddrs *game_addrs = nullptr;
+  CommandRegistry *registry = nullptr;
   bool (*resolve_game_addrs)(GameAddrs *addrs) = nullptr;
   bool (*add_runes)(GameAddrs *addrs, int amount, std::string &error) = nullptr;
 };

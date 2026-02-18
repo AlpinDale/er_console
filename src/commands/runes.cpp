@@ -1,5 +1,6 @@
 #include "runes.h"
 #include "command_context.h"
+#include "command_registry.h"
 
 #include <sstream>
 #include <vector>
@@ -32,4 +33,13 @@ std::string handle_runes_command(CommandContext &ctx, const std::string &input) 
   }
 
   return "Usage: runes add <amount>";
+}
+
+CommandInfo build_runes_command() {
+  CommandInfo info;
+  info.name = "runes";
+  info.usage = "runes add <amount>";
+  info.description = "Add runes to the current character.";
+  info.handler = handle_runes_command;
+  return info;
 }
