@@ -78,11 +78,15 @@ add_library(er_console_mod SHARED
   src/input_hooks.cpp
   src/item_queue.cpp
   src/memory_utils.cpp
+  src/commands/coords.cpp
+  src/commands/teleport.cpp
   src/commands/command_context.h
   src/commands/command_registry.cpp
   src/commands/command_registry.h
   src/commands/help.cpp
   src/commands/help.h
+  src/commands/coords.h
+  src/commands/teleport.h
   src/commands/items.cpp
   src/commands/items.h
   src/commands/search.cpp

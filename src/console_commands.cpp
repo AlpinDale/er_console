@@ -2,10 +2,12 @@
 
 #include "commands/command_context.h"
 #include "commands/command_registry.h"
+#include "commands/coords.h"
 #include "commands/help.h"
 #include "commands/items.h"
 #include "commands/runes.h"
 #include "commands/search.h"
+#include "commands/teleport.h"
 #include "game_actions.h"
 #include "item_queue.h"
 
@@ -71,6 +73,8 @@ void ensure_commands_registered(CommandRegistry &registry) {
     return;
   }
   register_command(registry, build_help_command());
+  register_command(registry, build_coords_command());
+  register_command(registry, build_teleport_command());
   register_command(registry, build_runes_command());
   register_command(registry, build_items_command());
   register_command(registry, build_search_command());

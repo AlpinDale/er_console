@@ -80,6 +80,16 @@ bool safe_read_u32(uintptr_t addr, uint32_t &out) {
   }
 }
 
+bool safe_read_f32(uintptr_t addr, float &out) {
+  __try {
+    out = *reinterpret_cast<float *>(addr);
+    return true;
+  } __except (EXCEPTION_EXECUTE_HANDLER) {
+    out = 0.0f;
+    return false;
+  }
+}
+
 bool safe_write_u8(uintptr_t addr, uint8_t value) {
   __try {
     *reinterpret_cast<uint8_t *>(addr) = value;
@@ -92,6 +102,15 @@ bool safe_write_u8(uintptr_t addr, uint8_t value) {
 bool safe_write_u32(uintptr_t addr, uint32_t value) {
   __try {
     *reinterpret_cast<uint32_t *>(addr) = value;
+    return true;
+  } __except (EXCEPTION_EXECUTE_HANDLER) {
+    return false;
+  }
+}
+
+bool safe_write_f32(uintptr_t addr, float value) {
+  __try {
+    *reinterpret_cast<float *>(addr) = value;
     return true;
   } __except (EXCEPTION_EXECUTE_HANDLER) {
     return false;

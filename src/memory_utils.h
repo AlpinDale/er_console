@@ -13,5 +13,7 @@ uintptr_t resolve_relative(uintptr_t addr, int offset, int addend);
 bool safe_read_ptr(uintptr_t addr, uintptr_t &out);
 bool safe_read_u8(uintptr_t addr, uint8_t &out);
 bool safe_read_u32(uintptr_t addr, uint32_t &out);
+bool safe_read_f32(uintptr_t addr, float &out);
 bool safe_write_u8(uintptr_t addr, uint8_t value);
 bool safe_write_u32(uintptr_t addr, uint32_t value);
+bool safe_write_f32(uintptr_t addr, float value);

@@ -10,7 +10,6 @@
 #include <string>
 #include <vector>
 
-#include "commands/command_context.h"
 #include "commands/command_registry.h"
 #include "console_commands.h"
 #include "game_actions.h"
