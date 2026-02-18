@@ -1,0 +1,509 @@
+ID,English,Japanese,Chinese,German,Spanish,Russian,Arabic,Korean
+2000300,Hefty Fire Pot,大火炎壺,大火焰壶,Schwerer Feuertopf,Recipiente de fuego pesado,Большой огненный горшок,ﻗﺩر اﻟﻧﺎر اﻟﺿﺧﻡ,큰 화염 항아리
+2000310,Hefty Rock Pot,大岩石壺,大岩石壶,Schwerer Steintopf,Recipiente de roca pesado,Большой горшок с камнями,ﻗﺩر اﻟﺻﺧﺭ اﻟﺿﺧﻡ,큰 암석 항아리
+2000320,Hefty Lightning Pot,大雷壺,大雷电壶,Schwerer Blitztopf,Recipiente de rayo pesado,Большой горшок с молнией,ﻗﺩر اﻟﺑﺭق اﻟﺿﺧﻡ,큰 벼락 항아리
+2000330,Hefty Fetid Pot,大糞壺,大粪便壶,Schwerer Stinktopf,Recipiente fétido pesado,Большой зловонный горшок,اﻟﻘﺩر اﻟﻧﺗﻥ اﻟﺿﺧﻡ,큰 대변 항아리
+2000340,Hefty Fly Pot,大蠅壺,大苍蝇壶,Schwerer Schwarmtopf,Recipiente de moscas pesado,Большой мушиный горшок,ﻗﺩر اﻟﺫﺑﺎب اﻟﺿﺧﻡ,큰 파리 항아리
+2000360,Hefty Freezing Pot,大氷結壺,大结冰壶,Schwerer Frosttopf,Recipiente de congelación pesado,Большой ледяной горшок,اﻟﻘﺩر اﻟﻣﺟﻣَﺩ اﻟﺿﺧﻡ,큰 빙결 항아리
+2000370,Hefty Poison Pot,大毒壺,大毒壶,Schwerer Gifttopf,Recipiente de veneno pesado,Большой горшок яда,ﻗﺩر اﻟﺳﻡ اﻟﺿﺧﻡ,큰 독 항아리
+2000380,Hefty Oil Pot,大油壷,大油壶,Schwerer Öltopf,Recipiente de aceite pesado,Большой горшок масла,ﻗﺩر اﻟﺯﻳﺕ اﻟﺿﺧﻡ,큰 기름 항아리
+2000600,Hefty Volcano Pot,大火山壺,大火山壶,Schwerer Vulkantopf,Recipiente volcánico pesado,Большой вулканический горшок,ﻗﺩر اﻟﺑﺭﻛﺎن اﻟﺿﺧﻡ,큰 화산 항아리
+2000620,Hefty Frenzied Flame Pot,大狂い火壺,大癫火壶,Schwerer Topf der rasenden Flamme,Recipiente de llama frenética pesado,Большой горшок Яростного Пламени,ﻗﺩر اﻟﻠﻬﺏ اﻟﻣﺳﺗﻌﺭ اﻟﺿﺧﻡ,큰 미친 불 항아리
+2000650,Hefty Rancor Pot,大怨霊壺,大怨魂壶,Schwerer Grolltopf,Recipiente de rencor pesado,Большой горшок озлобленности,ﻗﺩر اﻟﺣﻘﺩ اﻟﺿﺧﻡ,큰 원혼 항아리
+2000660,Hefty Magic Pot,大魔力壺,大魔力壶,Schwerer Magietopf,Recipiente mágico pesado,Большой магический горшок,ﻗﺩر اﻟﺳﺣﺭ اﻟﺿﺧﻡ,큰 마력 항아리
+2000670,Hefty Rot Pot,大腐敗壺,大腐败壶,Schwerer Fäulnistopf,Recipiente de podredumbre pesado,Большой горшок гниения,ﻗﺩر اﻟﻌﻔﻥ اﻟﺿﺧﻡ,큰 부패 항아리
+2000680,Hefty Furnace Pot,大焼炉壺,大燃炉壶,Schwerer Ofentopf,Recipiente pesado del horno,Большой горшок из печи,ﻗﺩر اﻟﻣﺻﻬﺭ اﻟﻌﻣﻼق,큰 소각로 항아리
+2000690,Hefty Red Lightning Pot,大赤雷壺,大红雷壶,Schwerer roter Blitztopf,Recipiente de rayo rojo pesado,Большой горшок красной молнии,ﻗﺩر اﻟﺑﺭق اﻷﺣﻣﺭ اﻟﺿﺧﻡ,큰 붉은 벼락 항아리
+2000700,Red Lightning Pot,赤雷壺,红雷壶,Roter Blitztopf,Recipiente de rayo rojo,Горшок красной молнии,ﻗﺩر اﻟﺑﺭق اﻷﺣﻣﺭ,붉은 벼락 항아리
+2000710,Frenzied Flame Pot,狂い火壺,癫火壶,Topf der rasenden Flamme,Recipiente de llama frenética,Горшок Яростного Пламени,ﻗﺩر اﻟﻠﻬﺏ اﻟﻣﺳﺗﻌﺭ,미친 불 항아리
+2000740,Eternal Sleep Pot,永眠壺,永眠壶,Ewiger Schlaftopf,Recipiente de sueño eterno,Горшок вечного сна,ﻗﺩر اﻟﻧﻭم اﻷﺑﺩي,영면 항아리
+2000760,Roped Frenzied Flame Pot,紐付き狂い火壺,附绳癫火壶,Topf der rasenden Flamme mit Kordel,Recipiente de llama frenética con cuerda,Горшок Яростного Пламени с верёвкой,ﻗﺩر اﻟﺑﺭق اﻟﻣﺭﺑﻭط ﺑﺣﺑﻝ,끈 달린 미친 불 항아리
+2000800,Spirit Raisin,スピリット・レーズン,灵力果干,Geisterrosine,Pasa espiritual,Духовный изюм,زﺑﻳﺏ اﻷرواح,스피릿 레이즌
+2000900,Blessing of Marika,マリカの祝福,玛莉卡的赐福,Segen von Marika,Bendición de Márida,Благословение Марики,ﻣﺑﺎرﻛﺔ ﻣﺎرﻳﻛﺎ,마리카의 축복
+2000910,Lulling Branch,微睡の枝,半梦树枝,Einlullender Ast,Rama arrulladora,Усыпляющая ветвь,اﻟﻔﺭع اﻟﻣﻬﺩئ,선잠의 가지
+2001100,Dragon Communion Flesh,竜餐の肉塊,龙飨肉块,Fleisch der Drachenkommunion,Carne de la Comunión del Dragón,Плоть для драконьего причастия,ﻟﺣﻡ ﻗﺭﺑﺎن اﻟﺗﻧﻳﻥ,용찬의 고기 덩어리
+2001105,Dragonscale Flesh,逆鱗の肉塊,逆鳞肉块,Drachenschuppenfleisch,Carne de escamas de dragón,Плоть с драконьей чешуи,ﻟﺣﻡ ﺣﺭاﺷﻑ اﻟﺗﻧﻳﻥ,역린의 고기 덩어리
+2001110,Fingerprint Nostrum,指紋の秘薬,指纹秘药,Fingerabdruckpräparat,Panacea de huellas digitales,Пальцевое снадобье,دواء ﺑﺻﻣﺔ اﻹﺻﺑﻊ,지문의 비약
+2001120,Spellproof Pickled Liver,抗魔の肝漬け,抗魔腌制肝,Zaubersichere eingelegte Leber,Hígado encurtido a prueba de hechizos,Чаростойкая маринованная печень,اﻟﻛﺑﺩ اﻟﻣﺧﻠﻠﺔ اﻟﻣﻘﺎوﻣﺔ ﻟﻠﺳﺣﺭ,항마의 간 절임
+2001130,Fireproof Pickled Liver,抗炎の肝漬け,抗火腌制肝,Feuersichere eingelegte Leber,Hígado encurtido a prueba de fuego,Огнестойкая маринованная печень,اﻟﻛﺑﺩ اﻟﻣﺧﻠﻠﺔ اﻟﻣﻘﺎوﻣﺔ ﻟﻠﻧﺎر,항염의 간 절임
+2001140,Lightningproof Pickled Liver,抗雷の肝漬け,抗雷腌制肝,Blitzsichere eingelegte Leber,Hígado encurtido a prueba de rayos,Молниестойкая маринованная печень,اﻟﻛﺑﺩ اﻟﻣﺧﻠﻠﺔ اﻟﻣﻘﺎوﻣﺔ ﻟﻠﺑﺭق,항뢰의 간 절임
+2001150,Holyproof Pickled Liver,抗聖の肝漬け,抗圣腌制肝,Heiligsichere eingelegte Leber,Hígado encurtido a prueba de santidad,Святостойкая маринованная печень,اﻟﻛﺑﺩ اﻟﻣﺧﻠﻠﺔ اﻟﻣﻘﺎوﻣﺔ ﻟﻠﺗﻘﺩﻳﺱ,항성의 간 절임
+2001160,Opaline Pickled Liver,真珠色の肝漬け,珍珠腌制肝,Opale eingelegte Leber,Hígado encurtido opalino,Маринованная опаловая печень,اﻟﻛﺑﺩ اﻟﻣﻧﻘﻭﻋﺔ اﻟﻣﺗﻸﻟﺋﺔ,진주색의 간 절임
+2001170,Well-Pickled Turtle Neck,亀首の古漬け,腌制老龟颈肉,Gut eingelegter Schildkrötenhals,Cuello de tortuga bien encurtido,Замаринованная шея черепахи,ﻋﻧﻖ اﻟﺳﻠﺣﻔﺎة اﻟﻣﻧﻘﻭع ﻛﻠﻳًﺎ,거북 목 묵은 절임
+2001200,Scorpion Stew,サソリ煮込み,炖煮蝎子,Skorpionseintopf,Estofado de escorpión,Похлёбка из скорпиона,ﺣﺳﺎء اﻟﻌﻘﺭب,전갈조림
+2001201,Gourmet Scorpion Stew,贅沢なサソリ煮込み,豪华炖煮蝎子,Gourmet-Skorpionseintopf,Estofado de escorpión gourmet,Изысканная похлёбка из скорпиона,ﺣﺳﺎء اﻟﻌﻘﺭب اﻟﻔﺎﺧﺭ,호화로운 전갈조림
+2001202,Scorpion Stew,サソリ煮込み,炖煮蝎子,Skorpionseintopf,Estofado de escorpión,Похлёбка из скорпиона,ﺣﺳﺎء اﻟﻌﻘﺭب,전갈조림
+2001203,Gourmet Scorpion Stew,贅沢なサソリ煮込み,豪华炖煮蝎子,Gourmet-Skorpionseintopf,Estofado de escorpión gourmet,Изысканная похлёбка из скорпиона,ﺣﺳﺎء اﻟﻌﻘﺭب اﻟﻔﺎﺧﺭ,호화로운 전갈조림
+2001210,Sacred Bloody Flesh,聖なる血肉,神圣血肉,Heiliges blutiges Fleisch,Carne sangrienta sagrada,Священная кровавая плоть,اﻟﻠﺣﻡ اﻟﺩﻣﻭي اﻟﻣﻘﺩس,성스러운 피와 살
+2001220,Silver Horn Tender,白銀の角貨,白银角币,Silbernes Horn,Cuerno blando plateado,Серебряный рог,اﻟﻘﺭن اﻟﻔﺿﻲ اﻟﻁﺭي,백은 뿔 화폐
+2001230,Golden Horn Tender,黄金の角貨,黄金角币,Goldenes Horn,Cuerno blando dorado,Золотой рог,اﻟﻘﺭن اﻟﺫﻫﺑﻲ اﻟﻁﺭي,황금 뿔 화폐
+2001400,Messmerfire Grease,メスメルの火脂,梅瑟莫火油脂,Messmerfeuerfett,Grasa de fuego de Messmer,Огненная смазка Мессмера,ﺷﺣﻡ ﻧﺎر ﻣﻳﺳﻣﺭ,메스메르의 불기름
+2001410,Dragonbolt Grease,竜雷脂,龙雷油脂,Drachenblitzfett,Grasa de rayo de dragón,Смазка драконьего грома,ﺷﺣﻡ ﺻﺎﻋﻘﺔ اﻟﺗﻧﻳﻥ,용뢰기름
+2001420,Royal Magic Grease,王家の魔力脂,王室魔力油脂,Königliches Magiefett,Grasa mágica real,Королевская магическая смазка,ﺷﺣﻡ اﻟﺳﺣﺭ اﻟﻣﻠﻛﻲ,왕가의 마력기름
+2001430,Golden Grease,黄金脂,黄金油脂,Goldfett,Grasa dorada,Золотая смазка,اﻟﺷﺣﻡ اﻟﺫﻫﺑﻲ,황금기름
+2001450,Eternal Sleep Grease,永眠脂,永眠油脂,Ewiges Schlaffett,Grasa de sueño eterno,Смазка вечного сна,ﺷﺣﻡ اﻟﻧﻭم اﻷﺑﺩي,영면기름
+2001480,Dragon Communion Grease,竜餐脂,龙飨油脂,Fett der Drachenkommunion,Grasa de la Comunión del Dragón,Смазка драконьего причастия,ﺷﺣﻡ ﻗﺭﺑﺎن اﻟﺗﻧﻳﻥ,용찬기름
+2001500,Drawstring Messmerfire Grease,紐付きメスメルの火脂,附绳梅瑟莫火油脂,Messmerfeuerfett mit Kordel,Grasa de fuego de Messmer con cordel,Огненная смазка Мессмера с нитью,ﺷﺣﻡ ﻧﺎر ﻣﻳﺳﻣﺭ اﻟﻣﺯود ﺑﺭﺑﺎط,끈 달린 메스메르의 불기름
+2001510,Drawstring Dragonbolt Grease,紐付き竜雷脂,附绳龙雷油脂,Drachenblitzfett mit Kordel,Grasa de rayo de dragón con cordel,Смазка драконьего грома с нитью,ﺷﺣﻡ ﺻﺎﻋﻘﺔ اﻟﺗﻧﻳﻥ اﻟﻣﺯود ﺑﺭﺑﺎط,끈 달린 용뢰기름
+2001520,Drawstring Royal Magic Grease,紐付き王家の魔力脂,附绳王室魔力油脂,Königliches Magiefett mit Kordel,Grasa mágica real con cordel,Королевская магическая смазка с нитью,ﺷﺣﻡ اﻟﺳﺣﺭ اﻟﻣﻠﻛﻲ اﻟﻣﺯود ﺑﺭﺑﺎط,끈 달린 왕가의 마력 기름
+2001530,Drawstring Golden Grease,紐付き黄金脂,附绳黄金油脂,Goldfett mit Kordel,Grasa dorada con cordel,Золотая смазка с нитью,اﻟﺷﺣﻡ اﻟﺫﻫﺑﻲ اﻟﻣﺯود ﺑﺭﺑﺎط,끈 달린 황금기름
+2001550,Drawstring Eternal Sleep Grease,紐付き永眠脂,附绳永眠油脂,Ewiges Schlaffett mit Kordel,Grasa de sueño eterno con cordel,Смазка вечного сна с нитью,ﺷﺣﻡ اﻟﻧﻭم اﻷﺑﺩي اﻟﻣﺯود ﺑﺭﺑﺎط,끈 달린 영면기름
+2001600,Festive Grease,祝祭脂,庆典油脂,Festliches Fett,Grasa festiva,Церемониальная смазка,اﻟﺷﺣﻡ اﻻﺣﺗﻔﺎﻟﻲ,축제기름
+2001700,Innard Meat,中身肉,内容物肉块,Innereienfleisch,Carne de entrañas,Нутряное мясо,ﻟﺣﻡ اﻷﺣﺷﺎء,내용물이 된 살
+2001710,Dragon Communion Harpoon,竜餐の銛,龙飨鱼叉,Harpune der Drachenkommunion,Arpón de la Comunión del Dragón,Гарпун драконьего причастия,ﺣﺭﺑﺔ ﻗﺭﺑﺎن اﻟﺗﻧﻳﻥ,용찬의 작살
+2002000,Polter Stone,人鳴り石,人声石,Resonanzstein,Piedra polter,Камень шумного духа,ﺣﺟﺭ ﺑﻭﻟﺗﺭ,사람소리 돌
+2002010,Rock Heart,岩の心臓,岩石心脏,Steinherz,Corazón de piedra,Каменное сердце,ﻗﻠﺏ اﻟﺻﺧﺭ,바위 심장
+2002020,Priestess Heart,巫女の心臓,女巫心脏,Priesterinnenherz,Corazón de sacerdotisa,Сердце жрицы,ﻗﻠﺏ اﻟﻛﺎﻫﻧﺔ,무녀의 심장
+2002030,Lamenter's Mask,嘆き人の仮面,喟叹者面具,Maske des Klägers,Máscara del lamentante,Маска плакальщика,ﻗﻧﺎع ﻻﻣﻳﻧﺗﺭ,한탄하는 사람의 가면
+2002100,Ancient Dragon's Blessing,古竜の恩寵,古龙恩泽,Segen des uralten Drachen,Bendición del dragón antiguo,Благослов. древнего дракона,ﻣﺑﺎرﻛﺔ اﻟﺗﻧﻳﻥ اﻟﻌﺭﻳﻖ,고룡의 은총
+2002120,Iris of Grace,祝福の瞳膜,赐福覆眼膜,Iris der Gnade,Iris de gracia,Радужка благодати,ﻗﺯﺣﻳﺔ اﻟﻧﻌﻣﺔ,축복의 눈동자막
+2002130,Iris of Occultation,暗闇の瞳膜,黑暗覆眼膜,Iris der Verfinsterung,Iris de ocultamiento,Радужка тьмы,ﻗﺯﺣﻳﺔ اﻻﺳﺗﺗﺎر,어둠의 눈동자막
+2002140,Thiollier's Concoction,ティエリエの秘薬,休里耶的秘药,Thiolliers Arznei,Brebaje de Thiollier,Снадобье Тиолье,ﺗﺭﻳﺎق ﺛﻳﻭﻟﻳﻳﻪ,티에리에의 비약
+2002150,"Prattling Pate ""Lamentation""",呼び声頭「嘆き」,唤声泥颅“喟叹”,"Redekopf: ""Wehklagen""","Mollera parlante: ""Lamento""",Говорящая голова «Всхлипы»,"اﻟﺭأس اﻟﻣﺛﺭﺛﺭ ""اﻟﺭﺛﺎء""","말하는 머리 ""한탄"""
+2002900,Remembrance of the Wild Boar Rider,猪乗りの追憶,山猪骑士的追忆,Echo des Wildschweinreiters,Recuerdo del Jinete de Jabalíes,Воспоминание о всаднике на кабане,ذﻛﺭى راﻛﺏ اﻟﺧﻧﺯﻳﺭ اﻟﺑﺭي,멧돼지 탄 자의 추억
+2002901,Remembrance of the Impaler,串刺し公の追憶,穿刺者的追忆,Echo des Pfählers,Recuerdo del Empalador,Воспоминание о Колосажателе,ذﻛﺭى اﻟﻣﺛﻘﻭب,가시공의 추억
+2002902,Remembrance of the Shadow Sunflower,影輪草の追憶,影轮草的追忆,Echo der Schattensonnenblume,Recuerdo del Girasol Sombrío,Воспоминание о теневом подсолнухе,ذﻛﺭى زﻫﺭة دوار اﻟﺷﻣﺱ اﻟﻣﻌﺗﻣﺔ,영륜초의 추억
+2002903,Remembrance of the Twin Moon Knight,双月の騎士の追憶,双月骑士的追忆,Echo der Zwillings-Mondritterin,Recuerdo de la Caballera de las Lunas Gemelas,Воспоминание о рыцаре Двойной Луны,ذﻛﺭى ﻓﺎرﺳﺔ ﺗﻭأم اﻟﻘﻣﺭ,쌍월의 기사의 추억
+2002904,Remembrance of the Saint of the Bud,蕾の聖女の追憶,花蕾圣女的追忆,Echo der Heiligen der Knospe,Recuerdo de la Santa de los Capullos,Воспоминание о святой Цветочных бутонов,ذﻛﺭى ﻗﺩﻳﺱ اﻟﺑﺭﻋﻡ,꽃봉오리의 성녀의 추억
+2002905,Remembrance of the Dancing Lion,獅子舞の追憶,舞狮的追忆,Echo des tanzenden Löwen,Recuerdo del León Danzante,Воспоминание о танцующем льве,ذﻛﺭى اﻷﺳﺩ اﻟﺭاﻗﺹ,사자무의 추억
+2002907,Remembrance of a God and a Lord,神と王の追憶,神祇与王的追忆,Echo eines Gottes und eines Fürsten,Recuerdo de un Dios y un Señor,Воспоминание о Боге и Повелителе,ذﻛﺭى ﺣﺎﻛﻡ وﻟﻭرد,신과 왕의 추억
+2002908,Remembrance of the Lord of Frenzied Flame,狂い火の王の追憶,癫火之王的追忆,Echo des Herrn der Rasenden Flamme,Recuerdo del Señor del Fuego Frenético,Воспоминание о Владыке Яростного Пламени,ذﻛﺭى ﻟﻭرد اﻟﻠﻬﺏ اﻟﻣﺳﺗﻌﺭ,미친 불의 왕의 추억
+2002909,Remembrance of the Mother of Fingers,指の母の追憶,指头之母的追忆,Echo der Mutter der Finger,Recuerdo de la Madre de los Dedos,Воспоминание о матери Пальцев,ذﻛﺭى أم اﻷﺻﺎﺑﻊ,손가락의 어머니의 추억
+2002910,Remembrance of Putrescence,泥濘の追憶,融泥的追忆,Echo der Verwesung,Recuerdo de la Putrescencia,Воспоминание о Гниющем,ذﻛﺭى اﻟﻌﻔﻥ,수렁의 추억
+2002950,Leda's Rune,レダのルーン,蕾妲的卢恩,Ledas Rune,Runa de Leda,Руна Леды,رون ﻟﻳﺩا,레다의 룬
+2002951,Broken Rune,壊れたルーン,毁坏卢恩,Gebrochene Rune,Runa rota,Расколотая руна,رون ﻣﻛﺳﻭر,망가진 룬
+2002952,Shadow Realm Rune [1],影の地のルーン【１】,幽影之地卢恩【１】,Schattenreich-Rune [1],Runa del Reino de las Sombras [1],Руна царства теней [1],رون ﻣﻣﻠﻛﺔ اﻟﻅﻝ [1],그림자의 땅의 룬 [1]
+2002953,Shadow Realm Rune [2],影の地のルーン【２】,幽影之地卢恩【２】,Schattenreich-Rune [2],Runa del Reino de las Sombras [2],Руна царства теней [2],رون ﻣﻣﻠﻛﺔ اﻟﻅﻝ [2],그림자의 땅의 룬 [2]
+2002954,Shadow Realm Rune [3],影の地のルーン【３】,幽影之地卢恩【３】,Schattenreich-Rune [3],Runa del Reino de las Sombras [3],Руна царства теней [3],رون ﻣﻣﻠﻛﺔ اﻟﻅﻝ [3],그림자의 땅의 룬 [3]
+2002955,Shadow Realm Rune [4],影の地のルーン【４】,幽影之地卢恩【４】,Schattenreich-Rune [4],Runa del Reino de las Sombras [4],Руна царства теней [4],رون ﻣﻣﻠﻛﺔ اﻟﻅﻝ [4],그림자의 땅의 룬 [4]
+2002956,Shadow Realm Rune [5],影の地のルーン【５】,幽影之地卢恩【５】,Schattenreich-Rune [5],Runa del Reino de las Sombras [5],Руна царства теней [5],رون ﻣﻣﻠﻛﺔ اﻟﻅﻝ [5],그림자의 땅의 룬 [5]
+2002957,Shadow Realm Rune [6],影の地のルーン【６】,幽影之地卢恩【６】,Schattenreich-Rune [6],Runa del Reino de las Sombras [6],Руна царства теней [6],رون ﻣﻣﻠﻛﺔ اﻟﻅﻝ [6],그림자의 땅의 룬 [6]
+2002958,Shadow Realm Rune [7],影の地のルーン【７】,幽影之地卢恩【７】,Schattenreich-Rune [7],Runa del Reino de las Sombras [7],Руна царства теней [7],رون ﻣﻣﻠﻛﺔ اﻟﻅﻝ [7],그림자의 땅의 룬 [7]
+2002959,Rune of an Unsung Hero,謳われぬ英雄のルーン,不受赞扬的英雄卢恩,Rune eines unbesungenen Helden,Runa de un héroe olvidado,Руна невоспетого героя,رون ﺑﻁﻝ ﻣﺟﻬﻭل,칭송받지 못할 영웅의 룬
+2002960,Marika's Rune,マリカのルーン,玛莉卡的卢恩,Marikas Rune,Runa de Márida,Руна Марики,رون ﻣﺎرﻳﻛﺎ,마리카의 룬
+2003000,Bondstone,絆の石,情谊石,Bindungsstein,Piedra vinculante,Камень связи,ﺣﺟﺭ اﻟﺻﻠﺔ,유대석
+2003001,Spritestone,精霊石,精灵石,Geiststein,Piedra espiritual,Камень духов,ﺣﺟﺭ اﻟﺷﺑﺢ,정령석
+2003130,Horned Bairn,角水子,带角幼子像,Gehörntes Kind,Retoño con cuernos,Рогатое дитя,ﻁﻔﻝ ذو ﻗﺭن,뿔인간 사산아
+2003140,Perfumed Oil of Ranah,ラーナの香油瓶,拉纳香油瓶,Duftöl von Ranah,Aceite perfumado de Ranah,Душистое масло Ранаха,زﻳﺕ راﻧﺎه اﻟﻌﻁﺭي,라나의 향유병
+2003150,Call of Tibia,ティビアの呼び声,提比亚的唤声,Tibias Ruf,Llamado de Tibia,Зов Тибии,ﻧﺩاء ﺗﻳﺑﻳﺎ,티비아의 부름
+2003160,Surging Frenzied Flame,迸る狂い火,迸发癫火,Lodernde rasende Flamme,Llama frenética creciente,Бушующее Яростное Пламя,اﻟﻠﻬﺏ اﻟﻣﺳﺗﻌﺭ اﻟﻬﺎﺋﺞ,내뿜는 미친 불
+2003170,Golden Vow,黄金樹に誓って,黄金树立誓,Goldener Schwur,Voto dorado,Золотой обет,اﻟﻌﻬﺩ اﻟﺫﻫﺑﻲ,황금 나무에 맹세코
+2003180,Fire Coil,火の蜷局,蜷曲火焰,Feuerspirale,Espiral de fuego,Огненный завиток,اﻟﺩواﻣﺔ اﻟﻧﺎرﻳﺔ,불의 똬리
+2003190,Fire Spritestone,火霊石,火精灵石,Feuer-Geiststein,Piedra espiritual de fuego,Огненный камень духов,ﺣﺟﺭ اﻟﺷﺑﺢ اﻟﻧﺎري,화령석
+2003200,Glinting Nail,輝く爪,光辉指爪,Schimmernder Nagel,Uña reluciente,Сверкающий ноготь,اﻟﻅﻔﺭ اﻟﻣﺗﻸﻟﺊ,빛나는 손톱
+2003310,Sunwarmth Stone,陽だまり石,暖阳石,Stein der Sonnenwärme,Roca de calidez,Камень тёплого солнца,ﺣﺟﺭ دفء اﻟﺷﻣﺱ,양지석
+2003350,Charming Branch,魅了の枝,惑众树枝,Bezaubernder Ast,Rama encantadora,Чарующая ветвь,اﻟﻔﺭع اﻵﺳﺭ,매료의 나뭇가지
+2004300,Miriam's Vanishing,ミリアムの消失,米丽安的消失,Miriams Verschwinden,Desvanecimiento de Miriam,Завеса Мириам,اﺧﺗﻔﺎء ﻣﻳﺭﻳﺎم,미리암의 소실
+2004310,Glintblade Trio,魔術の三輝剣,魔法三辉剑,Schimmerklingen-Trio,Trío de destellojas,Три блестящих клинка,ﺛﻼﺛﻳﺔ اﻟﻧﺻﺎل اﻟﻼﻣﻌﺔ,마술의 삼휘검
+2004320,Rellana's Twin Moons,レラーナの双月,蕾菈娜的双月,Rellanas Zwillingsmonde,Lunas gemelas de Rellana,Две луны Релланы,اﻟﻘﻣﺭان اﻟﺗﻭأم ﻟﺭﻳﻼﻧﺎ,렐라나의 쌍월
+2004500,Glintstone Nail,輝石の爪,辉石指爪,Schimmerstein-Nagel,Clavo de destellita,Блестящий гвоздь,ﻅﻔﺭ اﻟﺣﺟﺭ اﻟﻼﻣﻊ,휘석의 발톱
+2004510,Glintstone Nails,輝石の多爪,辉石繁指爪,Schimmerstein-Nägel,Clavos de destellita,Блестящие гвозди,أﻅﻔﺎر اﻟﺣﺟﺭ اﻟﻼﻣﻊ,휘석의 많은 발톱
+2004700,Blades of Stone,岩の刃,岩块刀刃,Steinklingen,Hojas de piedra,Каменные клинки,اﻟﻧﺻﺎل اﻟﺣﺟﺭﻳﺔ,바위 칼날
+2004710,Gravitational Missile,引力弾,引力球,Gravitationsrakete,Misil gravitatorio,Гравитационный снаряд,ﻗﺫﻳﻔﺔ اﻟﺟﺎذﺑﻳﺔ,인력탄
+2004900,Mantle of Thorns,刺纏い,棘刺上身,Dornenmantel,Manto de espinas,Шипованная мантия,ﻋﺑﺎءة اﻷﺷﻭاك,가시 두르기
+2004910,Impenetrable Thorns,拒絶の刺,拒绝的刺,Undurchdringliche Dornen,Espinas impenetrables,Непробиваемые шипы,اﻷﺷﻭاك اﻟﻣﻧﻳﻌﺔ,거절의 가시
+2005000,Rings of Spectral Light,霊光輪,灵魂光环,Ringe aus Spektrallicht,Anillos de luz espectral,Кольца призрачного света,اﻟﺣﻠﻘﺎت اﻟﺿﻭﺋﻳﺔ اﻟﻁﻳﻔﻳﺔ,영의 빛고리
+2006200,Vortex of Putrescence,泥濘の渦,融泥漩,Wirbel der Verwesung,Vórtice de putrescencia,Вихрь гнили,دواﻣﺔ اﻟﻌﻔﻥ,수렁의 소용돌이
+2006210,Mass of Putrescence,泥濘の塊,融泥块,Masse der Verwesung,Masa de putrescencia,Пузырь гнили,ﻛﺗﻠﺔ اﻟﻌﻔﻥ,수렁의 덩어리
+2006300,Furious Blade of Ansbach,アンスバッハの狂刃,安帕赫的狂刃,Zornige Klinge Ansbachs,Hoja furiosa de Ansbach,Неистовый клинок Ансбаха,ﻧﺻﻝ آﻧﺳﺑﺎخ اﻟﻭﺣﺷﻲ,안스바흐의 미친 칼날
+2006400,Heal from Afar,彼方からの回復,远方之恢复,Heilung aus der Ferne,Sanación a distancia,Лечение на расстоянии,اﻟﺗﻌﺎﻓﻲ ﻋﻥ ﺑُﻌﺩ,저편에서 온 회복
+2006650,Aspects of the Crucible: Thorns,坩堝の諸相・針,熔炉百相之针,Aspekt des Schmelztiegels: Dornen,Aspectos del Crisol: Espinas,Атрибут рыцаря Горнила: шипы,ﺟﻭاﻧﺏ اﻟﺑﻭﺗﻘﺔ: اﻷﺷﻭاك,도가니의 모습/침
+2006660,Aspects of the Crucible: Bloom,坩堝の諸相・花,熔炉百相之花,Aspekt des Schmelztiegels: Blüte,Aspectos del Crisol: Flor,Атрибут рыцаря Горнила: цветок,ﺟﻭاﻧﺏ اﻟﺑﻭﺗﻘﺔ: اﻟﺯﻫﺭة,도가니의 모습/꽃
+2006670,Minor Erdtree,小黄金樹,小黄金树,Niederer Erdenbaum,Terrárbol menor,Малое Древо Эрд,ﺷﺟﺭة إرد اﻟﺻﻐﻳﺭة,작은 황금 나무
+2006680,Land of Shadow,影の地,幽影之地,Schattenland,Tierra de la Sombra,Земля теней,أرض اﻟﻅﻝ,그림자의 땅
+2006690,Wrath from Afar,彼方からの怒り,远方之怒,Zorn aus der Ferne,Ira a distancia,Отголосок гнева,اﻟﻐﺿﺏ ﻋﻥ ﺑُﻌﺩ,저편에서 온 분노
+2006700,Light of Miquella,ミケラの光,米凯拉的光,Licht Miquellas,Luz de Miquella,Свет Микеллы,ﺿﻭء ﻣﻳﻛﻼ,미켈라의 빛
+2006710,Multilayered Ring of Light,重なり合う光輪,相迭光环,Mehrschichtiger Ring des Lichts,Anillos superpuestos de luz,Многослойные кольца света,اﻟﺣﻠﻘﺎت اﻟﺿﻭﺋﻳﺔ ﻣﺗﻌﺩدة اﻟﻁﺑﻘﺎت,겹쳐지는 빛고리
+2006800,Roar of Rugalea,ルガリアの咆哮,鲁格利亚的咆哮,Gebrüll von Rugalea,Rugido de Rugalea,Рёв Ругали,ﺻﻳﺣﺔ روﻏﺎﻟﻲ,루가리아의 포효
+2006900,Knight's Lightning Spear,騎士の雷槍,骑士雷电枪,Ritterblitzspeer,Lanza de rayo de los caballeros,Громовое копьё рыцаря,رﻣﺢ اﻟﻔﺎرس اﻟﺑﺭﻗﻲ,기사의 뇌창
+2006910,Dragonbolt of Florissax,フローサクスの竜雷,芙柔桑克斯的龙雷,Drachenblitz von Florissax,Rayo de dragón de Florissax,Драконья молния Флориссакс,ﺻﺎﻋﻘﺔ اﻟﺗﻧﻳﻥ ﻓﻠﻭرﻳﺳﺎﻛﺱ,플로삭스의 용뢰
+2006920,Electrocharge,帯電,带电,Elektroladung,Carga eléctrica,Электроразряд,اﻟﺷﺣﻥ اﻟﻛﻬﺭﺑﺎﺋﻲ,하전
+2007000,Bayle's Tyranny,ベールの暴虐,贝勒的残虐,Bayles Tyrannei,Tiranía de Bayle,Злоба Бейла,ﺟﺑﺭوت ﺑﺎﻳﻝ,베일의 포학
+2007010,Bayle's Flame Lightning,ベールの炎雷,贝勒的焰雷,Bayles Flammenblitz,Rayo llameante de Bayle,Огненная молния Бейла,ﻟﻬﻳﺏ ﺑﺎﻳﻝ اﻟﺑﺭﻗﻲ,베일의 염뢰
+2007020,Ghostflame Breath,霊炎ブレス,灵火吐息,Geisterflammen-Atem,Aliento de llama espectral,Дыхание пламени смерти,ﻧﺱ ﻟﻬﻳﺏ اﻟﺷﺑﺢ,영혼 불꽃 브레스
+2007200,Rotten Butterflies,腐敗の蝶,腐败蝶,Verrottete Schmetterlinge,Mariposas podridas,Гнилые бабочки,ﻓﺭاﺷﺎت اﻟﻌﻔﻥ,부패의 나비
+2007210,Pest-Thread Spears,蟲糸の槍,虫丝枪,Pestfaden-Speere,Lanzas de plagas entrelazadas,Липкие копья,رﻣﺣﺎ ﺧﻳﻭط اﻵﻓﺎت,곤충실 창
+2007300,Midra's Flame of Frenzy,ミドラーの狂い火,米德拉的癫火,Midras Rasende Flamme,Llama del frenesí de Midra,Яростное Пламя Мидры,ﻟﻬﻳﺏ ﺟﻧﻭن ﻣﺩرا,미드라의 미친 불
+2007410,Fleeting Microcosm,儚い小宇宙,虚幻小宇宙,Flüchtiger Mikrokosmos,Microcosmos efímero,Неуловимый микрокосм,اﻟﻌﺎﻟﻡ اﻟﺻﻐﻳﺭ اﻟﺧﺎﻁﻑ,덧없는 소우주
+2007420,Cherishing Fingers,守り指,守护指头,Liebkosende Finger,Dedos amorosos,Заботливые пальцы,اﻷﺻﺎﺑﻊ اﻟﺣﺎﻣﻳﺔ,수호 손가락
+2007600,Watchful Spirit,守護霊,守护灵,Wachsamer Geist,Espíritu vigilante,Бдительный дух,اﻟﺭوح اﻟﺣﺎرﺳﺔ,수호령
+2007700,Golden Arcs,黄金の弧,黄金弯弧,Goldene Bögen,Arcos dorados,Золотые дуги,اﻷﻗﻭاس اﻟﺫﻫﺑﻳﺔ,황금의 호
+2007710,Giant Golden Arc,黄金の大弧,黄金大弯弧,Riesiger goldener Bogen,Arco dorado gigante,Огромная золотая дуга,اﻟﻘﻭس اﻟﺫﻫﺑﻲ اﻟﻌﻣﻼق,황금의 큰 호
+2007720,Spira,スピラ,旋流,Spira,Espiral,Спираль света,اﻟﺩواﻣﺔ,스피라
+2007730,Divine Beast Tornado,神獣竜巻,神兽龙卷风,Göttlicher Bestien-Tornado,Tornado de la Bestia Divina,Смерч священного зверя,إﻋﺻﺎر اﻟﻭﺣﺵ اﻟﺳﻣﺎوي,신수 회오리바람
+2007740,Divine Bird Feathers,神鳥の羽,神鸟羽毛,Göttliche Vogelfedern,Plumas del Ave Divina,Перья священной птицы,رﻳﺵ اﻟﻁﺎﺋﺭ اﻟﺳﻣﺎوي,신조의 깃털
+2007800,Fire Serpent,火蛇,火焰蛇,Feuerschlange,Serpiente de fuego,Огненный змей,اﻷﻓﻌﻰ اﻟﻧﺎرﻳﺔ,불뱀
+2007810,Rain of Fire,火の雨,火焰雨,Feuerregen,Lluvia de fuego,Огненный дождь,اﻷﻣﻁﺎر اﻟﻧﺎرﻳﺔ,불의 비
+2007820,Messmer's Orb,メスメルの火球,梅瑟莫的火球,Messmers Kugel,Orbe de Messmer,Сфера Мессмера,ﻛﺭة ﻣﻳﺳﻣﺭ,메스메르의 불덩이
+2008000,Miquella's Great Rune,ミケラの大ルーン,米凯拉的大卢恩,Miquellas Große Rune,Runa Mayor de Miquella,Великая руна Микеллы,رون ﻣﻳﻛﻼ اﻟﻌﻅﻳﻡ,미켈라의 거대한 룬
+2008003,Igon's Furled Finger,エーゴンの鉤指,埃贡的勾指,Igons Krummfinger,Dedo doblado de Igon,Скрюченный палец Игона,إﺻﺑﻊ إﻳﻐﻭن اﻟﻣﻠﻔﻭﻓﺔ,에이곤의 갈고리 손가락
+2008004,Well Depths Key,井戸底の鍵,井底钥匙,Schlüssel zum Brunnenboden,Llave de las profundidades del pozo,Ключ от глубин колодца,ﻣﻔﺗﺎح أﻋﻣﺎق اﻟﺑﺋﺭ,우물 바닥의 열쇠
+2008005,Gaol Upper Level Key,牢獄上層の鍵,监牢上层钥匙,Schlüssel zur oberen Kerkerebene,Llave del nivel superior de la prisión,Ключ от верхнего яруса тюрьмы,ﻣﻔﺗﺎح ﻁﺎﺑﻖ اﻟﺳﺟﻥ اﻟﻌﻠﻭي,감옥 상층의 열쇠
+2008006,Gaol Lower Level Key,牢獄下層の鍵,监牢下层钥匙,Schlüssel zur unteren Kerkerebene,Llave del nivel inferior de la prisión,Ключ от нижнего яруса тюрьмы,ﻣﻔﺗﺎح ﻁﺎﺑﻖ اﻟﺳﺟﻥ اﻟﺳﻔﻠﻲ,감옥 하층의 열쇠
+2008007,Cross Map,十字の地図,十字记号地图,Mit Kreuz markierte Karte,Mapa de la cruz,Карта с крестом,ﺧﺭﻳﻁﺔ اﻟﺻﻠﻳﺏ,십자의 지도
+2008008,Hole-Laden Necklace,穴石のネックレス,孔洞项链,Gemeißelte Halskette,Collar con hueco agobiado,Ожерелье с отверстиями,اﻟﻌﻘﺩ اﻟﻣﻧﺣﻭت,구멍난 돌 목걸이
+2008011,Heart of Bayle,ベールの心臓,贝勒的心脏,Herz von Bayle,Corazón de Bayle,Сердце Бейла,ﻗﻠﺏ ﺑﺎﻳﻝ,베일의 심장
+2008012,mit Kreuz markierte Karte,,,Neue,Карта с новым крестом,Novo Mapa das Cruzes,ﺧﺭﻳﻁﺔ اﻟﺻﻠﻳﺏ اﻟﺟﺩﻳﺩة,新しい十字の地図
+2008013,Storeroom Key,倉庫の鍵,仓库钥匙,Lagerraumschlüssel,Llave del almacén,Ключ от кладовой,ﻣﻔﺗﺎح اﻟﻣﺧﺯن,창고 열쇠
+2008014,Secret Rite Scroll,秘儀の巻物,秘密仪式卷轴,Geheimritus-Schriftrolle,Pergamino del rito secreto,Свиток с тайным обрядом,ﻟﻔﺎﻓﺔ اﻟﻁﻘﺱ اﻟﺳﺭي,비밀 의식의 두루마리
+2008015,Letter for Freyja,フレイヤへの手紙,给弗蕾亚的信,Brief für Freyja,Carta para Freyja,Письмо для Фрейи,ﺧﻁﺎب إﻟﻰ ﻓﺭﻳﺎ,프레이야에게 쓴 편지
+2008016,Ruins Map,遺跡の地図,遗迹地图,Ruinenkarte,Mapa de las ruinas,Карта руин,ﺧﺭﻳﻁﺔ اﻷﻧﻘﺎض,유적의 지도
+2008017,Ruins Map (2nd),遺跡の地図（二枚目）,遗迹地图（第二张）,Ruinenkarte (II),Mapa de las ruinas (2.º),Карта руин (2-я),ﺧﺭﻳﻁﺔ اﻷﻧﻘﺎض (اﻟﺛﺎﻧﻳﺔ),유적의 지도(두번째 장)
+2008018,Ruins Map (3rd),遺跡の地図（三枚目）,遗迹地图（第三张）,Ruinenkarte (III),Mapa de las ruinas (3.º),Карта руин (3-я),ﺧﺭﻳﻁﺔ اﻷﻧﻘﺎض (اﻟﺛﺎﻟﺛﺔ),유적의 지도(세번째 장)
+2008019,Black Syrup,黒いシロップ,黑色浓浆,Schwarzer Sirup,Jarabe negro,Чёрная патока,ﺷﺭاب أﺳﻭاد,검은 시럽
+2008021,Messmer's Kindling,メスメルの種火,梅瑟莫的火种,Messmers Zunder,Yesca de Messmer,Лучина Мессмера,إﺷﻌﺎل ﻣﻳﺳﻣﺭ,메스메르의 불씨
+2008023,Keep Wall Key,城壁扉の鍵,城墙门钥匙,Schlüssel zur Schlossmauer,,Ключ от стены замка,ﻗﻠﻌﺔ ﻣﻭرن,성벽 문 열쇠
+2008025,Furnace Keeper's Note,焼炉職人のメモ書き,燃炉工匠的笔记,Notiz des Ofenbesitzers,Nota del custodio del horno,Записка хранителя печи,ﻣﻠﺣﻭﻅﺔ ﺣﺎرس اﻟﻣﺻﻬﺭ,소각로 장인의 메모
+2008027,Castle Cross Message,城砦十字の置き手紙,恩希斯城十字记号旁的信,Nachricht von Leda,Mensaje de Leda,Послание от Леды,رﺳﺎﻟﺔ ﻣﻥ ﻟﻳﺩا,성채 십자에 남긴 편지
+2008028,Ancient Ruins Cross Message,古遺跡十字の置き手紙,古遗迹十字记号旁的信,Nachricht von Dane,Mensaje de Dane,Послание от Дейна,رﺳﺎﻟﺔ ﻣﻥ داﻳﻥ,옛 유적 십자에 남긴 편지
+2008029,Monk's Missive,僧の手紙,修士的信,Sendschreiben des Mönchs,Misiva del monje,Послание от монаха,رﺳﺎﻟﺔ اﻟﺭاﻫﺏ,승려의 편지
+2008030,Storehouse Cross Message,保管庫十字の置き手紙,保藏库十字记号旁的信,Nachricht vom Kreuz des Lagerhauses,Mensaje de la cruz del almacén,Послание с хранилища креста,رﺳﺎﻟﺔ اﻟﺻﻠﻳﺏ ﻓﻲ اﻟﻣﺧﺯن,보관고 십자에 남긴 편지
+2008031,Note: Sealed Spiritsprings,文書「霊気流の封印について」,文件：关于受封印的灵魂气流,Notiz: Versiegelte Geisterquellen,Nota: Manantiales espirituales sellados,Заметка «Закрыт. источники»,ﻣﻠﺣﻭﻅﺔ: ﻳﻧﺎﺑﻳﻊ اﻷرواح اﻟﻣﺧﺗﻭﻣﺔ,문서 「영기류 봉인」
+2008032,Torn Diary Page,捨てられた日記,被丢弃的日记,Ausgerissene Tagebuchseite,Página rota del diario,Страница из дневника,ﺻﻔﺣﺔ ﻣﺫﻛﺭات ﻣﻣﺯﻗﺔ,버려진 일기
+2008033,Larval Tear,雫の幼生,泪滴幼体,Larventräne,Lágrima larval,Слеза личинки,دﻣﻌﺔ اﻟﻳﺭﻗﺔ,물방울 유생
+2008034,Message from Leda,レダの置き手紙,蕾妲留下的信,Nachricht von Leda,Mensaje de Leda,Послание от Леды,رﺳﺎﻟﺔ ﻣﻥ ﻟﻳﺩا,레다가 남긴 편지
+2008036,Prayer Room Key,祈りの間の鍵,祈祷厅钥匙,Schlüssel zum Gebetsraum,Llave del cuarto de rezo,Ключ от комнаты для молитвы,ﻣﻔﺗﺎح ﻏﺭﻓﺔ اﻟﺻﻼة,기도실 열쇠
+2008037,Tower of Shadow Message,影の塔の置き手紙,幽影塔旁的信,Nachricht vom Schattenturm,Mensaje de la torre de la sombra,Послание с башни тени,رﺳﺎﻟﺔ ﺑﺭج اﻟﻅﻝ,그림자의 탑에 남긴 편지
+2008131,Note: Sealed Spiritsprings,文書「霊気流の封印について」,文件：关于受封印的灵魂气流,Notiz: Versiegelte Geisterquellen,Nota: Manantiales espirituales sellados,Заметка «Закрыт. источники»,ﻣﻠﺣﻭﻅﺔ: ﻳﻧﺎﺑﻳﻊ اﻷرواح اﻟﻣﺧﺗﻭﻣﺔ,문서 「영기류 봉인」
+2008200,Incursion Painting,絵画「侵攻」,绘画《侵略》,"Gemälde ""Einfall""","Pintura: ""Incursión""",Картина «Вторжение»,"ﻟﻭﺣﺔ ""اﻻﺟﺗﻳﺎح""",그림 「침공」
+2008201,The Sacred Tower Painting,絵画「神の塔」,绘画《神之塔》,"Gemälde ""Der heilige Turm""","Pintura: ""La torre sagrada""",Картина «Священная башня»,"ﻟﻭﺣﺔ ""اﻟﺑﺭج اﻟﻣﻘﺩس""",그림 「신의 탑」
+2008202,Domain of Dragons Painting,絵画「竜の境地」,绘画《龙之境界》,"Gemälde ""Gebiet der Drachen""","Pintura: ""El territorio de los dragones""",Картина «Вотчина драконов»,"ﻟﻭﺣﺔ ""ﺳﺎﺣﺔ اﻟﺗﻧﺎﻧﻳﻥ""",그림 「용의 경지」
+2008600,Map: Gravesite Plain,地図断片：墓地平原,地图碎片：墓地平原,Karte: Grabfeld-Ebene,Mapa: Llanura de las Tumbas,Карта: равнина Надгробий,ﺧﺭﻳﻁﺔ: ﺳﻬﻝ اﻟﻣﻘﺑﺭة,지도 조각(묘지 평원)
+2008601,Map: Scadu Altus,地図断片：影のアルター,地图碎片：幽影亚坛,Karte: Scadu Altus,Mapa: Noctaltus,Карта: Теневой Альтус,ﺧﺭﻳﻁﺔ: ﻣﺭﺗﻔﻌﺎت ﺳﻛﺎدو,지도 조각(그림자 알터)
+2008602,Map: Southern Shore,地図断片：南海岸,地图碎片：南方海岸,Karte: Südufer,Mapa: Orilla sur,Карта: южное побережье,ﺧﺭﻳﻁﺔ: اﻟﺷﺎﻁﺊ اﻟﺟﻧﻭﺑﻲ,지도 조각(남쪽 해안)
+2008603,Map: Rauh Ruins,地図断片：ラウフの古遺跡,地图碎片：劳弗古遗迹,Karte: Ruinen von Rauh,Mapa: Ruinas de Rauh,Карта: Руины Рауха,ﺧﺭﻳﻁﺔ: أﻧﻘﺎض راوه,지도 조각(라우프의 옛 유적)
+2008604,Map: Abyss,地図断片：奈落,地图碎片：谷底,Karte: Abgrund,Mapa: Abismo,Карта: бездна,ﺧﺭﻳﻁﺔ: اﻟﻬﺎوﻳﺔ,지도 조각(나락)
+2008900,Moore's Bell Bearing,ムーアの鈴玉,穆尔的铃珠,Moores Klangperle,Rodamiento de campana de Moore,Колокольная сфера Мура,ﻛﺭة ﺟﺭس ﻣﻭر,무아의 방울
+2008901,Ymir's Bell Bearing,ユミルの鈴玉,尤弥尔的铃珠,Ymirs Klangperle,Rodamiento de campana de Ymir,Колокольная сфера Имира,ﻛﺭة ﺟﺭس ﻳﻣﻳﺭ,유미르의 방울
+2008902,Herbalist's Bell Bearing,草売りの鈴玉,药草贩子的铃珠,Klangperle des Kräuterkundigen,Rodamiento de campana del herbolario,Колокольная сфера травника,ﻛﺭة ﺟﺭس اﻟﻣﻌﺎﻟﺞ ﺑﺎﻷﻋﺷﺎب,풀 장사꾼의 방울
+2008903,Mushroom-Seller's Bell Bearing [1],キノコ売りの鈴玉【１】,蘑菇贩子的铃珠【１】,Klangperle [1] des Pilzhändlers,Rodamiento de campana del vendedor de hongos [1],Колокольная сфера торговца грибами [1],ﻛﺭة ﺟﺭس ﺑﺎﺋﻊ اﻟﻔﻁﺭ [1],버섯 장사꾼의 방울 [1]
+2008904,Mushroom-Seller's Bell Bearing [2],キノコ売りの鈴玉【２】,蘑菇贩子的铃珠【２】,Klangperle [2] des Pilzhändlers,Rodamiento de campana del vendedor de hongos [2],Колокольная сфера торговца грибами [2],ﻛﺭة ﺟﺭس ﺑﺎﺋﻊ اﻟﻔﻁﺭ [2],버섯 장사꾼의 방울 [2]
+2008905,Greasemonger's Bell Bearing,脂売りの鈴玉,树脂贩子的铃珠,Klangperle des Fetthändlers,Rodamiento de campana del vendedor de grasa,Колокольная сфера торговца смазками,ﻛﺭة ﺟﺭس ﺑﺎﺋﻊ اﻟﺷﺣﻭم,기름 장사꾼의 방울
+2008906,Moldmonger's Bell Bearing,カビ売りの鈴玉,霉菌贩子的铃珠,Klangperle des Schimmelhändlers,Rodamiento de campana de Mercader de moho,Кол. сфера торговца плесенью роговестов,ﻛﺭة ﺟﺭس ﻟﺗﺎﺟﺭ اﻟﻌﻔﻥ,곰팡이 장사꾼의 방울
+2008907,Igon's Bell Bearing,エーゴンの鈴玉,埃贡的铃珠,Igons Klangperle,Rodamiento de campana de Igon,Колокольная сфера Игона,ﻛﺭة ﺟﺭس ﻹﻳﻐﻭن,에이곤의 방울
+2008908,Spellmachinist's Bell Bearing,魔術技師の鈴玉,魔法技师的铃珠,Klangperle des Zauberkünstlers,Rodamiento de campana de Mecahechicero,Колокольная сфера заклинателя,ﻛﺭة ﺟﺭس ﻟﺳﺎﺣﺭ اﻟﺑﺭج,마술기사의 방울
+2008909,String-Seller's Bell Bearing,紐売りの鈴玉,绳索贩子的铃珠,Klangperle des Kordelhändlers,Rodamiento de campana de mercader de cordel,Колокольная сфера торговца струнами роговестов,ﻛﺭة ﺟﺭس ﺑﺎﺋﻊ اﻟﺧﻳﻭط,끈 장사꾼의 방울
+2009000,Ring of Miquella,ミケラのリング,米凯拉法环,Ring von Miquella,Anillo de Miquella,Кольцо Микеллы,ﻁﻭق ﻣﻳﻛﻼ,미켈라의 고리
+2009001,May the Best Win,手合わせ所望,期待切磋,Möge der Beste gewinnen,Que gane el mejor,Пусть победит лучший,ﻋﺳﻰ أن ﻳﻔﻭز اﻷﻓﺿﻝ,겨루기 소망
+2009002,The Two Fingers,二本指,双指,Zwei Finger,Los Dos Dedos,Два Пальца,اﻹﺻﺑﻌﺎن,두 손가락
+2009003,Let Us Go Together,貴方と共に,伴你同行,Gehen wir gemeinsam,Vámonos juntos,Пойдём вместе,ﻟﻧﻣﺽ ﻣﻌًﺎ,당신과 함께
+2009004,O Mother,母よ,母亲啊,Oh Mutter,О матерь,Mãe,ﻳﺎ أﻣﻲ,어머니여
+2009160,About the Scadutree Blessing,説明「影樹の加護」,说明：幽影树庇佑,Über den Segen des Scadubaums,Acerca de la bendición del Noctárbol,О благословении Древа Упадка,ﻋﻥ ﻣﺑﺎرﻛﺔ ﺷﺟﺭة ﺳﻛﺎدو,설명 「그림자 나무의 가호」
+2009161,About the Revered Spirit Ash Blessing,説明「霊灰の加護」,说明：灵灰庇佑,Über Segen der Verehrten Geisterasche,Acerca de la bendición de cenizas de espíritus venerados,О благословении праха славного духа,ﻋﻥ ﻣﺑﺎرﻛﺔ رﻣﺎد اﻷرواح اﻟﺟﻠﻳﻝ,설명 「영혼 재의 가호」
+2009162,About New Inventory Features,説明「インベントリの新機能」,说明：置物包的新功能,Über die neuen Inventarfunktionen,Acerca de las nuevas características del inventario,О новых возможностях инвентаря,ﻋﻥ ﻣﺯاﻳﺎ اﻟﻣﺧﺯون اﻟﺟﺩﻳﺩة,설명 「인벤토리의 새 기능」
+2009301,Forager Brood Cookbook [6],拾い虫の製法書【６】,集物虫的制作笔记【６】,Handbuch [6] der Sammlerbrut,Libro de preparaciones de la cría recolectora [6],Справочник собирателей [6],وﺻﻔﺔ ﻋﺎﺋﻠﺔ اﻟﻌف [6],수집벌레의 제작서 [6]
+2009302,Forager Brood Cookbook [1],拾い虫の製法書【１】,集物虫的制作笔记【１】,Handbuch [1] der Sammlerbrut,Libro de preparaciones de la cría recolectora [1],Справочник собирателей [1],وﺻﻔﺔ ﻋﺎﺋﻠﺔ اﻟﻌف [1],수집벌레의 제작서 [1]
+2009303,Forager Brood Cookbook [2],拾い虫の製法書【２】,集物虫的制作笔记【２】,Handbuch [2] der Sammlerbrut,Libro de preparaciones de la cría recolectora [2],Справочник собирателей [2],وﺻﻔﺔ ﻋﺎﺋﻠﺔ اﻟﻌف [2],수집벌레의 제작서 [2]
+2009304,Forager Brood Cookbook [3],拾い虫の製法書【３】,集物虫的制作笔记【３】,Handbuch [3] der Sammlerbrut,Libro de preparaciones de la cría recolectora [3],Справочник собирателей [3],وﺻﻔﺔ ﻋﺎﺋﻠﺔ اﻟﻌف [3],수집벌레의 제작서 [3]
+2009305,Forager Brood Cookbook [4],拾い虫の製法書【４】,集物虫的制作笔记【４】,Handbuch [4] der Sammlerbrut,Libro de preparaciones de la cría recolectora [4],Справочник собирателей [4],وﺻﻔﺔ ﻋﺎﺋﻠﺔ اﻟﻌف [4],수집벌레의 제작서 [4]
+2009306,Forager Brood Cookbook [5],拾い虫の製法書【５】,集物虫的制作笔记【５】,Handbuch [5] der Sammlerbrut,Libro de preparaciones de la cría recolectora [5],Справочник собирателей [5],وﺻﻔﺔ ﻋﺎﺋﻠﺔ اﻟﻌف [5],수집벌레의 제작서 [5]
+2009307,Igon's Cookbook [2],エーゴンの製法書【２】,埃贡的制作笔记【２】,Igons Handbuch [2],Libro de preparaciones de Igon [2],Справочник Игона [2],وﺻﻔﺔ إﻳﻐﻭن [2],에이곤의 제작서 [2]
+2009308,Finger-Weaver's Cookbook [2],指追いの製法書【２】,指头追寻者的制作笔记【２】,Handbuch [2] des Fingerwebers,Libro de preparaciones del Tejededos [2],Справочник ткача пальцев [2],وﺻﻔﺔ ﺣﺎﺋﻙ اﻷﺻﺎﺑﻊ [2],손가락 추종자의 제작서 [2]
+2009309,Greater Potentate's Cookbook [1],大壺師の製法書【１】,大维壶师的制作笔记【１】,Handbuch [1] des Großen Herrschers,Libro de preparaciones del Potentado Mayor [1],Справочник величайшего гончара [1],وﺻﻔﺔ اﻟﺯﻋﻳﻡ اﻷﻋﻅﻡ [1],큰 항아리 도공의 제작서 [1]
+2009310,Greater Potentate's Cookbook [4],大壺師の製法書【４】,大维壶师的制作笔记【４】,Handbuch [4] des Großen Herrschers,Libro de preparaciones del Potentado Mayor [4],Справочник величайшего гончара [4],وﺻﻔﺔ اﻟﺯﻋﻳﻡ اﻷﻋﻅﻡ [4],큰 항아리 도공의 제작서 [4]
+2009311,Greater Potentate's Cookbook [5],大壺師の製法書【５】,大维壶师的制作笔记【５】,Handbuch [5] des Großen Herrschers,Libro de preparaciones del Potentado Mayor [5],Справочник величайшего гончара [5],وﺻﻔﺔ اﻟﺯﻋﻳﻡ اﻷﻋﻅﻡ [5],큰 항아리 도공의 제작서 [5]
+2009312,Greater Potentate's Cookbook [12],大壺師の製法書【１２】,大维壶师的制作笔记【１２】,Handbuch [12] des Großen Herrschers,Libro de preparaciones del Potentado Mayor [12],Справочник величайшего гончара [12],وﺻﻔﺔ اﻟﺯﻋﻳﻡ اﻷﻋﻅﻡ [12],큰 항아리 도공의 제작서 [12]
+2009313,Greater Potentate's Cookbook [7],大壺師の製法書【７】,大维壶师的制作笔记【７】,Handbuch [7] des Großen Herrschers,Libro de preparaciones del Potentado Mayor [7],Справочник величайшего гончара [7],وﺻﻔﺔ اﻟﺯﻋﻳﻡ اﻷﻋﻅﻡ [7],큰 항아리 도공의 제작서 [7]
+2009314,Greater Potentate's Cookbook [9],大壺師の製法書【９】,大维壶师的制作笔记【９】,Handbuch [9] des Großen Herrschers,Libro de preparaciones del Potentado Mayor [9],Справочник величайшего гончара [9],وﺻﻔﺔ اﻟﺯﻋﻳﻡ اﻷﻋﻅﻡ [9],큰 항아리 도공의 제작서 [9]
+2009315,Greater Potentate's Cookbook [10],大壺師の製法書【１０】,大维壶师的制作笔记【１０】,Handbuch [10] des Großen Herrschers,Libro de preparaciones del Potentado Mayor [10],Справочник величайшего гончара [10],وﺻﻔﺔ اﻟﺯﻋﻳﻡ اﻷﻋﻅﻡ [10],큰 항아리 도공의 제작서 [10]
+2009316,Greater Potentate's Cookbook [11],大壺師の製法書【１１】,大维壶师的制作笔记【１１】,Handbuch [11] des Großen Herrschers,Libro de preparaciones del Potentado Mayor [11],Справочник величайшего гончара [11],وﺻﻔﺔ اﻟﺯﻋﻳﻡ اﻷﻋﻅﻡ [11],큰 항아리 도공의 제작서 [11]
+2009317,Mad Craftsman's Cookbook [2],狂った職人の製法書【２】,发狂工匠的制作笔记【２】,Handbuch [2] d. verrückten Handwerkers,Libro de preparaciones del artesano demente [2],Справочник безумного мастера [2],وﺻﻔﺔ ﺣﺭﻓﻲ اﻟﺣﺟﺭ اﻟﻼﻣﻊ [2],미친 장인의 제작서 [2]
+2009318,Greater Potentate's Cookbook [8],大壺師の製法書【８】,大维壶师的制作笔记【８】,Handbuch [8] des Großen Herrschers,Libro de preparaciones del Potentado Mayor [8],Справочник величайшего гончара [8],وﺻﻔﺔ اﻟﺯﻋﻳﻡ اﻷﻋﻅﻡ [8],큰 항아리 도공의 제작서 [8]
+2009319,Greater Potentate's Cookbook [3],大壺師の製法書【３】,大维壶师的制作笔记【３】,Handbuch [3] des Großen Herrschers,Libro de preparaciones del Potentado Mayor [3],Справочник величайшего гончара [3],وﺻﻔﺔ اﻟﺯﻋﻳﻡ اﻷﻋﻅﻡ [3],큰 항아리 도공의 제작서 [3]
+2009320,Greater Potentate's Cookbook [13],大壺師の製法書【１３】,大维壶师的制作笔记【１３】,Handbuch [13] des Großen Herrschers,Libro de preparaciones del Potentado Mayor [13],Справочник величайшего гончара [13],وﺻﻔﺔ اﻟﺯﻋﻳﻡ اﻷﻋﻅﻡ [13],큰 항아리 도공의 제작서 [13]
+2009321,Greater Potentate's Cookbook [14],大壺師の製法書【１４】,大维壶师的制作笔记【１４】,Handbuch [14] des Großen Herrschers,Libro de preparaciones del Potentado Mayor [14],Справочник величайшего гончара [14],وﺻﻔﺔ اﻟﺯﻋﻳﻡ اﻷﻋﻅﻡ [14],큰 항아리 도공의 제작서 [14]
+2009322,Greater Potentate's Cookbook [6],大壺師の製法書【６】,大维壶师的制作笔记【６】,Handbuch [6] des Großen Herrschers,Libro de preparaciones del Potentado Mayor [6],Справочник величайшего гончара [6],وﺻﻔﺔ اﻟﺯﻋﻳﻡ اﻷﻋﻅﻡ [6],큰 항아리 도공의 제작서 [6]
+2009323,Greater Potentate's Cookbook [2],大壺師の製法書【２】,大维壶师的制作笔记【２】,Handbuch [2] des Großen Herrschers,Libro de preparaciones del Potentado Mayor [2],Справочник величайшего гончара [2],وﺻﻔﺔ اﻟﺯﻋﻳﻡ اﻷﻋﻅﻡ [2],큰 항아리 도공의 제작서 [2]
+2009324,Ancient Dragon Knight's Cookbook [1],古竜騎士の製法書【１】,古龙骑士的制作笔记【１】,Handbuch [1] d. Uralten Drachenritters,Libro de preparaciones del caballero dragón antiguo [1],Справочник рыцаря древн. драконов [1],وﺻﻔﺔ ﻓﺎرس اﻟﺗﻧﻳﻥ اﻟﻌﺭﻳﻖ [1],고룡 기사의 제작서 [1]
+2009325,Mad Craftsman's Cookbook [1],狂った職人の製法書【１】,发狂工匠的制作笔记【１】,Handbuch [1] d. verrückten Handwerkers,Libro de preparaciones del artesano demente [1],Справочник безумного мастера [1],وﺻﻔﺔ اﻟﺣﺭﻓﻲ اﻟﻣﺟﻧﻭن [1],미친 장인의 제작서 [1]
+2009326,St. Trina Disciple's Cookbook [1],トリーナ信徒の製法書【１】,托莉娜信徒的制作笔记【１】,Handbuch [1] d. Schülers von St. Trina,Libro de preparaciones del discípulo de Santa Trina [1],Справочник ученика св. Трины [1],وﺻﻔﺔ ﺗﻠﻣﻳﺫ اﻟﻘﺩﻳﺳﺔ ﺗﺭﻳﻧﺎ [1],트리나 신도의 제작서 [1]
+2009327,Fire Knight's Cookbook [1],火の騎士の製法書【１】,火焰骑士的制作笔记【１】,Handbuch [1] des Feuerritters,Libro de preparaciones de los Caballeros ígneos [1],Справочник Огненного рыцаря [1],وﺻﻔﺔ ﻓﺎرس اﻟﻧﺎر [1],불 기사의 제작서 [1]
+2009328,Ancient Dragon Knight's Cookbook [2],古竜騎士の製法書【２】,古龙骑士的制作笔记【２】,Handbuch [2] d. Uralten Drachenritters,Libro de preparaciones del caballero dragón antiguo [2],Справочник рыцаря древн. драконов [2],وﺻﻔﺔ ﻓﺎرس اﻟﺗﻧﻳﻥ اﻟﻌﺭﻳﻖ [2],고룡 기사의 제작서 [2]
+2009329,Loyal Knight's Cookbook,従騎士の製法書,骑士实习生的制作笔记,Handbuch des getreuen Ritters,Libro de preparaciones de los caballeros leales,Справочник верного рыцаря,وﺻﻔﺔ اﻟﻔﺎرس اﻟﻣﺧﻠﺹ,종기사의 제작서
+2009330,Battlefield Priest's Cookbook [1],従軍司祭の製法書【１】,战场神父的制作笔记【１】,Handbuch [1] des Militärpriesters,Libro de preparaciones de los sacerdotes [1],Справочник священника-воина [1],وﺻﻔﺔ ﻛﺎﻫﻥ ﻣﻳﺩان اﻟﻣﻌﺭﻛﺔ [1],종군사제의 제작서 [1]
+2009331,Igon's Cookbook [1],エーゴンの製法書【１】,埃贡的制作笔记【１】,Igons Handbuch [1],Libro de preparaciones de Igon [1],Справочник Игона [1],وﺻﻔﺔ إﻳﻐﻭن [1],에이곤의 제작서 [1]
+2009332,Battlefield Priest's Cookbook [2],従軍司祭の製法書【２】,战场神父的制作笔记【２】,Handbuch [2] des Militärpriesters,Libro de preparaciones de los sacerdotes [2],Справочник священника-воина [2],وﺻﻔﺔ ﻛﺎﻫﻥ ﻣﻳﺩان اﻟﻣﻌﺭﻛﺔ [2],종군사제의 제작서 [2]
+2009333,Forager Brood Cookbook [7],拾い虫の製法書【７】,集物虫的制作笔记【７】,Handbuch [7] der Sammlerbrut,Libro de preparaciones de la cría recolectora [7],Справочник собирателей [7],وﺻﻔﺔ ﻋﺎﺋﻠﺔ اﻟﻌف [7],수집벌레의 제작서 [7]
+2009334,St. Trina Disciple's Cookbook [3],トリーナ信徒の製法書【３】,托莉娜信徒的制作笔记【３】,Handbuch [3] d. Schülers von St. Trina,Libro de preparaciones del discípulo de Santa Trina [3],Справочник ученика св. Трины [3],وﺻﻔﺔ ﺗﻠﻣﻳﺫ اﻟﻘﺩﻳﺳﺔ ﺗﺭﻳﻧﺎ [3],트리나 신도의 제작서 [3]
+2009335,Grave Keeper's Cookbook [2],墓守の製法書【２】,守墓者的制作笔记【２】,Handbuch [2] des Grabhüters,Libro de preparaciones de los guardianes de tumbas [2],Справочник хранителя могил [2],وﺻﻔﺔ ﺣﺎرس اﻟﻘﺑﺭ [2],묘지기의 제작서 [2]
+2009336,Antiquity Scholar's Cookbook [2],考古学者の製法書【２】,考古学者的制作笔记【２】,Handbuch [2] des Altertumsgelehrten,Libro de preparaciones de los expertos en antigüedades [2],Справочник учёного древности [2],وﺻﻔﺔ ﺑﺎﺣﺙ اﻟﻌﺻﻭر اﻟﻘﺩﻳﻣﺔ [2],고고학자의 제작서 [2]
+2009337,Tibia's Cookbook,ティビアの製法書,提比亚的制作笔记,Tibias Handbuch,Libro de preparaciones de Tibia,Справочник Тибии,وﺻﻔﺔ ﺗﻳﺑﻳﺎ,티비아의 제작서
+2009338,Mad Craftsman's Cookbook [3],狂った職人の製法書【３】,发狂工匠的制作笔记【３】,Handbuch [3] d. verrückten Handwerkers,Libro de preparaciones del artesano demente [3],Справочник безумного мастера [3],وﺻﻔﺔ اﻟﺣﺭﻓﻲ اﻟﻣﺟﻧﻭن [3],미친 장인의 제작서 [3]
+2009339,Battlefield Priest's Cookbook [3],従軍司祭の製法書【３】,战场神父的制作笔记【３】,Handbuch [3] des Militärpriesters,Libro de preparaciones de los sacerdotes [3],Справочник священника-воина [3],وﺻﻔﺔ ﻛﺎﻫﻥ ﻣﻳﺩان اﻟﻣﻌﺭﻛﺔ [3],종군사제의 제작서 [3]
+2009340,Fire Knight's Cookbook [2],火の騎士の製法書【２】,火焰骑士的制作笔记【２】,Handbuch [2] des Feuerritters,Libro de preparaciones de los Caballeros ígneos [2],Справочник Огненного рыцаря [2],وﺻﻔﺔ ﻓﺎرس اﻟﻧﺎر [2],불 기사의 제작서 [2]
+2009341,Antiquity Scholar's Cookbook [1],考古学者の製法書【１】,考古学者的制作笔记【１】,Handbuch [1] des Altertumsgelehrten,Libro de preparaciones de los expertos en antigüedades [1],Справочник учёного древности [1],وﺻﻔﺔ ﺑﺎﺣﺙ اﻟﻌﺻﻭر اﻟﻘﺩﻳﻣﺔ [1],고고학자의 제작서 [1]
+2009342,Finger-Weaver's Cookbook [1],指追いの製法書【１】,指头追寻者的制作笔记【１】,Handbuch [1] des Fingerwebers,Libro de preparaciones del Tejededos [1],Справочник ткача пальцев [1],وﺻﻔﺔ ﺣﺎﺋﻙ اﻷﺻﺎﺑﻊ [1],손가락 추종자의 제작서 [1]
+2009343,Battlefield Priest's Cookbook [4],従軍司祭の製法書【４】,战场神父的制作笔记【４】,Handbuch [4] des Militärpriesters,Libro de preparaciones de los sacerdotes [4],Справочник священника-воина [4],وﺻﻔﺔ ﻛﺎﻫﻥ ﻣﻳﺩان اﻟﻣﻌﺭﻛﺔ [4],종군사제의 제작서 [4]
+2009344,Grave Keeper's Cookbook [1],墓守の製法書【１】,守墓者的制作笔记【１】,Handbuch [1] des Grabhüters,Libro de preparaciones de los guardianes de tumbas [1],Справочник хранителя могил [1],وﺻﻔﺔ ﺣﺎرس اﻟﻘﺑﺭ [1],묘지기의 제작서 [1]
+2009345,St. Trina Disciple's Cookbook [2],トリーナ信徒の製法書【２】,托莉娜信徒的制作笔记【２】,Handbuch [2] d. Schülers von St. Trina,Libro de preparaciones del discípulo de Santa Trina [2],Справочник ученика св. Трины [2],وﺻﻔﺔ ﺗﻠﻣﻳﺫ اﻟﻘﺩﻳﺳﺔ ﺗﺭﻳﻧﺎ [2],트리나 신도의 제작서 [2]
+2009500,Hefty Cracked Pot,ヒビ大壺,大龟裂壶,Schwerer gesprungener Topf,Recipiente rajado pesado,Большой треснувший горшок,اﻟﻘﺩر اﻟﻣﺗﺻﺩع اﻟﺿﺧﻡ,금 간 큰 항아리
+2010000,Scadutree Fragment,影樹の破片,幽影树碎片,Scadubaum-Fragment,Fragmento del Noctárbol,Осколок Древа Упадка,ﺟﺯء ﺷﺟﺭة ﺳﻛﺎدو,그림자 나무 파편
+2010100,Revered Spirit Ash,霊灰,灵灰,Verehrte Geisterasche,Ceniza de espíritus venerados,Прах славного духа,رﻣﺎد اﻷرواح اﻟﺟﻠﻳﻝ,영혼 재
+2011000,Viridian Hidden Tear,緑色の秘雫,绿秘密露滴,Smaragdgrüne Geheimnisträne,Lágrima oculta viridián,Тайная изумрудная слеза,اﻟﺩﻣﻌﺔ اﻟﻣﺧﺑﺄة اﻟﺧﺿﺭاء,녹색 숨겨진 물방울
+2011010,Crimsonburst Dried Tear,緋湧きの枯れ雫,涌红枯露滴,Getrocknete purpurrote Träne,Lágrima seca de explosión carmesí,Засохшая багровая слеза,دﻣﻌﺔ اﻻﻧﻔﺟﺎر اﻟﻘﺭﻣﺯي اﻟﻣﺟﻔﻔﺔ,샘솟는 붉은 마른 물방울
+2011020,Crimson-Sapping Cracked Tear,緋吸いの割れ雫,夺红破露滴,Gesprungene purpurrote Träne,Lágrima rota de absorción carmesí,Треснувшая багровая слеза,اﻟﺩﻣﻌﺔ اﻟﻘﺭﻣﺯﻳﺔ اﻟﻣﺳﺗﻧﺯﻓﺔ اﻟﻣﺗﺻﺩﻋﺔ,붉은 흡수의 깨진 물방울
+2011030,Cerulean-Sapping Cracked Tear,青吸いの割れ雫,夺蓝破露滴,Gesprungene himmelrote Träne,Lágrima rota de absorción cerúlea,Треснувшая лазурная слеза,اﻟﺩﻣﻌﺔ اﻟﻼزوردﻳﺔ اﻟﻣﺳﺗﻧﺯﻓﺔ اﻟﻣﺗﺻﺩﻋﺔ,푸른 흡수의 깨진 물방울
+2011040,Oil-Soaked Tear,油ぎった雫,油光露滴,Ölgetränkte Träne,Lágrima empapada de aceite,Маслянистая слеза,اﻟﺩﻣﻌﺔ اﻟﻣﻧﻘﻭﻋﺔ ﻓﻲ اﻟﺯﻳﺕ,기름진 물방울
+2011050,Bloodsucking Cracked Tear,吸血の割れ雫,吸血破露滴,Gesprungene Blutsaugerträne,Lágrima rota chupasangre,Треснувшая кровососущая слеза,اﻟﺩﻣﻌﺔ ﻣﻣﺗﺻﺔ اﻟﺩﻣﺎء اﻟﻣﺗﺻﺩﻋﺔ,흡혈의 깨진 물방울
+2011060,Glovewort Crystal Tear,すずらんの結晶雫,铃兰结晶露滴,Tallilien-Kristallträne,Lágrima de cristal de lirio,Кристальная слеза ландыша,دﻣﻌﺔ اﻟﻧﺑﺗﺔ اﻟﺑﻠﻭرﻳﺔ,은방울꽃 결정 물방울
+2011070,Deflecting Hardtear,弾く硬雫,反弹硬露滴,Abwehrende Bleiträne,Lágrima sólida deflectora,Твёрдая отражающая слеза,اﻟﺩﻣﻌﺔ اﻟﺻﻠﺑﺔ اﻟﻣﺷﺗﺗﺔ,튕기는 굳은 물방울
+2015000,Beast Horn,獣の角,野兽角,Bestienhorn,Cuerno de bestia,Рог зверя,ﻗﺭن اﻟﻭﺣﺵ,짐승 뿔
+2015010,Spirit Calculus,霊結石,灵性结石,Geistercalculus,Cálculo de espíritu,Духовный камень,ﺣﺻﻰ روﺣﻳﺔ,영결석
+2015020,Pearlescent Scale,真珠色のウロコ,珍珠色鳞片,Perlmuttartige Schuppe,Escama nacarada,Перламутровая чешуя,ﻗﺷﺭة اﻟﻠﺅﻟﺅ,진주색 비늘
+2015030,Scorpion Liver,サソリの肝,蝎子肝,Skorpionleber,Hígado de escorpión,Печень скорпиона,ﻛﺑﺩ اﻟﻌﻘﺭب,전갈 간
+2015040,Fly Mold,蠅カビ,苍蝇霉,Fliegenschimmel,Moho de mosca,Мушиная плесень,ذﺑﺎﺑﺔ اﻟﻌﻔﻥ,파리곰팡이
+2020001,Rada Fruit,ラダの実,拉答果实,Radafrucht,Fruta de Rada,Плод рады,ﻓﺎﻛﻬﺔ رادا,라다 열매
+2020002,Redflesh Mushroom,赤肉キノコ,红肉蘑菇,Rotfleischpilz,Hongo rojo,Гриб с красной мякотью,ﻓﻁﺭ اﻟﻠﺣﻡ اﻷﺣﻣﺭ,붉은살버섯
+2020003,Whiteflesh Mushroom,白肉キノコ,白肉蘑菇,Weißfleischpilz,Hongo blanco,Гриб с белой мякотью,ﻓﻁﺭ اﻟﻠﺣﻡ اﻷﺑﻳﺽ,흰살버섯
+2020004,Knot Resin,瘤脂,瘤脂,Harzknoten,Resina nudosa,Узел смолы,اﻟﺻﻣﻎ اﻟﺩﻫﻧﻲ,혹기름
+2020005,Dewgem,玉露,玉露,Taujuwel,Gema del rocío,Сверкающая росянка,دﻳﻭﻏﻳﻡ,옥로
+2020006,Black Pyrefly,黒火蝶,黑火蝶,Schwarzer Feuerfalter,Mariposa ígnea negra,Огненная траурница,اﻟﻔﺭاﺷﺔ اﻟﺳﻭداء اﻟﻧﺎرﻳﺔ,검은불나비
+2020007,Glintslab Firefly,輝塊ホタル,辉石块萤火虫,Schimmerplatten-Glühwürmchen,Luciérnaga de destellita,Сияющий светлячок,ﻳﺭاﻋﺔ اﻟﺑﻼﻁﺔ اﻟﻼﻣﻌﺔ,휘석 덩어리 반딧불
+2020008,Yellow Fulgurbloom,黄雷花,黄雷电花,Gelbe Fulgurblüte,Flor fulgurosa amarilla,Жёлтый грозовой цветок,زﻫﺭة ﻓﺎﻟﻐﺭ اﻟﺻﻔﺭاء,노란 벼락꽃
+2020009,Shadow Sunflower,影輪草,影轮草,Schattensonnenblume,Girasol sombrío,Теневой подсолнух,زﻫﺭة دوار اﻟﺷﻣﺱ اﻟﻣﻌﺗﻣﺔ,영륜초
+2020010,Toxic Mossling,毒コケムシ,毒苔藓虫,Giftiger Moosling,Bestia tóxica de musgo,Ядовитый мохнач,اﻟﻁﺣﻠﺏ اﻟﺳﺎم,독이끼벌레
+2020011,Scarlet Bud,朱い蕾,猩红花蕾,Scharlachrote Knospe,Brote escarlata,Красный бутон,ﺑﺭﻋﻡ ﻗﺭﻣﺯي,붉은 꽃봉오리
+2020012,Sanguine Amaryllis,血のアマリリス,鲜血孤挺花,Blutamaryllis,Amaryllis sanguínea,Кровавый амариллис,اﻟﻧﺭﺟﺱ اﻟﺩﻣﻭي,피 아마릴리스
+2020013,Frozen Maggot,凍り付いた蛆虫,结冻蛆虫,Gefrorene Made,Gusano congelado,Замороженная личинка,اﻟﻳﺭﻗﺔ اﻟﻣﺟﻣﺩة,얼어붙은 구더기
+2020014,Deep-Purple Lily,深紫のスイレン,深紫睡莲,Tiefviolette Lilie,Lirio púrpura oscuro,Тёмно-фиолетовая кувшинка,اﻟﺯﻧﺑﻘﺔ اﻷرﺟﻭاﻧﻳﺔ اﻟﻐﺎﻣﻘﺔ,암자색 수련꽃
+2020015,Nectarblood Burgeon,蜜血の木の芽,蜜血木芽,Nektarblutknospe,Brote de sangre almibarada,Росток сладкой крови,ﺑﺭﻋﻡ رﺣﻳﻖ اﻟﺩم,밀혈의 나무 싹
+2020016,Winter-Lantern Fly,ほおずき虫,灯笼虫,Winterlaternenfliege,Mosca con farol invernal,Муха-фонарщик,ذﺑﺎﺑﺔ ﻓﺎﻧﻭس اﻟﺷﺗﺎء,꽈리벌레
+2020017,Swollen Grape,膨れたブドウ,膨胀葡萄,Pralle Traube,Uva hinchada,Распухший виноград,ﻋﻧﺑﺔ ﻣﻧﺗﻔﺧﺔ,부푼 포도
+2020018,Grave Keeper's Brainpan,墓守の頭蓋,守墓者头盖骨,Schädelknochen des Grabhüters,Cráneo del guardián de tumbas,Череп хранителя могил,ﺟﻣﺟﻣﺔ ﺣﺎرس اﻟﻘﺑﺭ,묘지기의 두개골
+2020019,Horn-Strewn Excrement,角混じりの排泄物,和角排泄物,Kot voller Hornsplitter,Excremento sembrado de cuernos,Экскременты с обломками рога,ﻓﺿﻼت اﻟﻘﺭن اﻟﻣﺑﻌﺛﺭ,뿔 섞인 배설물
+2020020,Gas Stone,ガス石,燃气石,Gasstein,Piedra gaseosa,Камень с газом,ﺣﺟﺭ اﻟﻐﺎز,가스석
+2020021,Ghostflame Bloom,霊炎花,灵火花,Geisterflammenblüte,Flor de llama espectral,Цветок пламени смерти,أزﻫﺎر ﻟﻬﻳﺏ اﻟﺷﺑﺢ,영혼 불 꽃
+2020022,Grave Cricket,墓鈴虫,墓地铃虫,Grabgrille,Grillo fúnebre,Могильный сверчок,ﺻﺭﺻﺎر ﻟﻳﻝ اﻟﻘﺑﺭ,묘방울벌레
+2020023,Dragon's Calorbloom,竜熱花,龙热花,Drachenblume,Flor de Calor del dragón,Жар дракона,زﻫﺭة ﺣﺭارة اﻟﺗﻧﻳﻥ,용열꽃
+2020024,Finger Mimic,指擬き,拟态指头,Fingerling,Imitador de dedo,Ложный палец,ﻣﺣﺎﻛﺎة اﻹﺻﺑﻊ,모조 손가락
+2020025,Empyrean-Blood Burgeon,神血の木の芽,神血木芽,Himmlische Blutknospe,Brote de sangre empírea,Росток неземной крови,ﺑﺭﻋﻡ دم اﻟﺭوح اﻟﺳﻣﺎوﻳﺔ,신혈의 나무 싹
+2020026,Congealed Putrescence,凝固した泥濘,凝固融泥,Geronnene Verwesung,Putrescencia solidificada,Комок гнили,اﻟﻌﻔﻥ اﻟﻣﺟﻣﺩ,응고한 수렁
+2020027,Roundrock,丸岩,浑圆岩石,Rundstein,Roca redonda,Круглый камешек,اﻟﺻﺧﺭة اﻟﻣﺳﺗﺩﻳﺭة,둥근 바위
+2020028,Spiritgrave Stone,霊墓石,灵墓碑石,Geistergrabstein,Piedra de tumba espiritual,Камень могильника духов,ﺣﺟﺭ ﻣﻘﺑﺭة اﻷرواح,영묘석
+2020029,Rauh Burrow,ラウフの巣穴,劳弗巢穴,Rauhnest,Madriguera de Rauh,Нора Рауха,ﻋﺵ راوه,라우프의 둥지돌
+2020030,Ember of Messmer,メスメルの残り火,梅瑟莫的余火,Messmers Glut,Brasa de Messmer,Уголь Мессмера,ﺟﻣﺭ ﻣﻳﺳﻣﺭ,메스메르의 잔불
+2020031,Blessed Bone Shard,祝福された骨片,赐福骨片,Gesegneter Knochensplitter,Fragmento de hueso bendecido,Осиянный осколок кости,ﺷﻅﻳﺔ اﻟﻌﻅﺎم اﻟﻣﺑﺎرﻛﺔ,축복받은 뼛조각
+2020032,Red Fulgurbloom,赤雷花,红雷花,Rote Fulgurblüte,Flor fulgurosa roja,Красный грозовой цветок,زﻫﺭة ﻓﺎﻟﻐﺭ اﻟﺣﻣﺭاء,붉은 벼락꽃
+2020033,Nailstone,爪石,指甲石,Nagelstein,Piedra de uña,Камень-ноготь,ﺣﺟﺭ اﻟﻅﻔﺭ,손톱돌
+2020034,Sharp Gravel Stone,尖ったさざれ石,尖锐碎石,Scharfer Schotterstein,Grava afilada,Острая чешуйка,ﺣﺟﺭ اﻟﺣﺻﻰ اﻟﺣﺎد,뾰족한 조약돌
+2020035,Furnace Visage,焼炉の面,燃炉面具,Ofengesicht,Frente del horno,Лик великана печи,وﺟﻪ اﻟﻣﺻﻬﺭ,소각로 가면
+2200000,Curseblade Meera,呪剣士ミラ,咒剑士米拉,Fluchklingen Meera,Мира,Lâmina Maldita Meera,ﻣﻳﺭا اﻟﻣﺑﺎرزة اﻟﻣﻠﻌﻭﻧﺔ,주검사 밀라
+2200001,Curseblade Meera +1,呪剣士ミラ＋１,咒剑士米拉＋１,Fluchklingen Meera +1,Мира,Lâmina Maldita Meera +1,ﻣﻳﺭا اﻟﻣﺑﺎرزة اﻟﻣﻠﻌﻭﻧﺔ +1,주검사 밀라+1
+2200002,Curseblade Meera +2,呪剣士ミラ＋２,咒剑士米拉＋２,Fluchklingen Meera +2,Мира,Lâmina Maldita Meera +2,ﻣﻳﺭا اﻟﻣﺑﺎرزة اﻟﻣﻠﻌﻭﻧﺔ +2,주검사 밀라+2
+2200003,Curseblade Meera +3,呪剣士ミラ＋３,咒剑士米拉＋３,Fluchklingen Meera +3,Мира,Lâmina Maldita Meera +3,ﻣﻳﺭا اﻟﻣﺑﺎرزة اﻟﻣﻠﻌﻭﻧﺔ +3,주검사 밀라+3
+2200004,Curseblade Meera +4,呪剣士ミラ＋４,咒剑士米拉＋４,Fluchklingen Meera +4,Мира,Lâmina Maldita Meera +4,ﻣﻳﺭا اﻟﻣﺑﺎرزة اﻟﻣﻠﻌﻭﻧﺔ +4,주검사 밀라+4
+2200005,Curseblade Meera +5,呪剣士ミラ＋５,咒剑士米拉＋５,Fluchklingen Meera +5,Мира,Lâmina Maldita Meera +5,ﻣﻳﺭا اﻟﻣﺑﺎرزة اﻟﻣﻠﻌﻭﻧﺔ +5,주검사 밀라+5
+2200006,Curseblade Meera +6,呪剣士ミラ＋６,咒剑士米拉＋６,Fluchklingen Meera +6,Мира,Lâmina Maldita Meera +6,ﻣﻳﺭا اﻟﻣﺑﺎرزة اﻟﻣﻠﻌﻭﻧﺔ +6,주검사 밀라+6
+2200007,Curseblade Meera +7,呪剣士ミラ＋７,咒剑士米拉＋７,Fluchklingen Meera +7,Мира,Lâmina Maldita Meera +7,ﻣﻳﺭا اﻟﻣﺑﺎرزة اﻟﻣﻠﻌﻭﻧﺔ +7,주검사 밀라+7
+2200008,Curseblade Meera +8,呪剣士ミラ＋８,咒剑士米拉＋８,Fluchklingen Meera +8,Мира,Lâmina Maldita Meera +8,ﻣﻳﺭا اﻟﻣﺑﺎرزة اﻟﻣﻠﻌﻭﻧﺔ +8,주검사 밀라+8
+2200009,Curseblade Meera +9,呪剣士ミラ＋９,咒剑士米拉＋９,Fluchklingen Meera +9,Мира,Lâmina Maldita Meera +9,ﻣﻳﺭا اﻟﻣﺑﺎرزة اﻟﻣﻠﻌﻭﻧﺔ +9,주검사 밀라+9
+2200010,Curseblade Meera +10,呪剣士ミラ＋１０,咒剑士米拉＋１０,Fluchklingen Meera +10,Мира,Lâmina Maldita Meera +10,ﻣﻳﺭا اﻟﻣﺑﺎرزة اﻟﻣﻠﻌﻭﻧﺔ +10,주검사 밀라+10
+2201000,Bloodfiend Hexer's Ashes,血鬼の呪術師の遺灰,血怪咒术师的骨灰,Asche des Hexers der Blutunholde,Cenizas del demonio sanguíneo embrujador,Прах кровопускателя-колдуна,رﻣﺎد ﺳﺎك اﻟﺩﻣﺎء اﻟﻣﺷﻌﻭذ,혈귀 주술사의 뼛가루
+2201001,Bloodfiend Hexer's Ashes +1,血鬼の呪術師の遺灰＋１,血怪咒术师的骨灰＋１,Asche des Hexers der Blutunholde +1,Cenizas del demonio sanguíneo embrujador +1,Прах кровопускателя-колдуна +1,رﻣﺎد ﺳﺎك اﻟﺩﻣﺎء اﻟﻣﺷﻌﻭذ +1,혈귀 주술사의 뼛가루+1
+2201002,Bloodfiend Hexer's Ashes +2,血鬼の呪術師の遺灰＋２,血怪咒术师的骨灰＋２,Asche des Hexers der Blutunholde +2,Cenizas del demonio sanguíneo embrujador +2,Прах кровопускателя-колдуна +2,رﻣﺎد ﺳﺎك اﻟﺩﻣﺎء اﻟﻣﺷﻌﻭذ +2,혈귀 주술사의 뼛가루+2
+2201003,Bloodfiend Hexer's Ashes +3,血鬼の呪術師の遺灰＋３,血怪咒术师的骨灰＋３,Asche des Hexers der Blutunholde +3,Cenizas del demonio sanguíneo embrujador +3,Прах кровопускателя-колдуна +3,رﻣﺎد ﺳﺎك اﻟﺩﻣﺎء اﻟﻣﺷﻌﻭذ +3,혈귀 주술사의 뼛가루+3
+2201004,Bloodfiend Hexer's Ashes +4,血鬼の呪術師の遺灰＋４,血怪咒术师的骨灰＋４,Asche des Hexers der Blutunholde +4,Cenizas del demonio sanguíneo embrujador +4,Прах кровопускателя-колдуна +4,رﻣﺎد ﺳﺎك اﻟﺩﻣﺎء اﻟﻣﺷﻌﻭذ +4,혈귀 주술사의 뼛가루+4
+2201005,Bloodfiend Hexer's Ashes +5,血鬼の呪術師の遺灰＋５,血怪咒术师的骨灰＋５,Asche des Hexers der Blutunholde +5,Cenizas del demonio sanguíneo embrujador +5,Прах кровопускателя-колдуна +5,رﻣﺎد ﺳﺎك اﻟﺩﻣﺎء اﻟﻣﺷﻌﻭذ +5,혈귀 주술사의 뼛가루+5
+2201006,Bloodfiend Hexer's Ashes +6,血鬼の呪術師の遺灰＋６,血怪咒术师的骨灰＋６,Asche des Hexers der Blutunholde +6,Cenizas del demonio sanguíneo embrujador +6,Прах кровопускателя-колдуна +6,رﻣﺎد ﺳﺎك اﻟﺩﻣﺎء اﻟﻣﺷﻌﻭذ +6,혈귀 주술사의 뼛가루+6
+2201007,Bloodfiend Hexer's Ashes +7,血鬼の呪術師の遺灰＋７,血怪咒术师的骨灰＋７,Asche des Hexers der Blutunholde +7,Cenizas del demonio sanguíneo embrujador +7,Прах кровопускателя-колдуна +7,رﻣﺎد ﺳﺎك اﻟﺩﻣﺎء اﻟﻣﺷﻌﻭذ +7,혈귀 주술사의 뼛가루+7
+2201008,Bloodfiend Hexer's Ashes +8,血鬼の呪術師の遺灰＋８,血怪咒术师的骨灰＋８,Asche des Hexers der Blutunholde +8,Cenizas del demonio sanguíneo embrujador +8,Прах кровопускателя-колдуна +8,رﻣﺎد ﺳﺎك اﻟﺩﻣﺎء اﻟﻣﺷﻌﻭذ +8,혈귀 주술사의 뼛가루+8
+2201009,Bloodfiend Hexer's Ashes +9,血鬼の呪術師の遺灰＋９,血怪咒术师的骨灰＋９,Asche des Hexers der Blutunholde +9,Cenizas del demonio sanguíneo embrujador +9,Прах кровопускателя-колдуна +9,رﻣﺎد ﺳﺎك اﻟﺩﻣﺎء اﻟﻣﺷﻌﻭذ +9,혈귀 주술사의 뼛가루+9
+2201010,Bloodfiend Hexer's Ashes +10,血鬼の呪術師の遺灰＋１０,血怪咒术师的骨灰＋１０,Asche des Hexers der Blutunholde +10,Cenizas del demonio sanguíneo embrujador +10,Прах кровопускателя-колдуна +10,رﻣﺎد ﺳﺎك اﻟﺩﻣﺎء اﻟﻣﺷﻌﻭذ +10,혈귀 주술사의 뼛가루+10
+2202000,Gravebird Ashes,墓守鳥の遺灰,守墓鸟的骨灰,Grabvogelasche,Cenizas del ave sepulcral,Прах могильной птицы,رﻣﺎد ﻁﺎﺋﺭ اﻟﻣﻘﺑﺭة,묘지기 새의 뼛가루
+2202001,Gravebird Ashes +1,墓守鳥の遺灰＋１,守墓鸟的骨灰＋１,Grabvogelasche +1,Cenizas del ave sepulcral +1,Прах могильной птицы +1,رﻣﺎد ﻁﺎﺋﺭ اﻟﻣﻘﺑﺭة +1,묘지기 새의 뼛가루+1
+2202002,Gravebird Ashes +2,墓守鳥の遺灰＋２,守墓鸟的骨灰＋２,Grabvogelasche +2,Cenizas del ave sepulcral +2,Прах могильной птицы +2,رﻣﺎد ﻁﺎﺋﺭ اﻟﻣﻘﺑﺭة +2,묘지기 새의 뼛가루+2
+2202003,Gravebird Ashes +3,墓守鳥の遺灰＋３,守墓鸟的骨灰＋３,Grabvogelasche +3,Cenizas del ave sepulcral +3,Прах могильной птицы +3,رﻣﺎد ﻁﺎﺋﺭ اﻟﻣﻘﺑﺭة +3,묘지기 새의 뼛가루+3
+2202004,Gravebird Ashes +4,墓守鳥の遺灰＋４,守墓鸟的骨灰＋４,Grabvogelasche +4,Cenizas del ave sepulcral +4,Прах могильной птицы +4,رﻣﺎد ﻁﺎﺋﺭ اﻟﻣﻘﺑﺭة +4,묘지기 새의 뼛가루+4
+2202005,Gravebird Ashes +5,墓守鳥の遺灰＋５,守墓鸟的骨灰＋５,Grabvogelasche +5,Cenizas del ave sepulcral +5,Прах могильной птицы +5,رﻣﺎد ﻁﺎﺋﺭ اﻟﻣﻘﺑﺭة +5,묘지기 새의 뼛가루+5
+2202006,Gravebird Ashes +6,墓守鳥の遺灰＋６,守墓鸟的骨灰＋６,Grabvogelasche +6,Cenizas del ave sepulcral +6,Прах могильной птицы +6,رﻣﺎد ﻁﺎﺋﺭ اﻟﻣﻘﺑﺭة +6,묘지기 새의 뼛가루+6
+2202007,Gravebird Ashes +7,墓守鳥の遺灰＋７,守墓鸟的骨灰＋７,Grabvogelasche +7,Cenizas del ave sepulcral +7,Прах могильной птицы +7,رﻣﺎد ﻁﺎﺋﺭ اﻟﻣﻘﺑﺭة +7,묘지기 새의 뼛가루+7
+2202008,Gravebird Ashes +8,墓守鳥の遺灰＋８,守墓鸟的骨灰＋８,Grabvogelasche +8,Cenizas del ave sepulcral +8,Прах могильной птицы +8,رﻣﺎد ﻁﺎﺋﺭ اﻟﻣﻘﺑﺭة +8,묘지기 새의 뼛가루+8
+2202009,Gravebird Ashes +9,墓守鳥の遺灰＋９,守墓鸟的骨灰＋９,Grabvogelasche +9,Cenizas del ave sepulcral +9,Прах могильной птицы +9,رﻣﺎد ﻁﺎﺋﺭ اﻟﻣﻘﺑﺭة +9,묘지기 새의 뼛가루+9
+2202010,Gravebird Ashes +10,墓守鳥の遺灰＋１０,守墓鸟的骨灰＋１０,Grabvogelasche +10,Cenizas del ave sepulcral +10,Прах могильной птицы +10,رﻣﺎد ﻁﺎﺋﺭ اﻟﻣﻘﺑﺭة +10,묘지기 새의 뼛가루+10
+2203000,Fire Knight Hilde,火の騎士、ヒルド,“火焰骑士”希德,Feuerritterin Hilde,Огненный рыцарь Хильда,Cavaleira de Fogo Hilde,ﻫﺎﻳﻠﺩ ﻓﺎرس اﻟﻧﺎر,불의 기사 힐드
+2203001,Fire Knight Hilde +1,火の騎士、ヒルド＋１,“火焰骑士”希德＋１,Feuerritterin Hilde +1,Огненный рыцарь Хильда +1,Cavaleira de Fogo Hilde +1,ﻫﺎﻳﻠﺩ ﻓﺎرس اﻟﻧﺎر +1,불의 기사 힐드+1
+2203002,Fire Knight Hilde +2,火の騎士、ヒルド＋２,“火焰骑士”希德＋２,Feuerritterin Hilde +2,Огненный рыцарь Хильда +2,Cavaleira de Fogo Hilde +2,ﻫﺎﻳﻠﺩ ﻓﺎرس اﻟﻧﺎر +2,불의 기사 힐드+2
+2203003,Fire Knight Hilde +3,火の騎士、ヒルド＋３,“火焰骑士”希德＋３,Feuerritterin Hilde +3,Огненный рыцарь Хильда +3,Cavaleira de Fogo Hilde +3,ﻫﺎﻳﻠﺩ ﻓﺎرس اﻟﻧﺎر +3,불의 기사 힐드+3
+2203004,Fire Knight Hilde +4,火の騎士、ヒルド＋４,“火焰骑士”希德＋４,Feuerritterin Hilde +4,Огненный рыцарь Хильда +4,Cavaleira de Fogo Hilde +4,ﻫﺎﻳﻠﺩ ﻓﺎرس اﻟﻧﺎر +4,불의 기사 힐드+4
+2203005,Fire Knight Hilde +5,火の騎士、ヒルド＋５,“火焰骑士”希德＋５,Feuerritterin Hilde +5,Огненный рыцарь Хильда +5,Cavaleira de Fogo Hilde +5,ﻫﺎﻳﻠﺩ ﻓﺎرس اﻟﻧﺎر +5,불의 기사 힐드+5
+2203006,Fire Knight Hilde +6,火の騎士、ヒルド＋６,“火焰骑士”希德＋６,Feuerritterin Hilde +6,Огненный рыцарь Хильда +6,Cavaleira de Fogo Hilde +6,ﻫﺎﻳﻠﺩ ﻓﺎرس اﻟﻧﺎر +6,불의 기사 힐드+6
+2203007,Fire Knight Hilde +7,火の騎士、ヒルド＋７,“火焰骑士”希德＋７,Feuerritterin Hilde +7,Огненный рыцарь Хильда +7,Cavaleira de Fogo Hilde +7,ﻫﺎﻳﻠﺩ ﻓﺎرس اﻟﻧﺎر +7,불의 기사 힐드+7
+2203008,Fire Knight Hilde +8,火の騎士、ヒルド＋８,“火焰骑士”希德＋８,Feuerritterin Hilde +8,Огненный рыцарь Хильда +8,Cavaleira de Fogo Hilde +8,ﻫﺎﻳﻠﺩ ﻓﺎرس اﻟﻧﺎر +8,불의 기사 힐드+8
+2203009,Fire Knight Hilde +9,火の騎士、ヒルド＋９,“火焰骑士”希德＋９,Feuerritterin Hilde +9,Огненный рыцарь Хильда +9,Cavaleira de Fogo Hilde +9,ﻫﺎﻳﻠﺩ ﻓﺎرس اﻟﻧﺎر +9,불의 기사 힐드+9
+2203010,Fire Knight Hilde +10,火の騎士、ヒルド＋１０,“火焰骑士”希德＋１０,Feuerritterin Hilde +10,Огненный рыцарь Хильда +10,Cavaleira de Fogo Hilde +10,ﻫﺎﻳﻠﺩ ﻓﺎرس اﻟﻧﺎر +10,불의 기사 힐드+10
+2204000,Spider Scorpion Ashes,蜘蛛サソリの遺灰,蜘蛛蝎的骨灰,Spinnenskorpionasche,Cenizas del escorpión araña,Прах паука-скорпиона,رﻣﺎد اﻟﻌﻘﺭب اﻟﻌﻧﻛﺑﻭﺗﻲ,거미전갈의 뼛가루
+2204001,Spider Scorpion Ashes +1,蜘蛛サソリの遺灰＋１,蜘蛛蝎的骨灰＋１,Spinnenskorpionasche +1,Cenizas del escorpión araña +1,Прах паука-скорпиона +1,رﻣﺎد اﻟﻌﻘﺭب اﻟﻌﻧﻛﺑﻭﺗﻲ +1,거미전갈의 뼛가루+1
+2204002,Spider Scorpion Ashes +2,蜘蛛サソリの遺灰＋２,蜘蛛蝎的骨灰＋２,Spinnenskorpionasche +2,Cenizas del escorpión araña +2,Прах паука-скорпиона +2,رﻣﺎد اﻟﻌﻘﺭب اﻟﻌﻧﻛﺑﻭﺗﻲ +2,거미전갈의 뼛가루+2
+2204003,Spider Scorpion Ashes +3,蜘蛛サソリの遺灰＋３,蜘蛛蝎的骨灰＋３,Spinnenskorpionasche +3,Cenizas del escorpión araña +3,Прах паука-скорпиона +3,رﻣﺎد اﻟﻌﻘﺭب اﻟﻌﻧﻛﺑﻭﺗﻲ +3,거미전갈의 뼛가루+3
+2204004,Spider Scorpion Ashes +4,蜘蛛サソリの遺灰＋４,蜘蛛蝎的骨灰＋４,Spinnenskorpionasche +4,Cenizas del escorpión araña +4,Прах паука-скорпиона +4,رﻣﺎد اﻟﻌﻘﺭب اﻟﻌﻧﻛﺑﻭﺗﻲ +4,거미전갈의 뼛가루+4
+2204005,Spider Scorpion Ashes +5,蜘蛛サソリの遺灰＋５,蜘蛛蝎的骨灰＋５,Spinnenskorpionasche +5,Cenizas del escorpión araña +5,Прах паука-скорпиона +5,رﻣﺎد اﻟﻌﻘﺭب اﻟﻌﻧﻛﺑﻭﺗﻲ +5,거미전갈의 뼛가루+5
+2204006,Spider Scorpion Ashes +6,蜘蛛サソリの遺灰＋６,蜘蛛蝎的骨灰＋６,Spinnenskorpionasche +6,Cenizas del escorpión araña +6,Прах паука-скорпиона +6,رﻣﺎد اﻟﻌﻘﺭب اﻟﻌﻧﻛﺑﻭﺗﻲ +6,거미전갈의 뼛가루+6
+2204007,Spider Scorpion Ashes +7,蜘蛛サソリの遺灰＋７,蜘蛛蝎的骨灰＋７,Spinnenskorpionasche +7,Cenizas del escorpión araña +7,Прах паука-скорпиона +7,رﻣﺎد اﻟﻌﻘﺭب اﻟﻌﻧﻛﺑﻭﺗﻲ +7,거미전갈의 뼛가루+7
+2204008,Spider Scorpion Ashes +8,蜘蛛サソリの遺灰＋８,蜘蛛蝎的骨灰＋８,Spinnenskorpionasche +8,Cenizas del escorpión araña +8,Прах паука-скорпиона +8,رﻣﺎد اﻟﻌﻘﺭب اﻟﻌﻧﻛﺑﻭﺗﻲ +8,거미전갈의 뼛가루+8
+2204009,Spider Scorpion Ashes +9,蜘蛛サソリの遺灰＋９,蜘蛛蝎的骨灰＋９,Spinnenskorpionasche +9,Cenizas del escorpión araña +9,Прах паука-скорпиона +9,رﻣﺎد اﻟﻌﻘﺭب اﻟﻌﻧﻛﺑﻭﺗﻲ +9,거미전갈의 뼛가루+9
+2204010,Spider Scorpion Ashes +10,蜘蛛サソリの遺灰＋１０,蜘蛛蝎的骨灰＋１０,Spinnenskorpionasche +10,Cenizas del escorpión araña +10,Прах паука-скорпиона +10,رﻣﺎد اﻟﻌﻘﺭب اﻟﻌﻧﻛﺑﻭﺗﻲ +10,거미전갈의 뼛가루+10
+2205000,Inquisitor Ashes,責問官の遺灰,拷问官的骨灰,Inquisitorinnenasche,Cenizas de las Inquisidoras,Прах инквизиторов,رﻣﺎد اﻟﻣﺣﻘﻖ,고문관의 뼛가루
+2205001,Inquisitor Ashes +1,責問官の遺灰＋１,拷问官的骨灰＋１,Inquisitorinnenasche +1,Cenizas de las Inquisidoras +1,Прах инквизиторов +1,رﻣﺎد اﻟﻣﺣﻘﻖ +1,고문관의 뼛가루+1
+2205002,Inquisitor Ashes +2,責問官の遺灰＋２,拷问官的骨灰＋２,Inquisitorinnenasche +2,Cenizas de las Inquisidoras +2,Прах инквизиторов +2,رﻣﺎد اﻟﻣﺣﻘﻖ +2,고문관의 뼛가루+2
+2205003,Inquisitor Ashes +3,責問官の遺灰＋３,拷问官的骨灰＋３,Inquisitorinnenasche +3,Cenizas de las Inquisidoras +3,Прах инквизиторов +3,رﻣﺎد اﻟﻣﺣﻘﻖ +3,고문관의 뼛가루+3
+2205004,Inquisitor Ashes +4,責問官の遺灰＋４,拷问官的骨灰＋４,Inquisitorinnenasche +4,Cenizas de las Inquisidoras +4,Прах инквизиторов +4,رﻣﺎد اﻟﻣﺣﻘﻖ +4,고문관의 뼛가루+4
+2205005,Inquisitor Ashes +5,責問官の遺灰＋５,拷问官的骨灰＋５,Inquisitorinnenasche +5,Cenizas de las Inquisidoras +5,Прах инквизиторов +5,رﻣﺎد اﻟﻣﺣﻘﻖ +5,고문관의 뼛가루+5
+2205006,Inquisitor Ashes +6,責問官の遺灰＋６,拷问官的骨灰＋６,Inquisitorinnenasche +6,Cenizas de las Inquisidoras +6,Прах инквизиторов +6,رﻣﺎد اﻟﻣﺣﻘﻖ +6,고문관의 뼛가루+6
+2205007,Inquisitor Ashes +7,責問官の遺灰＋７,拷问官的骨灰＋７,Inquisitorinnenasche +7,Cenizas de las Inquisidoras +7,Прах инквизиторов +7,رﻣﺎد اﻟﻣﺣﻘﻖ +7,고문관의 뼛가루+7
+2205008,Inquisitor Ashes +8,責問官の遺灰＋８,拷问官的骨灰＋８,Inquisitorinnenasche +8,Cenizas de las Inquisidoras +8,Прах инквизиторов +8,رﻣﺎد اﻟﻣﺣﻘﻖ +8,고문관의 뼛가루+8
+2205009,Inquisitor Ashes +9,責問官の遺灰＋９,拷问官的骨灰＋９,Inquisitorinnenasche +9,Cenizas de las Inquisidoras +9,Прах инквизиторов +9,رﻣﺎد اﻟﻣﺣﻘﻖ +9,고문관의 뼛가루+9
+2205010,Inquisitor Ashes +10,責問官の遺灰＋１０,拷问官的骨灰＋１０,Inquisitorinnenasche +10,Cenizas de las Inquisidoras +10,Прах инквизиторов +10,رﻣﺎد اﻟﻣﺣﻘﻖ +10,고문관의 뼛가루+10
+2206000,Demi-Human Swordsman Yosh,亜人の剣士、ヨシ,“亚人剑士”约西,Halbmenschen-Schwertkämpfer Yosh,Мечник-получеловек Йош,Espadachim Semi-Humano Yosh,ﻳﻭش اﻟﻣﺑﺎرز اﻟﻧﺻﻑ ﺑﺷﺭ,아인 검사 요시
+2206001,Demi-Human Swordsman Yosh +1,亜人の剣士、ヨシ＋１,“亚人剑士”约西＋１,Halbmenschen-Schwertkämpfer Yosh +1,Мечник-получеловек Йош +1,Espadachim Semi-Humano Yosh +1,ﻳﻭش اﻟﻣﺑﺎرز اﻟﻧﺻﻑ ﺑﺷﺭ +1,아인 검사 요시+1
+2206002,Demi-Human Swordsman Yosh +2,亜人の剣士、ヨシ＋２,“亚人剑士”约西＋２,Halbmenschen-Schwertkämpfer Yosh +2,Мечник-получеловек Йош +2,Espadachim Semi-Humano Yosh +2,ﻳﻭش اﻟﻣﺑﺎرز اﻟﻧﺻﻑ ﺑﺷﺭ +2,아인 검사 요시+2
+2206003,Demi-Human Swordsman Yosh +3,亜人の剣士、ヨシ＋３,“亚人剑士”约西＋３,Halbmenschen-Schwertkämpfer Yosh +3,Мечник-получеловек Йош +3,Espadachim Semi-Humano Yosh +3,ﻳﻭش اﻟﻣﺑﺎرز اﻟﻧﺻﻑ ﺑﺷﺭ +3,아인 검사 요시+3
+2206004,Demi-Human Swordsman Yosh +4,亜人の剣士、ヨシ＋４,“亚人剑士”约西＋４,Halbmenschen-Schwertkämpfer Yosh +4,Мечник-получеловек Йош +4,Espadachim Semi-Humano Yosh +4,ﻳﻭش اﻟﻣﺑﺎرز اﻟﻧﺻﻑ ﺑﺷﺭ +4,아인 검사 요시+4
+2206005,Demi-Human Swordsman Yosh +5,亜人の剣士、ヨシ＋５,“亚人剑士”约西＋５,Halbmenschen-Schwertkämpfer Yosh +5,Мечник-получеловек Йош +5,Espadachim Semi-Humano Yosh +5,ﻳﻭش اﻟﻣﺑﺎرز اﻟﻧﺻﻑ ﺑﺷﺭ +5,아인 검사 요시+5
+2206006,Demi-Human Swordsman Yosh +6,亜人の剣士、ヨシ＋６,“亚人剑士”约西＋６,Halbmenschen-Schwertkämpfer Yosh +6,Мечник-получеловек Йош +6,Espadachim Semi-Humano Yosh +6,ﻳﻭش اﻟﻣﺑﺎرز اﻟﻧﺻﻑ ﺑﺷﺭ +6,아인 검사 요시+6
+2206007,Demi-Human Swordsman Yosh +7,亜人の剣士、ヨシ＋７,“亚人剑士”约西＋７,Halbmenschen-Schwertkämpfer Yosh +7,Мечник-получеловек Йош +7,Espadachim Semi-Humano Yosh +7,ﻳﻭش اﻟﻣﺑﺎرز اﻟﻧﺻﻑ ﺑﺷﺭ +7,아인 검사 요시+7
+2206008,Demi-Human Swordsman Yosh +8,亜人の剣士、ヨシ＋８,“亚人剑士”约西＋８,Halbmenschen-Schwertkämpfer Yosh +8,Мечник-получеловек Йош +8,Espadachim Semi-Humano Yosh +8,ﻳﻭش اﻟﻣﺑﺎرز اﻟﻧﺻﻑ ﺑﺷﺭ +8,아인 검사 요시+8
+2206009,Demi-Human Swordsman Yosh +9,亜人の剣士、ヨシ＋９,“亚人剑士”约西＋９,Halbmenschen-Schwertkämpfer Yosh +9,Мечник-получеловек Йош +9,Espadachim Semi-Humano Yosh +9,ﻳﻭش اﻟﻣﺑﺎرز اﻟﻧﺻﻑ ﺑﺷﺭ +9,아인 검사 요시+9
+2206010,Demi-Human Swordsman Yosh +10,亜人の剣士、ヨシ＋１０,“亚人剑士”约西＋１０,Halbmenschen-Schwertkämpfer Yosh +10,Мечник-получеловек Йош +10,Espadachim Semi-Humano Yosh +10,ﻳﻭش اﻟﻣﺑﺎرز اﻟﻧﺻﻑ ﺑﺷﺭ +10,아인 검사 요시+10
+2207000,Messmer Soldier Ashes,メスメル兵の遺灰,梅瑟莫士兵的骨灰,Messmer-Soldatenasche,Cenizas de soldados de Messmer,Прах солдат Мессмера,رﻣﺎد ﺟﻧﺩي ﻣﻳﺳﻣﺭ,메스메르 병사의 뼛가루
+2207001,Messmer Soldier Ashes +1,メスメル兵の遺灰＋１,梅瑟莫士兵的骨灰＋１,Messmer-Soldatenasche +1,Cenizas de soldados de Messmer +1,Прах солдат Мессмера +1,رﻣﺎد ﺟﻧﺩي ﻣﻳﺳﻣﺭ +1,메스메르 병사의 뼛가루+1
+2207002,Messmer Soldier Ashes +2,メスメル兵の遺灰＋２,梅瑟莫士兵的骨灰＋２,Messmer-Soldatenasche +2,Cenizas de soldados de Messmer +2,Прах солдат Мессмера +2,رﻣﺎد ﺟﻧﺩي ﻣﻳﺳﻣﺭ +2,메스메르 병사의 뼛가루+2
+2207003,Messmer Soldier Ashes +3,メスメル兵の遺灰＋３,梅瑟莫士兵的骨灰＋３,Messmer-Soldatenasche +3,Cenizas de soldados de Messmer +3,Прах солдат Мессмера +3,رﻣﺎد ﺟﻧﺩي ﻣﻳﺳﻣﺭ +3,메스메르 병사의 뼛가루+3
+2207004,Messmer Soldier Ashes +4,メスメル兵の遺灰＋４,梅瑟莫士兵的骨灰＋４,Messmer-Soldatenasche +4,Cenizas de soldados de Messmer +4,Прах солдат Мессмера +4,رﻣﺎد ﺟﻧﺩي ﻣﻳﺳﻣﺭ +4,메스메르 병사의 뼛가루+4
+2207005,Messmer Soldier Ashes +5,メスメル兵の遺灰＋５,梅瑟莫士兵的骨灰＋５,Messmer-Soldatenasche +5,Cenizas de soldados de Messmer +5,Прах солдат Мессмера +5,رﻣﺎد ﺟﻧﺩي ﻣﻳﺳﻣﺭ +5,메스메르 병사의 뼛가루+5
+2207006,Messmer Soldier Ashes +6,メスメル兵の遺灰＋６,梅瑟莫士兵的骨灰＋６,Messmer-Soldatenasche +6,Cenizas de soldados de Messmer +6,Прах солдат Мессмера +6,رﻣﺎد ﺟﻧﺩي ﻣﻳﺳﻣﺭ +6,메스메르 병사의 뼛가루+6
+2207007,Messmer Soldier Ashes +7,メスメル兵の遺灰＋７,梅瑟莫士兵的骨灰＋７,Messmer-Soldatenasche +7,Cenizas de soldados de Messmer +7,Прах солдат Мессмера +7,رﻣﺎد ﺟﻧﺩي ﻣﻳﺳﻣﺭ +7,메스메르 병사의 뼛가루+7
+2207008,Messmer Soldier Ashes +8,メスメル兵の遺灰＋８,梅瑟莫士兵的骨灰＋８,Messmer-Soldatenasche +8,Cenizas de soldados de Messmer +8,Прах солдат Мессмера +8,رﻣﺎد ﺟﻧﺩي ﻣﻳﺳﻣﺭ +8,메스메르 병사의 뼛가루+8
+2207009,Messmer Soldier Ashes +9,メスメル兵の遺灰＋９,梅瑟莫士兵的骨灰＋９,Messmer-Soldatenasche +9,Cenizas de soldados de Messmer +9,Прах солдат Мессмера +9,رﻣﺎد ﺟﻧﺩي ﻣﻳﺳﻣﺭ +9,메스메르 병사의 뼛가루+9
+2207010,Messmer Soldier Ashes +10,メスメル兵の遺灰＋１０,梅瑟莫士兵的骨灰＋１０,Messmer-Soldatenasche +10,Cenizas de soldados de Messmer +10,Прах солдат Мессмера +10,رﻣﺎد ﺟﻧﺩي ﻣﻳﺳﻣﺭ +10,메스메르 병사의 뼛가루+10
+2208000,Black Knight Commander Andreas,,“黑骑士团长”安卓斯,Schwarzer Ritterkommandant Andreas,Andreas,dowódca Czarnych Rycerzy,أﻧﺩرﻳﺎس زﻋﻳﻡ اﻟﻔﺭﺳﺎن اﻟﺳﻭد,黒騎士長、アンドレアス
+2208001,Black Knight Commander Andreas +1,,“黑骑士团长”安卓斯＋１,Schwarzer Ritterkommandant Andreas +1,Andreas,dowódca Czarnych Rycerzy +1,أﻧﺩرﻳﺎس زﻋﻳﻡ اﻟﻔﺭﺳﺎن اﻟﺳﻭد +1,黒騎士長、アンドレアス＋１
+2208002,Black Knight Commander Andreas +2,,“黑骑士团长”安卓斯＋２,Schwarzer Ritterkommandant Andreas +2,Andreas,dowódca Czarnych Rycerzy +2,أﻧﺩرﻳﺎس زﻋﻳﻡ اﻟﻔﺭﺳﺎن اﻟﺳﻭد +2,黒騎士長、アンドレアス＋２
+2208003,Black Knight Commander Andreas +3,,“黑骑士团长”安卓斯＋３,Schwarzer Ritterkommandant Andreas +3,Andreas,dowódca Czarnych Rycerzy +3,أﻧﺩرﻳﺎس زﻋﻳﻡ اﻟﻔﺭﺳﺎن اﻟﺳﻭد +3,黒騎士長、アンドレアス＋３
+2208004,Black Knight Commander Andreas +4,,“黑骑士团长”安卓斯＋４,Schwarzer Ritterkommandant Andreas +4,Andreas,dowódca Czarnych Rycerzy +4,أﻧﺩرﻳﺎس زﻋﻳﻡ اﻟﻔﺭﺳﺎن اﻟﺳﻭد +4,黒騎士長、アンドレアス＋４
+2208005,Black Knight Commander Andreas +5,,“黑骑士团长”安卓斯＋５,Schwarzer Ritterkommandant Andreas +5,Andreas,dowódca Czarnych Rycerzy +5,أﻧﺩرﻳﺎس زﻋﻳﻡ اﻟﻔﺭﺳﺎن اﻟﺳﻭد +5,黒騎士長、アンドレアス＋５
+2208006,Black Knight Commander Andreas +6,,“黑骑士团长”安卓斯＋６,Schwarzer Ritterkommandant Andreas +6,Andreas,dowódca Czarnych Rycerzy +6,أﻧﺩرﻳﺎس زﻋﻳﻡ اﻟﻔﺭﺳﺎن اﻟﺳﻭد +6,黒騎士長、アンドレアス＋６
+2208007,Black Knight Commander Andreas +7,,“黑骑士团长”安卓斯＋７,Schwarzer Ritterkommandant Andreas +7,Andreas,dowódca Czarnych Rycerzy +7,أﻧﺩرﻳﺎس زﻋﻳﻡ اﻟﻔﺭﺳﺎن اﻟﺳﻭد +7,黒騎士長、アンドレアス＋７
+2208008,Black Knight Commander Andreas +8,,“黑骑士团长”安卓斯＋８,Schwarzer Ritterkommandant Andreas +8,Andreas,dowódca Czarnych Rycerzy +8,أﻧﺩرﻳﺎس زﻋﻳﻡ اﻟﻔﺭﺳﺎن اﻟﺳﻭد +8,黒騎士長、アンドレアス＋８
+2208009,Black Knight Commander Andreas +9,,“黑骑士团长”安卓斯＋９,Schwarzer Ritterkommandant Andreas +9,Andreas,dowódca Czarnych Rycerzy +9,أﻧﺩرﻳﺎس زﻋﻳﻡ اﻟﻔﺭﺳﺎن اﻟﺳﻭد +9,黒騎士長、アンドレアス＋９
+2208010,Black Knight Commander Andreas +10,,“黑骑士团长”安卓斯＋１０,Schwarzer Ritterkommandant Andreas +10,Andreas,dowódca Czarnych Rycerzy +10,أﻧﺩرﻳﺎس زﻋﻳﻡ اﻟﻔﺭﺳﺎن اﻟﺳﻭد +10,黒騎士長、アンドレアス＋１０
+2209000,Black Knight Captain Huw,,“黑骑士副团长”修,Schwarzer Ritterkapitän Huw,Huw,kapitan Czarnych Rycerzy,ﻫﻳﻭ ﻗﺎﺋﺩ اﻟﻔﺭﺳﺎن اﻟﺳﻭد,黒騎士の副長、ヒュー
+2209001,Black Knight Captain Huw +1,,“黑骑士副团长”修＋１,Schwarzer Ritterkapitän Huw +1,Huw,kapitan Czarnych Rycerzy +1,ﻫﻳﻭ ﻗﺎﺋﺩ اﻟﻔﺭﺳﺎن اﻟﺳﻭد +1,黒騎士の副長、ヒュー＋１
+2209002,Black Knight Captain Huw +2,,“黑骑士副团长”修＋２,Schwarzer Ritterkapitän Huw +2,Huw,kapitan Czarnych Rycerzy +2,ﻫﻳﻭ ﻗﺎﺋﺩ اﻟﻔﺭﺳﺎن اﻟﺳﻭد +2,黒騎士の副長、ヒュー＋２
+2209003,Black Knight Captain Huw +3,,“黑骑士副团长”修＋３,Schwarzer Ritterkapitän Huw +3,Huw,kapitan Czarnych Rycerzy +3,ﻫﻳﻭ ﻗﺎﺋﺩ اﻟﻔﺭﺳﺎن اﻟﺳﻭد +3,黒騎士の副長、ヒュー＋３
+2209004,Black Knight Captain Huw +4,,“黑骑士副团长”修＋４,Schwarzer Ritterkapitän Huw +4,Huw,kapitan Czarnych Rycerzy +4,ﻫﻳﻭ ﻗﺎﺋﺩ اﻟﻔﺭﺳﺎن اﻟﺳﻭد +4,黒騎士の副長、ヒュー＋４
+2209005,Black Knight Captain Huw +5,,“黑骑士副团长”修＋５,Schwarzer Ritterkapitän Huw +5,Huw,kapitan Czarnych Rycerzy +5,ﻫﻳﻭ ﻗﺎﺋﺩ اﻟﻔﺭﺳﺎن اﻟﺳﻭد +5,黒騎士の副長、ヒュー＋５
+2209006,Black Knight Captain Huw +6,,“黑骑士副团长”修＋６,Schwarzer Ritterkapitän Huw +6,Huw,kapitan Czarnych Rycerzy +6,ﻫﻳﻭ ﻗﺎﺋﺩ اﻟﻔﺭﺳﺎن اﻟﺳﻭد +6,黒騎士の副長、ヒュー＋６
+2209007,Black Knight Captain Huw +7,,“黑骑士副团长”修＋７,Schwarzer Ritterkapitän Huw +7,Huw,kapitan Czarnych Rycerzy +7,ﻫﻳﻭ ﻗﺎﺋﺩ اﻟﻔﺭﺳﺎن اﻟﺳﻭد +7,黒騎士の副長、ヒュー＋７
+2209008,Black Knight Captain Huw +8,,“黑骑士副团长”修＋８,Schwarzer Ritterkapitän Huw +8,Huw,kapitan Czarnych Rycerzy +8,ﻫﻳﻭ ﻗﺎﺋﺩ اﻟﻔﺭﺳﺎن اﻟﺳﻭد +8,黒騎士の副長、ヒュー＋８
+2209009,Black Knight Captain Huw +9,,“黑骑士副团长”修＋９,Schwarzer Ritterkapitän Huw +9,Huw,kapitan Czarnych Rycerzy +9,ﻫﻳﻭ ﻗﺎﺋﺩ اﻟﻔﺭﺳﺎن اﻟﺳﻭد +9,黒騎士の副長、ヒュー＋９
+2209010,Black Knight Captain Huw +10,,“黑骑士副团长”修＋１０,Schwarzer Ritterkapitän Huw +10,Huw,kapitan Czarnych Rycerzy +10,ﻫﻳﻭ ﻗﺎﺋﺩ اﻟﻔﺭﺳﺎن اﻟﺳﻭد +10,黒騎士の副長、ヒュー＋１０
+2210000,Bigmouth Imp Ashes,大口インプの遺灰,大嘴小恶魔的骨灰,Großmaulwichtasche,Cenizas del diablillo bocón,Прах большеротого беса,رﻣﺎد اﻟﻘﺯم ﻛﺑﻳﺭ اﻟﻔﻡ,큰 입 임프의 뼛가루
+2210001,Bigmouth Imp Ashes +1,大口インプの遺灰＋１,大嘴小恶魔的骨灰＋１,Großmaulwichtasche +1,Cenizas del diablillo bocón +1,Прах большеротого беса +1,رﻣﺎد اﻟﻘﺯم ﻛﺑﻳﺭ اﻟﻔﻡ +1,큰 입 임프의 뼛가루+1
+2210002,Bigmouth Imp Ashes +2,大口インプの遺灰＋２,大嘴小恶魔的骨灰＋２,Großmaulwichtasche +2,Cenizas del diablillo bocón +2,Прах большеротого беса +2,رﻣﺎد اﻟﻘﺯم ﻛﺑﻳﺭ اﻟﻔﻡ +2,큰 입 임프의 뼛가루+2
+2210003,Bigmouth Imp Ashes +3,大口インプの遺灰＋３,大嘴小恶魔的骨灰＋３,Großmaulwichtasche +3,Cenizas del diablillo bocón +3,Прах большеротого беса +3,رﻣﺎد اﻟﻘﺯم ﻛﺑﻳﺭ اﻟﻔﻡ +3,큰 입 임프의 뼛가루+3
+2210004,Bigmouth Imp Ashes +4,大口インプの遺灰＋４,大嘴小恶魔的骨灰＋４,Großmaulwichtasche +4,Cenizas del diablillo bocón +4,Прах большеротого беса +4,رﻣﺎد اﻟﻘﺯم ﻛﺑﻳﺭ اﻟﻔﻡ +4,큰 입 임프의 뼛가루+4
+2210005,Bigmouth Imp Ashes +5,大口インプの遺灰＋５,大嘴小恶魔的骨灰＋５,Großmaulwichtasche +5,Cenizas del diablillo bocón +5,Прах большеротого беса +5,رﻣﺎد اﻟﻘﺯم ﻛﺑﻳﺭ اﻟﻔﻡ +5,큰 입 임프의 뼛가루+5
+2210006,Bigmouth Imp Ashes +6,大口インプの遺灰＋６,大嘴小恶魔的骨灰＋６,Großmaulwichtasche +6,Cenizas del diablillo bocón +6,Прах большеротого беса +6,رﻣﺎد اﻟﻘﺯم ﻛﺑﻳﺭ اﻟﻔﻡ +6,큰 입 임프의 뼛가루+6
+2210007,Bigmouth Imp Ashes +7,大口インプの遺灰＋７,大嘴小恶魔的骨灰＋７,Großmaulwichtasche +7,Cenizas del diablillo bocón +7,Прах большеротого беса +7,رﻣﺎد اﻟﻘﺯم ﻛﺑﻳﺭ اﻟﻔﻡ +7,큰 입 임프의 뼛가루+7
+2210008,Bigmouth Imp Ashes +8,大口インプの遺灰＋８,大嘴小恶魔的骨灰＋８,Großmaulwichtasche +8,Cenizas del diablillo bocón +8,Прах большеротого беса +8,رﻣﺎد اﻟﻘﺯم ﻛﺑﻳﺭ اﻟﻔﻡ +8,큰 입 임프의 뼛가루+8
+2210009,Bigmouth Imp Ashes +9,大口インプの遺灰＋９,大嘴小恶魔的骨灰＋９,Großmaulwichtasche +9,Cenizas del diablillo bocón +9,Прах большеротого беса +9,رﻣﺎد اﻟﻘﺯم ﻛﺑﻳﺭ اﻟﻔﻡ +9,큰 입 임프의 뼛가루+9
+2210010,Bigmouth Imp Ashes +10,大口インプの遺灰＋１０,大嘴小恶魔的骨灰＋１０,Großmaulwichtasche +10,Cenizas del diablillo bocón +10,Прах большеротого беса +10,رﻣﺎد اﻟﻘﺯم ﻛﺑﻳﺭ اﻟﻔﻡ +10,큰 입 임프의 뼛가루+10
+2211000,Man-Fly Ashes,人蠅の遺灰,人形苍蝇的骨灰,Menschenfliegenasche,Cenizas de hombres moscas,Прах мухолюдов,رﻣﺎد اﻟﺫﺑﺎب اﻟﺑﺷﺭي,인간파리의 뼛가루
+2211001,Man-Fly Ashes +1,人蠅の遺灰＋１,人形苍蝇的骨灰＋１,Menschenfliegenasche +1,Cenizas de hombres moscas +1,Прах мухолюдов +1,رﻣﺎد اﻟﺫﺑﺎب اﻟﺑﺷﺭي +1,인간파리의 뼛가루+1
+2211002,Man-Fly Ashes +2,人蠅の遺灰＋２,人形苍蝇的骨灰＋２,Menschenfliegenasche +2,Cenizas de hombres moscas +2,Прах мухолюдов +2,رﻣﺎد اﻟﺫﺑﺎب اﻟﺑﺷﺭي +2,인간파리의 뼛가루+2
+2211003,Man-Fly Ashes +3,人蠅の遺灰＋３,人形苍蝇的骨灰＋３,Menschenfliegenasche +3,Cenizas de hombres moscas +3,Прах мухолюдов +3,رﻣﺎد اﻟﺫﺑﺎب اﻟﺑﺷﺭي +3,인간파리의 뼛가루+3
+2211004,Man-Fly Ashes +4,人蠅の遺灰＋４,人形苍蝇的骨灰＋４,Menschenfliegenasche +4,Cenizas de hombres moscas +4,Прах мухолюдов +4,رﻣﺎد اﻟﺫﺑﺎب اﻟﺑﺷﺭي +4,인간파리의 뼛가루+4
+2211005,Man-Fly Ashes +5,人蠅の遺灰＋５,人形苍蝇的骨灰＋５,Menschenfliegenasche +5,Cenizas de hombres moscas +5,Прах мухолюдов +5,رﻣﺎد اﻟﺫﺑﺎب اﻟﺑﺷﺭي +5,인간파리의 뼛가루+5
+2211006,Man-Fly Ashes +6,人蠅の遺灰＋６,人形苍蝇的骨灰＋６,Menschenfliegenasche +6,Cenizas de hombres moscas +6,Прах мухолюдов +6,رﻣﺎد اﻟﺫﺑﺎب اﻟﺑﺷﺭي +6,인간파리의 뼛가루+6
+2211007,Man-Fly Ashes +7,人蠅の遺灰＋７,人形苍蝇的骨灰＋７,Menschenfliegenasche +7,Cenizas de hombres moscas +7,Прах мухолюдов +7,رﻣﺎد اﻟﺫﺑﺎب اﻟﺑﺷﺭي +7,인간파리의 뼛가루+7
+2211008,Man-Fly Ashes +8,人蠅の遺灰＋８,人形苍蝇的骨灰＋８,Menschenfliegenasche +8,Cenizas de hombres moscas +8,Прах мухолюдов +8,رﻣﺎد اﻟﺫﺑﺎب اﻟﺑﺷﺭي +8,인간파리의 뼛가루+8
+2211009,Man-Fly Ashes +9,人蠅の遺灰＋９,人形苍蝇的骨灰＋９,Menschenfliegenasche +9,Cenizas de hombres moscas +9,Прах мухолюдов +9,رﻣﺎد اﻟﺫﺑﺎب اﻟﺑﺷﺭي +9,인간파리의 뼛가루+9
+2211010,Man-Fly Ashes +10,人蠅の遺灰＋１０,人形苍蝇的骨灰＋１０,Menschenfliegenasche +10,Cenizas de hombres moscas +10,Прах мухолюдов +10,رﻣﺎد اﻟﺫﺑﺎب اﻟﺑﺷﺭي +10,인간파리의 뼛가루+10
+2212000,Taylew the Golem Smith,鍛冶ゴーレム、テウル,“锻造魔像”泰乌尔,Taylew der Golemschmied,o Ferreiro Golem,Taylew,ﺗﺎﻳﻠﻭ اﻟﻐﻭﻟﻡ اﻟﺣﺩاد,단조골렘 테울
+2212001,Taylew the Golem Smith +1,鍛冶ゴーレム、テウル＋１,“锻造魔像”泰乌尔＋１,Taylew der Golemschmied +1,o Ferreiro Golem +1,Taylew,ﺗﺎﻳﻠﻭ اﻟﻐﻭﻟﻡ اﻟﺣﺩاد +1,단조골렘 테울+1
+2212002,Taylew the Golem Smith +2,鍛冶ゴーレム、テウル＋２,“锻造魔像”泰乌尔＋２,Taylew der Golemschmied +2,o Ferreiro Golem +2,Taylew,ﺗﺎﻳﻠﻭ اﻟﻐﻭﻟﻡ اﻟﺣﺩاد +2,단조골렘 테울+2
+2212003,Taylew the Golem Smith +3,鍛冶ゴーレム、テウル＋３,“锻造魔像”泰乌尔＋３,Taylew der Golemschmied +3,o Ferreiro Golem +3,Taylew,ﺗﺎﻳﻠﻭ اﻟﻐﻭﻟﻡ اﻟﺣﺩاد +3,단조골렘 테울+3
+2212004,Taylew the Golem Smith +4,鍛冶ゴーレム、テウル＋４,“锻造魔像”泰乌尔＋４,Taylew der Golemschmied +4,o Ferreiro Golem +4,Taylew,ﺗﺎﻳﻠﻭ اﻟﻐﻭﻟﻡ اﻟﺣﺩاد +4,단조골렘 테울+4
+2212005,Taylew the Golem Smith +5,鍛冶ゴーレム、テウル＋５,“锻造魔像”泰乌尔＋５,Taylew der Golemschmied +5,o Ferreiro Golem +5,Taylew,ﺗﺎﻳﻠﻭ اﻟﻐﻭﻟﻡ اﻟﺣﺩاد +5,단조골렘 테울+5
+2212006,Taylew the Golem Smith +6,鍛冶ゴーレム、テウル＋６,“锻造魔像”泰乌尔＋６,Taylew der Golemschmied +6,o Ferreiro Golem +6,Taylew,ﺗﺎﻳﻠﻭ اﻟﻐﻭﻟﻡ اﻟﺣﺩاد +6,단조골렘 테울+6
+2212007,Taylew the Golem Smith +7,鍛冶ゴーレム、テウル＋７,“锻造魔像”泰乌尔＋７,Taylew der Golemschmied +7,o Ferreiro Golem +7,Taylew,ﺗﺎﻳﻠﻭ اﻟﻐﻭﻟﻡ اﻟﺣﺩاد +7,단조골렘 테울+7
+2212008,Taylew the Golem Smith +8,鍛冶ゴーレム、テウル＋８,“锻造魔像”泰乌尔＋８,Taylew der Golemschmied +8,o Ferreiro Golem +8,Taylew,ﺗﺎﻳﻠﻭ اﻟﻐﻭﻟﻡ اﻟﺣﺩاد +8,단조골렘 테울+8
+2212009,Taylew the Golem Smith +9,鍛冶ゴーレム、テウル＋９,“锻造魔像”泰乌尔＋９,Taylew der Golemschmied +9,o Ferreiro Golem +9,Taylew,ﺗﺎﻳﻠﻭ اﻟﻐﻭﻟﻡ اﻟﺣﺩاد +9,단조골렘 테울+9
+2212010,Taylew the Golem Smith +10,鍛冶ゴーレム、テウル＋１０,“锻造魔像”泰乌尔＋１０,Taylew der Golemschmied +10,o Ferreiro Golem +10,Taylew,ﺗﺎﻳﻠﻭ اﻟﻐﻭﻟﻡ اﻟﺣﺩاد +10,단조골렘 테울+10
+2213000,Divine Bird Warrior Ornis,神鳥の戦士、オルニス,“神鸟战士”奥尼斯,Göttlicher Vogelkrieger Ornis,Воин священной птицы Орнис,Guerreiro Pássaro Divino Ornis,أورﻧﻳﺱ ﻣﺣﺎرب اﻟﻁﺎﺋﺭ اﻟﺳﻣﺎوي,신조 전사 오르니스
+2213001,Divine Bird Warrior Ornis +1,神鳥の戦士、オルニス＋１,“神鸟战士”奥尼斯＋１,Göttlicher Vogelkrieger Ornis +1,Воин священной птицы Орнис +1,Guerreiro Pássaro Divino Ornis +1,أورﻧﻳﺱ ﻣﺣﺎرب اﻟﻁﺎﺋﺭ اﻟﺳﻣﺎوي +1,신조 전사 오르니스+1
+2213002,Divine Bird Warrior Ornis +2,神鳥の戦士、オルニス＋２,“神鸟战士”奥尼斯＋２,Göttlicher Vogelkrieger Ornis +2,Воин священной птицы Орнис +2,Guerreiro Pássaro Divino Ornis +2,أورﻧﻳﺱ ﻣﺣﺎرب اﻟﻁﺎﺋﺭ اﻟﺳﻣﺎوي +2,신조 전사 오르니스+2
+2213003,Divine Bird Warrior Ornis +3,神鳥の戦士、オルニス＋３,“神鸟战士”奥尼斯＋３,Göttlicher Vogelkrieger Ornis +3,Воин священной птицы Орнис +3,Guerreiro Pássaro Divino Ornis +3,أورﻧﻳﺱ ﻣﺣﺎرب اﻟﻁﺎﺋﺭ اﻟﺳﻣﺎوي +3,신조 전사 오르니스+3
+2213004,Divine Bird Warrior Ornis +4,神鳥の戦士、オルニス＋４,“神鸟战士”奥尼斯＋４,Göttlicher Vogelkrieger Ornis +4,Воин священной птицы Орнис +4,Guerreiro Pássaro Divino Ornis +4,أورﻧﻳﺱ ﻣﺣﺎرب اﻟﻁﺎﺋﺭ اﻟﺳﻣﺎوي +4,신조 전사 오르니스+4
+2213005,Divine Bird Warrior Ornis +5,神鳥の戦士、オルニス＋５,“神鸟战士”奥尼斯＋５,Göttlicher Vogelkrieger Ornis +5,Воин священной птицы Орнис +5,Guerreiro Pássaro Divino Ornis +5,أورﻧﻳﺱ ﻣﺣﺎرب اﻟﻁﺎﺋﺭ اﻟﺳﻣﺎوي +5,신조 전사 오르니스+5
+2213006,Divine Bird Warrior Ornis +6,神鳥の戦士、オルニス＋６,“神鸟战士”奥尼斯＋６,Göttlicher Vogelkrieger Ornis +6,Воин священной птицы Орнис +6,Guerreiro Pássaro Divino Ornis +6,أورﻧﻳﺱ ﻣﺣﺎرب اﻟﻁﺎﺋﺭ اﻟﺳﻣﺎوي +6,신조 전사 오르니스+6
+2213007,Divine Bird Warrior Ornis +7,神鳥の戦士、オルニス＋７,“神鸟战士”奥尼斯＋７,Göttlicher Vogelkrieger Ornis +7,Воин священной птицы Орнис +7,Guerreiro Pássaro Divino Ornis +7,أورﻧﻳﺱ ﻣﺣﺎرب اﻟﻁﺎﺋﺭ اﻟﺳﻣﺎوي +7,신조 전사 오르니스+7
+2213008,Divine Bird Warrior Ornis +8,神鳥の戦士、オルニス＋８,“神鸟战士”奥尼斯＋８,Göttlicher Vogelkrieger Ornis +8,Воин священной птицы Орнис +8,Guerreiro Pássaro Divino Ornis +8,أورﻧﻳﺱ ﻣﺣﺎرب اﻟﻁﺎﺋﺭ اﻟﺳﻣﺎوي +8,신조 전사 오르니스+8
+2213009,Divine Bird Warrior Ornis +9,神鳥の戦士、オルニス＋９,“神鸟战士”奥尼斯＋９,Göttlicher Vogelkrieger Ornis +9,Воин священной птицы Орнис +9,Guerreiro Pássaro Divino Ornis +9,أورﻧﻳﺱ ﻣﺣﺎرب اﻟﻁﺎﺋﺭ اﻟﺳﻣﺎوي +9,신조 전사 오르니스+9
+2213010,Divine Bird Warrior Ornis +10,神鳥の戦士、オルニス＋１０,“神鸟战士”奥尼斯＋１０,Göttlicher Vogelkrieger Ornis +10,Воин священной птицы Орнис +10,Guerreiro Pássaro Divino Ornis +10,أورﻧﻳﺱ ﻣﺣﺎرب اﻟﻁﺎﺋﺭ اﻟﺳﻣﺎوي +10,신조 전사 오르니스+10
+2214000,Horned Warrior Ashes,角の戦士の遺灰,角战士的骨灰,Asche des Hornkriegers,Cenizas de guerrero con cuernos,Прах рогатого воина,رﻣﺎد اﻟﻣﺣﺎرب ذي اﻟﻘﺭن,뿔 전사의 뼛가루
+2214001,Horned Warrior Ashes +1,角の戦士の遺灰＋１,角战士的骨灰＋１,Asche des Hornkriegers +1,Cenizas de guerrero con cuernos +1,Прах рогатого воина +1,رﻣﺎد اﻟﻣﺣﺎرب ذي اﻟﻘﺭن +1,뿔 전사의 뼛가루+1
+2214002,Horned Warrior Ashes +2,角の戦士の遺灰＋２,角战士的骨灰＋２,Asche des Hornkriegers +2,Cenizas de guerrero con cuernos +2,Прах рогатого воина +2,رﻣﺎد اﻟﻣﺣﺎرب ذي اﻟﻘﺭن +2,뿔 전사의 뼛가루+2
+2214003,Horned Warrior Ashes +3,角の戦士の遺灰＋３,角战士的骨灰＋３,Asche des Hornkriegers +3,Cenizas de guerrero con cuernos +3,Прах рогатого воина +3,رﻣﺎد اﻟﻣﺣﺎرب ذي اﻟﻘﺭن +3,뿔 전사의 뼛가루+3
+2214004,Horned Warrior Ashes +4,角の戦士の遺灰＋４,角战士的骨灰＋４,Asche des Hornkriegers +4,Cenizas de guerrero con cuernos +4,Прах рогатого воина +4,رﻣﺎد اﻟﻣﺣﺎرب ذي اﻟﻘﺭن +4,뿔 전사의 뼛가루+4
+2214005,Horned Warrior Ashes +5,角の戦士の遺灰＋５,角战士的骨灰＋５,Asche des Hornkriegers +5,Cenizas de guerrero con cuernos +5,Прах рогатого воина +5,رﻣﺎد اﻟﻣﺣﺎرب ذي اﻟﻘﺭن +5,뿔 전사의 뼛가루+5
+2214006,Horned Warrior Ashes +6,角の戦士の遺灰＋６,角战士的骨灰＋６,Asche des Hornkriegers +6,Cenizas de guerrero con cuernos +6,Прах рогатого воина +6,رﻣﺎد اﻟﻣﺣﺎرب ذي اﻟﻘﺭن +6,뿔 전사의 뼛가루+6
+2214007,Horned Warrior Ashes +7,角の戦士の遺灰＋７,角战士的骨灰＋７,Asche des Hornkriegers +7,Cenizas de guerrero con cuernos +7,Прах рогатого воина +7,رﻣﺎد اﻟﻣﺣﺎرب ذي اﻟﻘﺭن +7,뿔 전사의 뼛가루+7
+2214008,Horned Warrior Ashes +8,角の戦士の遺灰＋８,角战士的骨灰＋８,Asche des Hornkriegers +8,Cenizas de guerrero con cuernos +8,Прах рогатого воина +8,رﻣﺎد اﻟﻣﺣﺎرب ذي اﻟﻘﺭن +8,뿔 전사의 뼛가루+8
+2214009,Horned Warrior Ashes +9,角の戦士の遺灰＋９,角战士的骨灰＋９,Asche des Hornkriegers +9,Cenizas de guerrero con cuernos +9,Прах рогатого воина +9,رﻣﺎد اﻟﻣﺣﺎرب ذي اﻟﻘﺭن +9,뿔 전사의 뼛가루+9
+2214010,Horned Warrior Ashes +10,角の戦士の遺灰＋１０,角战士的骨灰＋１０,Asche des Hornkriegers +10,Cenizas de guerrero con cuernos +10,Прах рогатого воина +10,رﻣﺎد اﻟﻣﺣﺎرب ذي اﻟﻘﺭن +10,뿔 전사의 뼛가루+10
+2215000,Ancient Dragon Florissax,古竜フローサクス,,Uralter Drache Florissax,Древняя драконица Флориссакс,Dragão Ancião Florissax,ﻓﻠﻭرﻳﺳﺎﻛﺱ اﻟﺗﻧﻳﻥ اﻟﻌﺭﻳﻖ,고룡 플로삭스
+2215001,Ancient Dragon Florissax +1,古竜フローサクス＋１,,Uralter Drache Florissax +1,Древняя драконица Флориссакс +1,Dragão Ancião Florissax +1,ﻓﻠﻭرﻳﺳﺎﻛﺱ اﻟﺗﻧﻳﻥ اﻟﻌﺭﻳﻖ +1,고룡 플로삭스+1
+2215002,Ancient Dragon Florissax +2,古竜フローサクス＋２,,Uralter Drache Florissax +2,Древняя драконица Флориссакс +2,Dragão Ancião Florissax +2,ﻓﻠﻭرﻳﺳﺎﻛﺱ اﻟﺗﻧﻳﻥ اﻟﻌﺭﻳﻖ +2,고룡 플로삭스+2
+2215003,Ancient Dragon Florissax +3,古竜フローサクス＋３,,Uralter Drache Florissax +3,Древняя драконица Флориссакс +3,Dragão Ancião Florissax +3,ﻓﻠﻭرﻳﺳﺎﻛﺱ اﻟﺗﻧﻳﻥ اﻟﻌﺭﻳﻖ +3,고룡 플로삭스+3
+2215004,Ancient Dragon Florissax +4,古竜フローサクス＋４,,Uralter Drache Florissax +4,Древняя драконица Флориссакс +4,Dragão Ancião Florissax +4,ﻓﻠﻭرﻳﺳﺎﻛﺱ اﻟﺗﻧﻳﻥ اﻟﻌﺭﻳﻖ +4,고룡 플로삭스+4
+2215005,Ancient Dragon Florissax +5,古竜フローサクス＋５,,Uralter Drache Florissax +5,Древняя драконица Флориссакс +5,Dragão Ancião Florissax +5,ﻓﻠﻭرﻳﺳﺎﻛﺱ اﻟﺗﻧﻳﻥ اﻟﻌﺭﻳﻖ +5,고룡 플로삭스+5
+2215006,Ancient Dragon Florissax +6,古竜フローサクス＋６,,Uralter Drache Florissax +6,Древняя драконица Флориссакс +6,Dragão Ancião Florissax +6,ﻓﻠﻭرﻳﺳﺎﻛﺱ اﻟﺗﻧﻳﻥ اﻟﻌﺭﻳﻖ +6,고룡 플로삭스+6
+2215007,Ancient Dragon Florissax +7,古竜フローサクス＋７,,Uralter Drache Florissax +7,Древняя драконица Флориссакс +7,Dragão Ancião Florissax +7,ﻓﻠﻭرﻳﺳﺎﻛﺱ اﻟﺗﻧﻳﻥ اﻟﻌﺭﻳﻖ +7,고룡 플로삭스+7
+2215008,Ancient Dragon Florissax +8,古竜フローサクス＋８,,Uralter Drache Florissax +8,Древняя драконица Флориссакс +8,Dragão Ancião Florissax +8,ﻓﻠﻭرﻳﺳﺎﻛﺱ اﻟﺗﻧﻳﻥ اﻟﻌﺭﻳﻖ +8,고룡 플로삭스+8
+2215009,Ancient Dragon Florissax +9,古竜フローサクス＋９,,Uralter Drache Florissax +9,Древняя драконица Флориссакс +9,Dragão Ancião Florissax +9,ﻓﻠﻭرﻳﺳﺎﻛﺱ اﻟﺗﻧﻳﻥ اﻟﻌﺭﻳﻖ +9,고룡 플로삭스+9
+2215010,Ancient Dragon Florissax +10,古竜フローサクス＋１０,,Uralter Drache Florissax +10,Древняя драконица Флориссакс +10,Dragão Ancião Florissax +10,ﻓﻠﻭرﻳﺳﺎﻛﺱ اﻟﺗﻧﻳﻥ اﻟﻌﺭﻳﻖ +10,고룡 플로삭스+10
+2217000,Fingercreeper Ashes,ユビムシの遺灰,指虫的骨灰,Fingerkriecherasche,Cenizas de trepadedos,Прах ползучего Пальца,رﻣﺎد اﻹﺻﺑﻊ اﻟﺯاﺣﻔﺔ,손가락벌레의 뼛가루
+2217001,Fingercreeper Ashes +1,ユビムシの遺灰＋１,指虫的骨灰＋１,Fingerkriecherasche +1,Cenizas de trepadedos +1,Прах ползучего Пальца +1,رﻣﺎد اﻹﺻﺑﻊ اﻟﺯاﺣﻔﺔ +1,손가락벌레의 뼛가루+1
+2217002,Fingercreeper Ashes +2,ユビムシの遺灰＋２,指虫的骨灰＋２,Fingerkriecherasche +2,Cenizas de trepadedos +2,Прах ползучего Пальца +2,رﻣﺎد اﻹﺻﺑﻊ اﻟﺯاﺣﻔﺔ +2,손가락벌레의 뼛가루+2
+2217003,Fingercreeper Ashes +3,ユビムシの遺灰＋３,指虫的骨灰＋３,Fingerkriecherasche +3,Cenizas de trepadedos +3,Прах ползучего Пальца +3,رﻣﺎد اﻹﺻﺑﻊ اﻟﺯاﺣﻔﺔ +3,손가락벌레의 뼛가루+3
+2217004,Fingercreeper Ashes +4,ユビムシの遺灰＋４,指虫的骨灰＋４,Fingerkriecherasche +4,Cenizas de trepadedos +4,Прах ползучего Пальца +4,رﻣﺎد اﻹﺻﺑﻊ اﻟﺯاﺣﻔﺔ +4,손가락벌레의 뼛가루+4
+2217005,Fingercreeper Ashes +5,ユビムシの遺灰＋５,指虫的骨灰＋５,Fingerkriecherasche +5,Cenizas de trepadedos +5,Прах ползучего Пальца +5,رﻣﺎد اﻹﺻﺑﻊ اﻟﺯاﺣﻔﺔ +5,손가락벌레의 뼛가루+5
+2217006,Fingercreeper Ashes +6,ユビムシの遺灰＋６,指虫的骨灰＋６,Fingerkriecherasche +6,Cenizas de trepadedos +6,Прах ползучего Пальца +6,رﻣﺎد اﻹﺻﺑﻊ اﻟﺯاﺣﻔﺔ +6,손가락벌레의 뼛가루+6
+2217007,Fingercreeper Ashes +7,ユビムシの遺灰＋７,指虫的骨灰＋７,Fingerkriecherasche +7,Cenizas de trepadedos +7,Прах ползучего Пальца +7,رﻣﺎد اﻹﺻﺑﻊ اﻟﺯاﺣﻔﺔ +7,손가락벌레의 뼛가루+7
+2217008,Fingercreeper Ashes +8,ユビムシの遺灰＋８,指虫的骨灰＋８,Fingerkriecherasche +8,Cenizas de trepadedos +8,Прах ползучего Пальца +8,رﻣﺎد اﻹﺻﺑﻊ اﻟﺯاﺣﻔﺔ +8,손가락벌레의 뼛가루+8
+2217009,Fingercreeper Ashes +9,ユビムシの遺灰＋９,指虫的骨灰＋９,Fingerkriecherasche +9,Cenizas de trepadedos +9,Прах ползучего Пальца +9,رﻣﺎد اﻹﺻﺑﻊ اﻟﺯاﺣﻔﺔ +9,손가락벌레의 뼛가루+9
+2217010,Fingercreeper Ashes +10,ユビムシの遺灰＋１０,指虫的骨灰＋１０,Fingerkriecherasche +10,Cenizas de trepadedos +10,Прах ползучего Пальца +10,رﻣﺎد اﻹﺻﺑﻊ اﻟﺯاﺣﻔﺔ +10,손가락벌레의 뼛가루+10
+2218000,Fire Knight Queelign,火の騎士、クウィライン,“火焰骑士”昆兰,Feuerritter Queelign,Огненный рыцарь Квилайн,Cavaleiro de Fogo Queelign,ﻛﻭﻳﻠﻳﻥ ﻓﺎرس اﻟﻧﺎر,불의 기사 퀼라인
+2218001,Fire Knight Queelign +1,火の騎士、クウィライン＋１,“火焰骑士”昆兰＋１,Feuerritter Queelign +1,Огненный рыцарь Квилайн +1,Cavaleiro de Fogo Queelign +1,ﻛﻭﻳﻠﻳﻥ ﻓﺎرس اﻟﻧﺎر +1,불의 기사 퀼라인+1
+2218002,Fire Knight Queelign +2,火の騎士、クウィライン＋２,“火焰骑士”昆兰＋２,Feuerritter Queelign +2,Огненный рыцарь Квилайн +2,Cavaleiro de Fogo Queelign +2,ﻛﻭﻳﻠﻳﻥ ﻓﺎرس اﻟﻧﺎر +2,불의 기사 퀼라인+2
+2218003,Fire Knight Queelign +3,火の騎士、クウィライン＋３,“火焰骑士”昆兰＋３,Feuerritter Queelign +3,Огненный рыцарь Квилайн +3,Cavaleiro de Fogo Queelign +3,ﻛﻭﻳﻠﻳﻥ ﻓﺎرس اﻟﻧﺎر +3,불의 기사 퀼라인+3
+2218004,Fire Knight Queelign +4,火の騎士、クウィライン＋４,“火焰骑士”昆兰＋４,Feuerritter Queelign +4,Огненный рыцарь Квилайн +4,Cavaleiro de Fogo Queelign +4,ﻛﻭﻳﻠﻳﻥ ﻓﺎرس اﻟﻧﺎر +4,불의 기사 퀼라인+4
+2218005,Fire Knight Queelign +5,火の騎士、クウィライン＋５,“火焰骑士”昆兰＋５,Feuerritter Queelign +5,Огненный рыцарь Квилайн +5,Cavaleiro de Fogo Queelign +5,ﻛﻭﻳﻠﻳﻥ ﻓﺎرس اﻟﻧﺎر +5,불의 기사 퀼라인+5
+2218006,Fire Knight Queelign +6,火の騎士、クウィライン＋６,“火焰骑士”昆兰＋６,Feuerritter Queelign +6,Огненный рыцарь Квилайн +6,Cavaleiro de Fogo Queelign +6,ﻛﻭﻳﻠﻳﻥ ﻓﺎرس اﻟﻧﺎر +6,불의 기사 퀼라인+6
+2218007,Fire Knight Queelign +7,火の騎士、クウィライン＋７,“火焰骑士”昆兰＋７,Feuerritter Queelign +7,Огненный рыцарь Квилайн +7,Cavaleiro de Fogo Queelign +7,ﻛﻭﻳﻠﻳﻥ ﻓﺎرس اﻟﻧﺎر +7,불의 기사 퀼라인+7
+2218008,Fire Knight Queelign +8,火の騎士、クウィライン＋８,“火焰骑士”昆兰＋８,Feuerritter Queelign +8,Огненный рыцарь Квилайн +8,Cavaleiro de Fogo Queelign +8,ﻛﻭﻳﻠﻳﻥ ﻓﺎرس اﻟﻧﺎر +8,불의 기사 퀼라인+8
+2218009,Fire Knight Queelign +9,火の騎士、クウィライン＋９,“火焰骑士”昆兰＋９,Feuerritter Queelign +9,Огненный рыцарь Квилайн +9,Cavaleiro de Fogo Queelign +9,ﻛﻭﻳﻠﻳﻥ ﻓﺎرس اﻟﻧﺎر +9,불의 기사 퀼라인+9
+2218010,Fire Knight Queelign +10,火の騎士、クウィライン＋１０,“火焰骑士”昆兰＋１０,Feuerritter Queelign +10,Огненный рыцарь Квилайн +10,Cavaleiro de Fogo Queelign +10,ﻛﻭﻳﻠﻳﻥ ﻓﺎرس اﻟﻧﺎر +10,불의 기사 퀼라인+10
+2219000,Schwerthand der Nacht,,“黑夜剑士”约兰,Jolán,Espadachim da Noite Jolán,szermierka nocy,ﺟﻭﻻن ﻣﺑﺎرزة اﻟﻠﻳﻝ,夜の剣士、ヨラーン
+2219001,Schwerthand der Nacht +1,,“黑夜剑士”约兰＋１,Jolán,Espadachim da Noite Jolán +1,szermierka nocy +1,ﺟﻭﻻن ﻣﺑﺎرزة اﻟﻠﻳﻝ +1,夜の剣士、ヨラーン＋１
+2219002,Schwerthand der Nacht +2,,“黑夜剑士”约兰＋２,Jolán,Espadachim da Noite Jolán +2,szermierka nocy +2,ﺟﻭﻻن ﻣﺑﺎرزة اﻟﻠﻳﻝ +2,夜の剣士、ヨラーン＋２
+2219003,Schwerthand der Nacht +3,,“黑夜剑士”约兰＋３,Jolán,Espadachim da Noite Jolán +3,szermierka nocy +3,ﺟﻭﻻن ﻣﺑﺎرزة اﻟﻠﻳﻝ +3,夜の剣士、ヨラーン＋３
+2219004,Schwerthand der Nacht +4,,“黑夜剑士”约兰＋４,Jolán,Espadachim da Noite Jolán +4,szermierka nocy +4,ﺟﻭﻻن ﻣﺑﺎرزة اﻟﻠﻳﻝ +4,夜の剣士、ヨラーン＋４
+2219005,Schwerthand der Nacht +5,,“黑夜剑士”约兰＋５,Jolán,Espadachim da Noite Jolán +5,szermierka nocy +5,ﺟﻭﻻن ﻣﺑﺎرزة اﻟﻠﻳﻝ +5,夜の剣士、ヨラーン＋５
+2219006,Schwerthand der Nacht +6,,“黑夜剑士”约兰＋６,Jolán,Espadachim da Noite Jolán +6,szermierka nocy +6,ﺟﻭﻻن ﻣﺑﺎرزة اﻟﻠﻳﻝ +6,夜の剣士、ヨラーン＋６
+2219007,Schwerthand der Nacht +7,,“黑夜剑士”约兰＋７,Jolán,Espadachim da Noite Jolán +7,szermierka nocy +7,ﺟﻭﻻن ﻣﺑﺎرزة اﻟﻠﻳﻝ +7,夜の剣士、ヨラーン＋７
+2219008,Schwerthand der Nacht +8,,“黑夜剑士”约兰＋８,Jolán,Espadachim da Noite Jolán +8,szermierka nocy +8,ﺟﻭﻻن ﻣﺑﺎرزة اﻟﻠﻳﻝ +8,夜の剣士、ヨラーン＋８
+2219009,Schwerthand der Nacht +9,,“黑夜剑士”约兰＋９,Jolán,Espadachim da Noite Jolán +9,szermierka nocy +9,ﺟﻭﻻن ﻣﺑﺎرزة اﻟﻠﻳﻝ +9,夜の剣士、ヨラーン＋９
+2219010,Schwerthand der Nacht +10,,“黑夜剑士”约兰＋１０,Jolán,Espadachim da Noite Jolán +10,szermierka nocy +10,ﺟﻭﻻن ﻣﺑﺎرزة اﻟﻠﻳﻝ +10,夜の剣士、ヨラーン＋１０
+2220000,Jolán and Anna,ヨラーンとアンナ,约兰与安娜,Jolán und Anna,Jolán y Anna,Йолана и Анна,ﺟﻭﻻن وآﻧﺎ,욜란과 안나
+2220001,Jolán and Anna +1,ヨラーンとアンナ＋１,约兰与安娜＋１,Jolán und Anna +1,Jolán y Anna +1,Йолана и Анна +1,ﺟﻭﻻن وآﻧﺎ +1,욜란과 안나+1
+2220002,Jolán and Anna +2,ヨラーンとアンナ＋２,约兰与安娜＋２,Jolán und Anna +2,Jolán y Anna +2,Йолана и Анна +2,ﺟﻭﻻن وآﻧﺎ +2,욜란과 안나+2
+2220003,Jolán and Anna +3,ヨラーンとアンナ＋３,约兰与安娜＋３,Jolán und Anna +3,Jolán y Anna +3,Йолана и Анна +3,ﺟﻭﻻن وآﻧﺎ +3,욜란과 안나+3
+2220004,Jolán and Anna +4,ヨラーンとアンナ＋４,约兰与安娜＋４,Jolán und Anna +4,Jolán y Anna +4,Йолана и Анна +4,ﺟﻭﻻن وآﻧﺎ +4,욜란과 안나+4
+2220005,Jolán and Anna +5,ヨラーンとアンナ＋５,约兰与安娜＋５,Jolán und Anna +5,Jolán y Anna +5,Йолана и Анна +5,ﺟﻭﻻن وآﻧﺎ +5,욜란과 안나+5
+2220006,Jolán and Anna +6,ヨラーンとアンナ＋６,约兰与安娜＋６,Jolán und Anna +6,Jolán y Anna +6,Йолана и Анна +6,ﺟﻭﻻن وآﻧﺎ +6,욜란과 안나+6
+2220007,Jolán and Anna +7,ヨラーンとアンナ＋７,约兰与安娜＋７,Jolán und Anna +7,Jolán y Anna +7,Йолана и Анна +7,ﺟﻭﻻن وآﻧﺎ +7,욜란과 안나+7
+2220008,Jolán and Anna +8,ヨラーンとアンナ＋８,约兰与安娜＋８,Jolán und Anna +8,Jolán y Anna +8,Йолана и Анна +8,ﺟﻭﻻن وآﻧﺎ +8,욜란과 안나+8
+2220009,Jolán and Anna +9,ヨラーンとアンナ＋９,约兰与安娜＋９,Jolán und Anna +9,Jolán y Anna +9,Йолана и Анна +9,ﺟﻭﻻن وآﻧﺎ +9,욜란과 안나+9
+2220010,Jolán and Anna +10,ヨラーンとアンナ＋１０,约兰与安娜＋１０,Jolán und Anna +10,Jolán y Anna +10,Йолана и Анна +10,ﺟﻭﻻن وآﻧﺎ +10,욜란과 안나+10

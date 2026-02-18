@@ -1,0 +1,308 @@
+ID,Name
+0,Reset
+6000,Hunched over writhing start
+6001,Hunched over writhing
+6002,Run forward slash
+17140,Die from poison
+18140,Nothing
+26001,Turn 90 degrees left
+26011,Turn 90 degrees right
+26020,small kick
+26021,Turn 180
+26030,small kick
+26031,Turn 180
+50050,Cant use item
+50250,"Kneel down hand on ground, dream mist message"
+60000,Push small door
+60001,Pull small door
+60002,Pull small door
+60003,Push small door
+60010,Hold hand up to door
+60020,Move lever and push medium door
+60030,Push heavy door
+60040,Push very heavy door
+60060,"Walk through fog gate, moves cam"
+60070,Pickup item
+60071,Pickup item
+60080,Open chest
+60090,Bend over pickup item
+60100,Prayer
+60110,Push head height
+60120,Push waist height
+60130,Disappear (reappear at end)
+60131,Stand up with fog and noise
+60160,Push heavy door
+60170,Push very heavy door
+60180,Push bigger very heavy door
+60190,Push bigger very heavy door
+60200,Pull lever
+60201,Twist lever?
+60202,Push something into ground
+60210,Ladder kick
+60220,Stuck (only rotate)
+60230,Push large rotating lever
+60231,Push large rotating lever
+60240,Hold hand to head
+60241,Stuck (only rotate)
+60250,Warp (doesn't warp)
+60260,Instantly invis and cant move
+60265,T-pose and error noise
+60270,Hold up 3 fingers (loop)
+60350,Stuck (only rotate)
+60360,Stuck (only rotate)
+60370,Open chest
+60380,Place fist on surface
+60390,Stuck (only rotate)
+60400,Lift gate
+60450,"Touch something on ground, blue fire consumes you"
+60451,Stand up (relative to above anim)
+60455,T-pose for split second
+60456,Stand up from ground
+60460,"Hold out hand, woosh noise, then cant move"
+60470,"Walk through blue portal then go invis, cant move (really cool)"
+60471,Come out other side of blue portal then reappear (really cool)
+60472,"Walk through red portal then go invis, cant move (really cool)"
+60473,Come out other side of red portal then reappear (really cool)
+60480,Look through monocular
+60481,Looking through monocular
+60482,Stop looking through monocular
+60490,"Hold out hand, hand turns blue"
+60500,"Go invis, flash of light, rise out of ground metallic, then back to normal"
+60501,"Appear out of the air with particles, then land"
+60502,"Appear standing, with pinkish particles"
+60503,T-pose temp
+60504,T-pose temp
+60505,"Disappear standing, with pinkish particles"
+60510,Hold up hand open palm toward sky
+60511,Retract hand open palm toward sky
+60512,Retract hand open palm toward sky
+60513,Retract hand open palm then eat shit out of hand
+60520,Hold out hand and shatter orange glass/particles
+60521,Hold out hand and shatter orange glass/particles
+60522,Hold out hand and shatter yellow glass/particles
+60523,Hold out hand and shatter orange/white glass/particles
+60524,Hold out hand and shatter red glass/particles
+60525,Hold out hand and shatter gold glass/particles
+60530,One handed pull something out of ground
+60540,Put hands at side
+60541,Put hands at side
+60542,Put hands at side
+60543,Emit orange particles
+60550,Hold out hand
+60560,Kneel down then stand
+60750,Pull something out of wall with both hands
+60760,Step up and pull something out of surface
+60780,Pull something out of wall with both hands
+60790,Overhand pull something out of wall with both hands
+60800,Prayer
+60810,Place something with stone noise
+60811,Place something with stone noise
+63000,Stand up
+63010,Stand up from invis
+63020,Stand up slow from invis then fist pump air
+63021,White summon animation
+63040,Appear while standing
+63050,Nothing
+63060,Crouched then stand up slowly
+63061,Stand up with finger pointing at sky
+63070,Stand up holding out fist
+63080,Nudge
+63090,Appear from invis with fist on chest
+65012,Nothing
+65013,Nothing
+65030,Nothing
+65040,Use effigy
+67000,Die from poison (doesn't kill)
+67001,Stand up
+67010,Lie down flat on ground
+67011,Lie down flat on ground
+67020,Stand up slow
+67030,Nothing
+67040,Nothing
+67050,Nothing
+67060,Nothing
+67070,"Grab face then wretch backwards, fall to knees and collapse"
+67080,Hold out hand then LOUD whoosing noise and block face
+67090,Stand up
+67100,Crouching with hand out then stand
+68000,Lost grace discovered anim
+68001,Lost grace discovered anim
+68002,Lost grace discovered anim then sit at grace
+68010,Sit at grace
+68011,Sit at grace
+68012,Stand up from grace
+68020,"Sit at grace crossed legs, cupped hands"
+68021,"Sit at grace crossed legs, cupped hands"
+68022,Stand up from grace
+68023,Sit at grace casual
+68024,"Sit at grace, look to side"
+68040,"Conversation look up, camera moves up"
+68041,"Conversation look up, camera moves up"
+68042,Conversation end
+68043,Stuck (only rotate)
+68050,Move backwards slightly
+68100,Hold out arms and warp (doesn't warp)
+68101,Hold out arms and warp (doesn't warp) then reappear and stop
+68110,"Sit at grace, look to right and level up"
+68120,Nothing
+68200,"Sit at grace, look to right and level up"
+68201,stop leveling up and look away
+68202,stop leveling up and look away
+68205,"Sit at grace, look to left and level up then stop"
+68206,stop leveling up and look away
+68207,stop leveling up and look away
+68210,Stop giving the woman your attention
+68211,Stop giving the woman your attention
+68212,Stop giving the woman your attention
+68215,Stop giving the woman your attention
+68216,Stop giving the woman your attention
+68217,Stop giving the woman your attention
+68220,Stop giving the woman your attention
+68221,Stop giving the woman your attention
+68222,Stop giving the woman your attention
+68225,Stop giving the woman your attention
+68226,Stop giving the woman your attention
+68227,Stop giving the woman your attention
+69000,Place something on ground?
+69001,Hold something on ground?
+69002,Kneeling with hand out then stand up
+69003,Kneel and offer something to covenant
+69010,Prayer offer something
+69030,Kneel
+80000,Bow --ALL THESE GESTURE LOOP
+80010,Proper bow
+80020,My thanks
+80030,Curtsy
+80040,"couldn't be bothered, these are gestures"
+80050,gesture
+80051,gesture
+80051,gesture
+80060,gesture
+80070,gesture
+80080,gesture
+80090,gesture
+80100,gesture
+80131,gesture
+80200,gesture
+80210,gesture
+80220,gesture
+80230,gesture
+80240,gesture
+80250,gesture
+80300,gesture
+80400,gesture
+80410,gesture
+80500,gesture
+80510,gesture
+80520,gesture
+80530,gesture
+80540,gesture
+80541,gesture
+80550,gesture
+80600,gesture
+80700,gesture
+80710,gesture
+80720,gesture
+80730,gesture
+80800,gesture
+80801,gesture
+80900,gesture
+80901,gesture
+80910,gesture
+80911,gesture
+80920,gesture
+80921,gesture
+80930,gesture
+80931,gesture
+80940,gesture
+80941,gesture
+80950,gesture
+80951,gesture
+80960,gesture
+80961,gesture
+80970,gesture
+80971,gesture
+80980,gesture
+80981,gesture
+81000,gesture
+81001,gesture
+81010,gesture
+81011,gesture
+81020,gesture
+81021,gesture
+81030,gesture
+81031,gesture
+81040,gesture
+81041,gesture
+81050,gesture
+81051,gesture
+81060,gesture
+81061,gesture
+81080,gesture
+81081,gesture
+90000,Place something on surface
+90001,Completely stuck
+90002,Completely stuck
+90003,Completely stuck
+90004,Laying face first on ground
+90005,"Super edgy slow walk from invis, black smoke and spooky noise"
+90006,Walk forward loop
+90007,Invis
+90008,Spirit summon cube
+90009,Death (doesn't kill)
+90100,Hands together in front of stomach
+90101,Stuck (only rotate)
+90102,Stuck (only rotate)
+90103,Stuck (only rotate)
+90104,Stuck (only rotate)
+90105,Stuck (only rotate)
+90106,Stuck (only rotate)
+90107,Stuck (only rotate)
+90108,Stuck (only rotate)
+90109,Stuck (only rotate)
+90200,Stuck (only rotate)
+90201,"Reach hand out, ow it's hot, then have a heart attack and squelch noise"
+90202,"Reach hand out, madness effect on fingers"
+90203,Rest hand on something with low hum noise
+90204,Kneel down and pull soul out of that one girl
+90205,Kneel down and hug
+90206,Kneel down and hug
+90207,Being held
+90208,Prayer hands and white circle with noise
+90209,Stuck (only rotate)
+90210,Sit and slowly burn
+90211,as above but no fire
+90300,Kneel down and hug
+90301,Being held
+90302,Get up from held
+90305,Kneel down and hug
+90306,Being held
+90307,Get up from held
+90310,Nudge
+90311,T-pose and freeze
+90312,Nothing
+90315,Crouched way down and looking up for a second
+90316,as above but loop
+90317,eat grass
+90320,Nothing
+90321,Nothing
+90322,Nothing
+90325,Nothing
+90326,Nothing
+90327,Nothing
+90330,Sitting for a second
+90331,Sitting and looking up
+90332,Sitting and looking down
+90335,Kneel down and hug
+90336,Being held
+90337,Get up from held
+90400,Hands together in front of stomach pain and throw head back
+90401,Hands bound pain
+90402,Hand under chin pain anim
+90403,On ground pain anim
+99998,Nothing
+99999,Nothing
+150250,Crouch for a split second
+160070,Crouch for a split second
+360070,Pickup item while crouched
+6026000,Invis for a couple seconds

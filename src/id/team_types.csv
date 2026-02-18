@@ -1,0 +1,36 @@
+ID,NAME
+0,None
+1,Live
+2,White Ghost
+3,Black Ghost
+4,Grey Ghost
+5,Wandering Ghost
+6,Enemy
+7,Boss
+8,Ally
+9,Hostile Ally
+10,Decoy
+11,Decoy-like
+12,Battle Ally
+13,Invader
+14,Neutral
+15,Charmed
+16,Invader
+17,Invader
+18,Invader
+19,Host
+20,Co-op
+21,Hostile
+22,Wandering Phantom
+23,Enemy 1
+24,Enemy 2
+25,Strong Enemy
+26,Friendly NPC
+27,Hostile NPC
+28,Co-op NPC
+29,Indiscriminate
+30,Object
+31,Co-op Mad Phantom
+32,Invader Mad Phantom
+33,Arch Enemy Team
+47,Spirit Summon

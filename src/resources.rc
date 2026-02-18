@@ -1,0 +1,10 @@
+#include "resources.h"
+
+IDR_CSV_WEAPONS RCDATA "..\\src\\id\\weapons.csv"
+IDR_CSV_DLC_WEAPONS RCDATA "..\\src\\id\\dlc_weapons.csv"
+IDR_CSV_ARMOR RCDATA "..\\src\\id\\armor.csv"
+IDR_CSV_DLC_ARMOR RCDATA "..\\src\\id\\dlc_armor.csv"
+IDR_CSV_TALISMANS RCDATA "..\\src\\id\\talismans.csv"
+IDR_CSV_DLC_TALISMANS RCDATA "..\\src\\id\\dlc_talismans.csv"
+IDR_CSV_GOODS RCDATA "..\\src\\id\\goods.csv"
+IDR_CSV_DLC_ITEMS RCDATA "..\\src\\id\\dlc_items.csv"

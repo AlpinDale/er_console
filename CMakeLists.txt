@@ -80,10 +80,14 @@ add_library(er_console_mod SHARED
   src/commands/help.h
   src/commands/items.cpp
   src/commands/items.h
+  src/commands/search.cpp
+  src/commands/search.h
   src/commands/runes.cpp
   src/commands/runes.h
+  src/resources.rc
 )
 target_include_directories(er_console_mod PRIVATE src)
+target_include_directories(er_console_mod PRIVATE src/commands)
 target_include_directories(er_console_mod PRIVATE ${kiero_SOURCE_DIR}/minhook/include)
 target_link_libraries(er_console_mod PRIVATE imgui kiero d3d12 d3d11 dxgi d3dcompiler)
 target_compile_definitions(er_console_mod PRIVATE WIN32_LEAN_AND_MEAN NOMINMAX ER_CONSOLE_BUILD)

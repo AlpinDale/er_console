@@ -16,6 +16,7 @@
 #include "commands/help.h"
 #include "commands/items.h"
 #include "commands/runes.h"
+#include "commands/search.h"
 
 #if defined(ER_CONSOLE_BUILD)
 #include "MinHook.h"
@@ -214,6 +215,7 @@ bool g_request_focus = false;
 bool g_input_blocked = false;
 bool g_input_hooks_installed = false;
 bool g_input_hooks_attempted = false;
+HMODULE g_module_handle = nullptr;
 std::string g_input;
 std::string g_last_command;
 std::vector<std::string> g_log = {
@@ -468,6 +470,7 @@ std::string handle_command(const std::string &command) {
     register_command(g_command_registry, build_help_command());
     register_command(g_command_registry, build_runes_command());
     register_command(g_command_registry, build_items_command());
+    register_command(g_command_registry, build_search_command());
   }
 
   return dispatch_command(g_command_registry, ctx, command);
@@ -1212,6 +1215,7 @@ void install_input_hooks() {
 
 BOOL APIENTRY DllMain(HMODULE hModule, DWORD reason, LPVOID) {
   if (reason == DLL_PROCESS_ATTACH) {
+    g_module_handle = hModule;
     char module_path[MAX_PATH * 4] = {};
     if (GetModuleFileNameA(hModule, module_path, sizeof(module_path)) != 0) {
       std::string path(module_path);
