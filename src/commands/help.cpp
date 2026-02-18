@@ -23,7 +23,16 @@ std::string handle_help_command(CommandContext &ctx, const std::string &input) {
 
   auto parts = split_words(input);
   if (parts.size() >= 2) {
-    const CommandInfo *cmd = find_command(*ctx.registry, parts[1]);
+    const std::string &name = parts[1];
+    if (name == "tgm") {
+      return "tgm\nUsage: tgm\nToggle god mode (no death, infinite "
+             "stamina/FP).";
+    }
+    if (name == "tcl") {
+      return "tcl\nUsage: tcl\nToggle noclip (player + Torrent).";
+    }
+
+    const CommandInfo *cmd = find_command(*ctx.registry, name);
     if (!cmd) {
       return "Unknown command.";
     }
@@ -39,6 +48,10 @@ std::string handle_help_command(CommandContext &ctx, const std::string &input) {
   for (const auto &cmd : ctx.registry->commands) {
     out += "\n" + cmd.name + ": " + cmd.usage + " - " + cmd.description;
   }
+  out += "\n";
+  out += "tgm: tgm - Toggle god mode (no death, infinite stamina/FP).";
+  out += "\n";
+  out += "tcl: tcl - Toggle noclip (player + Torrent).";
   return out;
 }
 
