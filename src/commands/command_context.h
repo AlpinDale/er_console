@@ -17,5 +17,6 @@ struct CommandContext {
   CommandRegistry *registry = nullptr;
   bool (*resolve_game_addrs)(GameAddrs *addrs) = nullptr;
   bool (*add_runes)(GameAddrs *addrs, int amount, std::string &error) = nullptr;
-  bool (*add_item)(GameAddrs *addrs, int item_id, int quantity, std::string &error) = nullptr;
+  bool (*add_item)(GameAddrs *addrs, int item_id, int quantity,
+                   std::string &error) = nullptr;
 };

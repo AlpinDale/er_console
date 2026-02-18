@@ -5,11 +5,11 @@
 
 #include <cstdarg>
 #include <cstdio>
+#include <cstring>
 #include <mutex>
+#include <sstream>
 #include <string>
 #include <vector>
-#include <cstring>
-#include <sstream>
 
 #include "commands/command_context.h"
 #include "commands/command_registry.h"
@@ -18,12 +18,12 @@
 #include "commands/runes.h"
 
 #if defined(ER_CONSOLE_BUILD)
+#include "MinHook.h"
 #include "imgui.h"
 #include "imgui_impl_dx11.h"
 #include "imgui_impl_dx12.h"
 #include "imgui_impl_win32.h"
 #include "imgui_stdlib.h"
-#include "MinHook.h"
 extern LRESULT ImGui_ImplWin32_WndProcHandler(HWND, UINT, WPARAM, LPARAM);
 #else
 struct ImVec2 {
@@ -117,7 +117,8 @@ inline void ImGui_ImplDX12_Init(ID3D12Device *, int, int,
                                 D3D12_GPU_DESCRIPTOR_HANDLE) {}
 inline void ImGui_ImplDX12_Shutdown() {}
 inline void ImGui_ImplDX12_NewFrame() {}
-inline void ImGui_ImplDX12_RenderDrawData(void *, ID3D12GraphicsCommandList *) {}
+inline void ImGui_ImplDX12_RenderDrawData(void *, ID3D12GraphicsCommandList *) {
+}
 inline void ImGui_ImplDX12_InvalidateDeviceObjects() {}
 inline void ImGui_ImplDX12_CreateDeviceObjects() {}
 inline void ImGui_ImplDX11_Init(ID3D11Device *, ID3D11DeviceContext *) {}
@@ -164,13 +165,14 @@ using ExecuteCommandListsFn = void(__stdcall *)(ID3D12CommandQueue *, UINT,
 
 HRESULT __stdcall hk_present_dx12(IDXGISwapChain *swapchain_base, UINT sync,
                                   UINT flags);
-HRESULT __stdcall hk_present_dx11(IDXGISwapChain *swapchain, UINT sync, UINT flags);
-HRESULT __stdcall hk_resize_buffers_dx12(IDXGISwapChain *swapchain_base, UINT count,
-                                         UINT width, UINT height, DXGI_FORMAT format,
-                                         UINT flags);
+HRESULT __stdcall hk_present_dx11(IDXGISwapChain *swapchain, UINT sync,
+                                  UINT flags);
+HRESULT __stdcall hk_resize_buffers_dx12(IDXGISwapChain *swapchain_base,
+                                         UINT count, UINT width, UINT height,
+                                         DXGI_FORMAT format, UINT flags);
 HRESULT __stdcall hk_resize_buffers_dx11(IDXGISwapChain *swapchain, UINT count,
-                                         UINT width, UINT height, DXGI_FORMAT format,
-                                         UINT flags);
+                                         UINT width, UINT height,
+                                         DXGI_FORMAT format, UINT flags);
 void __stdcall hk_execute_command_lists(ID3D12CommandQueue *queue, UINT num,
                                         ID3D12CommandList *const *lists);
 void install_input_hooks();
@@ -249,8 +251,8 @@ bool get_module_info(const char *name, uintptr_t &base, size_t &size) {
   return true;
 }
 
-uintptr_t pattern_scan(uintptr_t base, size_t size, const unsigned char *pattern,
-                       const char *mask) {
+uintptr_t pattern_scan(uintptr_t base, size_t size,
+                       const unsigned char *pattern, const char *mask) {
   size_t pattern_len = std::strlen(mask);
   for (size_t i = 0; i + pattern_len <= size; ++i) {
     bool match = true;
@@ -270,7 +272,8 @@ uintptr_t pattern_scan(uintptr_t base, size_t size, const unsigned char *pattern
 uintptr_t pattern_scan_exact(uintptr_t base, size_t size,
                              const unsigned char *pattern, size_t pattern_len) {
   for (size_t i = 0; i + pattern_len <= size; ++i) {
-    if (std::memcmp(reinterpret_cast<void *>(base + i), pattern, pattern_len) == 0) {
+    if (std::memcmp(reinterpret_cast<void *>(base + i), pattern, pattern_len) ==
+        0) {
       return base + i;
     }
   }
@@ -297,13 +300,13 @@ bool resolve_game_addrs(GameAddrs *addrs) {
     return false;
   }
 
-  const unsigned char world_chr_man_pat[] = {
-      0x48, 0x8B, 0x05, 0x00, 0x00, 0x00, 0x00, 0x48,
-      0x85, 0xC0, 0x74, 0x0F, 0x48, 0x39, 0x88};
+  const unsigned char world_chr_man_pat[] = {0x48, 0x8B, 0x05, 0x00, 0x00,
+                                             0x00, 0x00, 0x48, 0x85, 0xC0,
+                                             0x74, 0x0F, 0x48, 0x39, 0x88};
   const char world_chr_man_mask[] = "xxx????xxxxxxx";
 
-  const unsigned char add_soul_pat[] = {0x44, 0x8B, 0x49, 0x6C, 0x45, 0x33, 0xDB};
-
+  const unsigned char add_soul_pat[] = {0x44, 0x8B, 0x49, 0x6C,
+                                        0x45, 0x33, 0xDB};
 
   uintptr_t world_chr_man_scan =
       pattern_scan(base, size, world_chr_man_pat, world_chr_man_mask);
@@ -371,7 +374,8 @@ bool add_runes(GameAddrs *addrs, int amount, std::string &error) {
   return true;
 }
 
-bool add_item_impl(GameAddrs *addrs, int item_id, int quantity, std::string &error) {
+bool add_item_impl(GameAddrs *addrs, int item_id, int quantity,
+                   std::string &error) {
   if (!addrs) {
     error = "Missing game addresses.";
     return false;
@@ -389,7 +393,8 @@ bool add_item_impl(GameAddrs *addrs, int item_id, int quantity, std::string &err
     return false;
   }
 
-  auto map_item_man_ptr = reinterpret_cast<uintptr_t *>(addrs->map_item_man_ptr);
+  auto map_item_man_ptr =
+      reinterpret_cast<uintptr_t *>(addrs->map_item_man_ptr);
   if (!map_item_man_ptr || !*map_item_man_ptr) {
     error = "MapItemMan is null.";
     return false;
@@ -494,7 +499,8 @@ bool is_input_message(UINT msg) {
   }
 }
 
-LRESULT CALLBACK wndproc_hook(HWND hwnd, UINT msg, WPARAM wparam, LPARAM lparam) {
+LRESULT CALLBACK wndproc_hook(HWND hwnd, UINT msg, WPARAM wparam,
+                              LPARAM lparam) {
   if (ImGui_ImplWin32_WndProcHandler(hwnd, msg, wparam, lparam)) {
     return 1;
   }
@@ -566,7 +572,8 @@ bool create_d3d11_render_target(IDXGISwapChain *swapchain) {
   if (FAILED(swapchain->GetBuffer(0, IID_PPV_ARGS(&back_buffer)))) {
     return false;
   }
-  if (FAILED(g_d3d11_device->CreateRenderTargetView(back_buffer, nullptr, &g_d3d11_rtv))) {
+  if (FAILED(g_d3d11_device->CreateRenderTargetView(back_buffer, nullptr,
+                                                    &g_d3d11_rtv))) {
     back_buffer->Release();
     return false;
   }
@@ -645,7 +652,8 @@ bool init_imgui(IDXGISwapChain3 *swapchain) {
     return true;
   }
 
-  if (FAILED(swapchain->GetDevice(__uuidof(ID3D12Device), (void **)&g_device))) {
+  if (FAILED(
+          swapchain->GetDevice(__uuidof(ID3D12Device), (void **)&g_device))) {
     log_line("GetDevice D3D12 failed");
     return false;
   }
@@ -672,7 +680,8 @@ bool init_imgui(IDXGISwapChain3 *swapchain) {
   rtv_desc.Type = D3D12_DESCRIPTOR_HEAP_TYPE_RTV;
   rtv_desc.NumDescriptors = g_frame_count;
   rtv_desc.Flags = D3D12_DESCRIPTOR_HEAP_FLAG_NONE;
-  if (FAILED(g_device->CreateDescriptorHeap(&rtv_desc, IID_PPV_ARGS(&g_rtv_heap)))) {
+  if (FAILED(g_device->CreateDescriptorHeap(&rtv_desc,
+                                            IID_PPV_ARGS(&g_rtv_heap)))) {
     log_line("CreateDescriptorHeap RTV failed");
     return false;
   }
@@ -681,7 +690,8 @@ bool init_imgui(IDXGISwapChain3 *swapchain) {
   srv_desc.Type = D3D12_DESCRIPTOR_HEAP_TYPE_CBV_SRV_UAV;
   srv_desc.NumDescriptors = 1;
   srv_desc.Flags = D3D12_DESCRIPTOR_HEAP_FLAG_SHADER_VISIBLE;
-  if (FAILED(g_device->CreateDescriptorHeap(&srv_desc, IID_PPV_ARGS(&g_srv_heap)))) {
+  if (FAILED(g_device->CreateDescriptorHeap(&srv_desc,
+                                            IID_PPV_ARGS(&g_srv_heap)))) {
     log_line("CreateDescriptorHeap SRV failed");
     return false;
   }
@@ -716,12 +726,12 @@ bool init_imgui(IDXGISwapChain3 *swapchain) {
   ImGui::StyleColorsDark();
 
   ImGui_ImplWin32_Init(g_hwnd);
-  ImGui_ImplDX12_Init(g_device, g_frame_count, g_swapchain_format,
-                      g_srv_heap, g_srv_heap->GetCPUDescriptorHandleForHeapStart(),
+  ImGui_ImplDX12_Init(g_device, g_frame_count, g_swapchain_format, g_srv_heap,
+                      g_srv_heap->GetCPUDescriptorHandleForHeapStart(),
                       g_srv_heap->GetGPUDescriptorHandleForHeapStart());
 
-  g_wndproc = (WNDPROC)SetWindowLongPtr(g_hwnd, GWLP_WNDPROC,
-                                       (LONG_PTR)wndproc_hook);
+  g_wndproc =
+      (WNDPROC)SetWindowLongPtr(g_hwnd, GWLP_WNDPROC, (LONG_PTR)wndproc_hook);
   g_imgui_ready = true;
   g_backend_dx12 = true;
   log_line("ImGui initialized (DX12 format=%d buffers=%u)",
@@ -734,9 +744,11 @@ bool init_imgui_dx11(IDXGISwapChain *swapchain) {
     return true;
   }
 
-  HRESULT hr = swapchain->GetDevice(__uuidof(ID3D11Device), (void **)&g_d3d11_device);
+  HRESULT hr =
+      swapchain->GetDevice(__uuidof(ID3D11Device), (void **)&g_d3d11_device);
   if (FAILED(hr)) {
-    log_line("GetDevice D3D11 failed (hr=0x%08lx)", static_cast<unsigned long>(hr));
+    log_line("GetDevice D3D11 failed (hr=0x%08lx)",
+             static_cast<unsigned long>(hr));
     return false;
   }
   g_d3d11_device->GetImmediateContext(&g_d3d11_context);
@@ -763,8 +775,8 @@ bool init_imgui_dx11(IDXGISwapChain *swapchain) {
   ImGui_ImplWin32_Init(g_hwnd);
   ImGui_ImplDX11_Init(g_d3d11_device, g_d3d11_context);
 
-  g_wndproc = (WNDPROC)SetWindowLongPtr(g_hwnd, GWLP_WNDPROC,
-                                       (LONG_PTR)wndproc_hook);
+  g_wndproc =
+      (WNDPROC)SetWindowLongPtr(g_hwnd, GWLP_WNDPROC, (LONG_PTR)wndproc_hook);
   g_imgui_ready = true;
   g_backend_dx12 = false;
   log_line("ImGui initialized (D3D11)");
@@ -805,10 +817,11 @@ void render_console() {
   ImGui::SetNextWindowSize(console_size, ImGuiCond_Always);
   ImGui::SetNextWindowBgAlpha(0.0f);
 
-  ImGuiWindowFlags flags = ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_NoResize |
-                            ImGuiWindowFlags_NoMove | ImGuiWindowFlags_NoScrollbar |
-                            ImGuiWindowFlags_NoScrollWithMouse | ImGuiWindowFlags_NoCollapse |
-                            ImGuiWindowFlags_NoSavedSettings;
+  ImGuiWindowFlags flags =
+      ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_NoResize |
+      ImGuiWindowFlags_NoMove | ImGuiWindowFlags_NoScrollbar |
+      ImGuiWindowFlags_NoScrollWithMouse | ImGuiWindowFlags_NoCollapse |
+      ImGuiWindowFlags_NoSavedSettings;
 
   ImGui::PushStyleVar(ImGuiStyleVar_WindowRounding, 0.0f);
   ImGui::PushStyleVar(ImGuiStyleVar_WindowBorderSize, 0.0f);
@@ -825,8 +838,8 @@ void render_console() {
   ImU32 top_col = IM_COL32(0, 0, 0, 0);
   ImU32 bottom_col = IM_COL32(0, 0, 0, 255);
   draw_list->AddRectFilledMultiColor(
-      win_pos, ImVec2(win_pos.x + win_size.x, win_pos.y + win_size.y),
-      top_col, top_col, bottom_col, bottom_col);
+      win_pos, ImVec2(win_pos.x + win_size.x, win_pos.y + win_size.y), top_col,
+      top_col, bottom_col, bottom_col);
 
   if (g_request_focus) {
     ImGui::SetWindowFocus();
@@ -834,8 +847,8 @@ void render_console() {
     g_request_focus = false;
   }
 
-  ImGui::BeginChild("console_log", ImVec2(0.0f, -ImGui::GetFrameHeightWithSpacing()),
-                    false);
+  ImGui::BeginChild("console_log",
+                    ImVec2(0.0f, -ImGui::GetFrameHeightWithSpacing()), false);
   for (const auto &line : g_log) {
     ImGui::TextUnformatted(line.c_str());
   }
@@ -980,9 +993,9 @@ HRESULT __stdcall hk_present_dx11(IDXGISwapChain *swapchain, UINT sync,
   return g_present(swapchain, sync, flags);
 }
 
-HRESULT __stdcall hk_resize_buffers_dx12(IDXGISwapChain *swapchain_base, UINT count,
-                                         UINT width, UINT height, DXGI_FORMAT format,
-                                         UINT flags) {
+HRESULT __stdcall hk_resize_buffers_dx12(IDXGISwapChain *swapchain_base,
+                                         UINT count, UINT width, UINT height,
+                                         DXGI_FORMAT format, UINT flags) {
   std::lock_guard<std::mutex> lock(g_mutex);
   auto *swapchain = reinterpret_cast<IDXGISwapChain3 *>(swapchain_base);
   if (g_frame_ctx) {
@@ -996,7 +1009,8 @@ HRESULT __stdcall hk_resize_buffers_dx12(IDXGISwapChain *swapchain_base, UINT co
     ImGui_ImplDX12_InvalidateDeviceObjects();
   }
 
-  auto result = g_resize_buffers(swapchain_base, count, width, height, format, flags);
+  auto result =
+      g_resize_buffers(swapchain_base, count, width, height, format, flags);
 
   if (g_imgui_ready) {
     ImGui_ImplDX12_CreateDeviceObjects();
@@ -1011,12 +1025,13 @@ HRESULT __stdcall hk_resize_buffers_dx12(IDXGISwapChain *swapchain_base, UINT co
 }
 
 HRESULT __stdcall hk_resize_buffers_dx11(IDXGISwapChain *swapchain, UINT count,
-                                         UINT width, UINT height, DXGI_FORMAT format,
-                                         UINT flags) {
+                                         UINT width, UINT height,
+                                         DXGI_FORMAT format, UINT flags) {
   std::lock_guard<std::mutex> lock(g_mutex);
   cleanup_d3d11_render_target();
 
-  auto result = g_resize_buffers(swapchain, count, width, height, format, flags);
+  auto result =
+      g_resize_buffers(swapchain, count, width, height, format, flags);
   if (g_imgui_ready && !g_backend_dx12) {
     create_d3d11_render_target(swapchain);
   }
@@ -1067,10 +1082,11 @@ DWORD WINAPI init_thread(LPVOID) {
 
   auto present_status = kiero::bind(140, (void **)&g_present, hk_present_dx12);
   log_line("Bind Present (D3D12) status=%d", (int)present_status);
-  auto resize_status = kiero::bind(145, (void **)&g_resize_buffers, hk_resize_buffers_dx12);
+  auto resize_status =
+      kiero::bind(145, (void **)&g_resize_buffers, hk_resize_buffers_dx12);
   log_line("Bind ResizeBuffers (D3D12) status=%d", (int)resize_status);
-  auto exec_status =
-      kiero::bind(54, (void **)&g_execute_command_lists, hk_execute_command_lists);
+  auto exec_status = kiero::bind(54, (void **)&g_execute_command_lists,
+                                 hk_execute_command_lists);
   log_line("Bind ExecuteCommandLists status=%d", (int)exec_status);
 
   log_line("Hooks installed (D3D12)");
@@ -1114,16 +1130,18 @@ BOOL WINAPI hk_get_keyboard_state(PBYTE state) {
 }
 
 UINT WINAPI hk_get_raw_input_data(HRAWINPUT hRawInput, UINT uiCommand,
-                                  LPVOID pData, PUINT pcbSize, UINT cbSizeHeader) {
+                                  LPVOID pData, PUINT pcbSize,
+                                  UINT cbSizeHeader) {
   if (g_console_open) {
     if (pcbSize) {
       *pcbSize = 0;
     }
     return 0;
   }
-  return g_get_raw_input_data ? g_get_raw_input_data(hRawInput, uiCommand, pData,
-                                                     pcbSize, cbSizeHeader)
-                              : 0;
+  return g_get_raw_input_data
+             ? g_get_raw_input_data(hRawInput, uiCommand, pData, pcbSize,
+                                    cbSizeHeader)
+             : 0;
 }
 
 UINT WINAPI hk_get_raw_input_buffer(PRAWINPUT pData, PUINT pcbSize,
@@ -1154,7 +1172,8 @@ void install_input_hooks() {
 
   if (MH_CreateHook(reinterpret_cast<LPVOID>(GetAsyncKeyState),
                     reinterpret_cast<LPVOID>(hk_get_async_key_state),
-                    reinterpret_cast<LPVOID *>(&g_get_async_key_state)) == MH_OK) {
+                    reinterpret_cast<LPVOID *>(&g_get_async_key_state)) ==
+      MH_OK) {
     MH_EnableHook(reinterpret_cast<LPVOID>(GetAsyncKeyState));
   }
 
@@ -1166,19 +1185,22 @@ void install_input_hooks() {
 
   if (MH_CreateHook(reinterpret_cast<LPVOID>(GetKeyboardState),
                     reinterpret_cast<LPVOID>(hk_get_keyboard_state),
-                    reinterpret_cast<LPVOID *>(&g_get_keyboard_state)) == MH_OK) {
+                    reinterpret_cast<LPVOID *>(&g_get_keyboard_state)) ==
+      MH_OK) {
     MH_EnableHook(reinterpret_cast<LPVOID>(GetKeyboardState));
   }
 
   if (MH_CreateHook(reinterpret_cast<LPVOID>(GetRawInputData),
                     reinterpret_cast<LPVOID>(hk_get_raw_input_data),
-                    reinterpret_cast<LPVOID *>(&g_get_raw_input_data)) == MH_OK) {
+                    reinterpret_cast<LPVOID *>(&g_get_raw_input_data)) ==
+      MH_OK) {
     MH_EnableHook(reinterpret_cast<LPVOID>(GetRawInputData));
   }
 
   if (MH_CreateHook(reinterpret_cast<LPVOID>(GetRawInputBuffer),
                     reinterpret_cast<LPVOID>(hk_get_raw_input_buffer),
-                    reinterpret_cast<LPVOID *>(&g_get_raw_input_buffer)) == MH_OK) {
+                    reinterpret_cast<LPVOID *>(&g_get_raw_input_buffer)) ==
+      MH_OK) {
     MH_EnableHook(reinterpret_cast<LPVOID>(GetRawInputBuffer));
   }
 

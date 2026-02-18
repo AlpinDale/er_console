@@ -15,7 +15,8 @@ static std::vector<std::string> split_words(const std::string &input) {
   return parts;
 }
 
-std::string handle_items_command(CommandContext &ctx, const std::string &input) {
+std::string handle_items_command(CommandContext &ctx,
+                                 const std::string &input) {
   auto parts = split_words(input);
   if (parts.size() >= 5 && parts[0] == "item" && parts[1] == "add") {
     std::string type = parts[2];
@@ -73,7 +74,8 @@ CommandInfo build_items_command() {
   CommandInfo info;
   info.name = "item";
   info.usage = "item add <type> <item_id> <quantity> [upgrade]";
-  info.description = "Add an item by ID with type: weapon|armor|talisman|goods.";
+  info.description =
+      "Add an item by ID with type: weapon|armor|talisman|goods.";
   info.handler = handle_items_command;
   return info;
 }

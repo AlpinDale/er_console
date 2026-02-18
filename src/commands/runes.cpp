@@ -5,7 +5,8 @@
 #include <sstream>
 #include <vector>
 
-std::string handle_runes_command(CommandContext &ctx, const std::string &input) {
+std::string handle_runes_command(CommandContext &ctx,
+                                 const std::string &input) {
   std::istringstream stream(input);
   std::vector<std::string> parts;
   std::string token;

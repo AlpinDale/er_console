@@ -5,7 +5,8 @@
 
 struct CommandContext;
 
-using CommandHandler = std::string (*)(CommandContext &ctx, const std::string &input);
+using CommandHandler = std::string (*)(CommandContext &ctx,
+                                       const std::string &input);
 
 struct CommandInfo {
   std::string name;
@@ -19,6 +20,7 @@ struct CommandRegistry {
 };
 
 void register_command(CommandRegistry &registry, CommandInfo info);
-const CommandInfo *find_command(const CommandRegistry &registry, const std::string &name);
+const CommandInfo *find_command(const CommandRegistry &registry,
+                                const std::string &name);
 std::string dispatch_command(CommandRegistry &registry, CommandContext &ctx,
                              const std::string &input);

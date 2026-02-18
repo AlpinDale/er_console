@@ -296,8 +296,7 @@ int main(int argc, char **argv) {
     }
   }
 
-  std::string dll_path =
-      (argc > 2) ? argv[2] : "er_console_mod.dll";
+  std::string dll_path = (argc > 2) ? argv[2] : "er_console_mod.dll";
   if (!file_exists(dll_path.c_str())) {
     if (!is_absolute_path(dll_path)) {
       std::string exe_dir = get_dirname(exe_path);
