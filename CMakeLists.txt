@@ -71,7 +71,14 @@ target_compile_definitions(kiero PRIVATE
   ER_CONSOLE_BUILD
 )
 
-add_library(er_console_mod SHARED src/dllmain.cpp)
+add_library(er_console_mod SHARED
+  src/dllmain.cpp
+  src/commands/command_context.h
+  src/commands/command_registry.cpp
+  src/commands/command_registry.h
+  src/commands/runes.cpp
+  src/commands/runes.h
+)
 target_include_directories(er_console_mod PRIVATE src)
 target_include_directories(er_console_mod PRIVATE ${kiero_SOURCE_DIR}/minhook/include)
 target_link_libraries(er_console_mod PRIVATE imgui kiero d3d12 d3d11 dxgi d3dcompiler)

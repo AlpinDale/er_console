@@ -9,6 +9,11 @@
 #include <string>
 #include <vector>
 #include <cstring>
+#include <sstream>
+
+#include "commands/command_context.h"
+#include "commands/command_registry.h"
+#include "commands/runes.h"
 
 #if defined(ER_CONSOLE_BUILD)
 #include "imgui.h"
@@ -213,6 +218,9 @@ std::vector<std::string> g_log = {
 
 char g_log_path[MAX_PATH * 4] = "er_console_mod.log";
 
+GameAddrs g_game_addrs;
+CommandRegistry g_command_registry;
+
 void log_line(const char *fmt, ...) {
   FILE *f = std::fopen(g_log_path, "a");
   if (!f) {
@@ -224,6 +232,140 @@ void log_line(const char *fmt, ...) {
   va_end(args);
   std::fputc('\n', f);
   std::fclose(f);
+}
+
+bool get_module_info(const char *name, uintptr_t &base, size_t &size) {
+  HMODULE mod = GetModuleHandleA(name);
+  if (!mod) {
+    return false;
+  }
+  base = reinterpret_cast<uintptr_t>(mod);
+  auto *dos = reinterpret_cast<IMAGE_DOS_HEADER *>(base);
+  auto *nt = reinterpret_cast<IMAGE_NT_HEADERS *>(base + dos->e_lfanew);
+  size = static_cast<size_t>(nt->OptionalHeader.SizeOfImage);
+  return true;
+}
+
+uintptr_t pattern_scan(uintptr_t base, size_t size, const unsigned char *pattern,
+                       const char *mask) {
+  size_t pattern_len = std::strlen(mask);
+  for (size_t i = 0; i + pattern_len <= size; ++i) {
+    bool match = true;
+    for (size_t j = 0; j < pattern_len; ++j) {
+      if (mask[j] == 'x' && pattern[j] != *(unsigned char *)(base + i + j)) {
+        match = false;
+        break;
+      }
+    }
+    if (match) {
+      return base + i;
+    }
+  }
+  return 0;
+}
+
+uintptr_t resolve_relative(uintptr_t addr, int offset, int addend) {
+  int32_t rel = *reinterpret_cast<int32_t *>(addr + offset);
+  return addr + rel + addend;
+}
+
+bool resolve_game_addrs(GameAddrs *addrs) {
+  if (!addrs) {
+    return false;
+  }
+  if (addrs->initialized) {
+    return addrs->world_chr_man && addrs->add_soul_call;
+  }
+
+  uintptr_t base = 0;
+  size_t size = 0;
+  if (!get_module_info("eldenring.exe", base, size)) {
+    log_line("Failed to find eldenring.exe module");
+    return false;
+  }
+
+  const unsigned char world_chr_man_pat[] = {
+      0x48, 0x8B, 0x05, 0x00, 0x00, 0x00, 0x00, 0x48,
+      0x85, 0xC0, 0x74, 0x0F, 0x48, 0x39, 0x88};
+  const char world_chr_man_mask[] = "xxx????xxxxxxx";
+
+  const unsigned char add_soul_pat[] = {0x44, 0x8B, 0x49, 0x6C, 0x45, 0x33, 0xDB};
+  const char add_soul_mask[] = "xxxxxxx";
+
+  uintptr_t world_chr_man_scan =
+      pattern_scan(base, size, world_chr_man_pat, world_chr_man_mask);
+  if (world_chr_man_scan) {
+    addrs->world_chr_man = resolve_relative(world_chr_man_scan, 3, 7);
+  }
+
+  uintptr_t add_soul_scan = pattern_scan(base, size, add_soul_pat, add_soul_mask);
+  if (add_soul_scan) {
+    addrs->add_soul_call = add_soul_scan;
+  }
+
+  addrs->initialized = true;
+  log_line("Resolved WorldChrMan=0x%p AddSoul=0x%p",
+           reinterpret_cast<void *>(addrs->world_chr_man),
+           reinterpret_cast<void *>(addrs->add_soul_call));
+
+  return addrs->world_chr_man && addrs->add_soul_call;
+}
+
+bool add_runes(GameAddrs *addrs, int amount, std::string &error) {
+  if (!addrs) {
+    error = "Missing game addresses.";
+    return false;
+  }
+  if (amount <= 0) {
+    error = "Amount must be positive.";
+    return false;
+  }
+
+  if (!resolve_game_addrs(addrs)) {
+    error = "Failed to resolve game addresses.";
+    return false;
+  }
+
+  auto world_chr_man = *reinterpret_cast<uintptr_t *>(addrs->world_chr_man);
+  if (!world_chr_man) {
+    error = "WorldChrMan is null.";
+    return false;
+  }
+
+  auto player_list = *reinterpret_cast<uintptr_t *>(world_chr_man + 0x10EF8);
+  if (!player_list) {
+    error = "Player list is null.";
+    return false;
+  }
+
+  auto player = *reinterpret_cast<uintptr_t *>(player_list);
+  if (!player) {
+    error = "Player is null.";
+    return false;
+  }
+
+  auto player_data = *reinterpret_cast<uintptr_t *>(player + 0x580);
+  if (!player_data) {
+    error = "Player data is null.";
+    return false;
+  }
+
+  using AddSoulFn = void(__fastcall *)(void *ctx, int amount);
+  auto add_soul = reinterpret_cast<AddSoulFn>(addrs->add_soul_call);
+  add_soul(reinterpret_cast<void *>(player_data), amount);
+  return true;
+}
+std::string handle_command(const std::string &command) {
+  CommandContext ctx;
+  ctx.game_addrs = &g_game_addrs;
+  ctx.resolve_game_addrs = resolve_game_addrs;
+  ctx.add_runes = add_runes;
+
+  if (!g_command_registry.runes) {
+    g_command_registry.runes = handle_runes_command;
+  }
+
+  return dispatch_command(g_command_registry, ctx, command);
 }
 
 bool is_input_message(UINT msg) {
@@ -606,7 +748,10 @@ void render_console() {
                        ImGuiInputTextFlags_EnterReturnsTrue)) {
     if (!g_input.empty()) {
       g_log.push_back("> " + g_input);
-      g_log.push_back("Command received (not implemented).");
+      std::string response = handle_command(g_input);
+      if (!response.empty()) {
+        g_log.push_back(response);
+      }
     }
     g_input.clear();
     g_request_focus = true;
