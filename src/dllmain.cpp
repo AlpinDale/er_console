@@ -319,6 +319,54 @@ uintptr_t resolve_relative(uintptr_t addr, int offset, int addend) {
   return addr + rel + addend;
 }
 
+bool safe_read_ptr(uintptr_t addr, uintptr_t &out) {
+  __try {
+    out = *reinterpret_cast<uintptr_t *>(addr);
+    return true;
+  } __except (EXCEPTION_EXECUTE_HANDLER) {
+    out = 0;
+    return false;
+  }
+}
+
+bool safe_read_u8(uintptr_t addr, uint8_t &out) {
+  __try {
+    out = *reinterpret_cast<uint8_t *>(addr);
+    return true;
+  } __except (EXCEPTION_EXECUTE_HANDLER) {
+    out = 0;
+    return false;
+  }
+}
+
+bool safe_read_u32(uintptr_t addr, uint32_t &out) {
+  __try {
+    out = *reinterpret_cast<uint32_t *>(addr);
+    return true;
+  } __except (EXCEPTION_EXECUTE_HANDLER) {
+    out = 0;
+    return false;
+  }
+}
+
+bool safe_write_u8(uintptr_t addr, uint8_t value) {
+  __try {
+    *reinterpret_cast<uint8_t *>(addr) = value;
+    return true;
+  } __except (EXCEPTION_EXECUTE_HANDLER) {
+    return false;
+  }
+}
+
+bool safe_write_u32(uintptr_t addr, uint32_t value) {
+  __try {
+    *reinterpret_cast<uint32_t *>(addr) = value;
+    return true;
+  } __except (EXCEPTION_EXECUTE_HANDLER) {
+    return false;
+  }
+}
+
 bool resolve_game_addrs(GameAddrs *addrs) {
   if (!addrs) {
     return false;
@@ -497,6 +545,170 @@ bool toggle_god_mode(GameAddrs *addrs, bool &enabled, std::string &error) {
   return true;
 }
 
+bool toggle_no_clip(GameAddrs *addrs, bool &enabled, std::string &error) {
+  if (!addrs) {
+    error = "Missing game addresses.";
+    return false;
+  }
+  if (!resolve_game_addrs(addrs)) {
+    error = "Failed to resolve game addresses.";
+    return false;
+  }
+  if (!addrs->world_chr_man) {
+    error = "WorldChrMan not found.";
+    return false;
+  }
+
+  auto world_chr_man = *reinterpret_cast<uintptr_t *>(addrs->world_chr_man);
+  if (!world_chr_man) {
+    error = "WorldChrMan is null.";
+    return false;
+  }
+
+  auto player_list = *reinterpret_cast<uintptr_t *>(world_chr_man + 0x10EF8);
+  if (!player_list) {
+    error = "Player list is null.";
+    return false;
+  }
+
+  auto player = *reinterpret_cast<uintptr_t *>(player_list);
+  if (!player) {
+    error = "Player is null.";
+    return false;
+  }
+
+  bool map_collision_flag = false;
+  {
+    auto ptr1 = *reinterpret_cast<uintptr_t *>(world_chr_man + 0x1E508);
+    if (!ptr1) {
+      error = "Collision flags pointer is null.";
+      return false;
+    }
+    auto ptr2 = *reinterpret_cast<uintptr_t *>(ptr1 + 0x58);
+    if (!ptr2) {
+      error = "Collision flags buffer is null.";
+      return false;
+    }
+    auto flags = reinterpret_cast<uint8_t *>(ptr2 + 0xF0);
+    map_collision_flag = ((*flags) & (1 << 3)) != 0;
+  }
+
+  bool gravity_flag = false;
+  {
+    auto ptr1 = *reinterpret_cast<uintptr_t *>(player + 0x190);
+    if (!ptr1) {
+      error = "Gravity ptr1 is null.";
+      return false;
+    }
+    auto ptr2 = *reinterpret_cast<uintptr_t *>(ptr1 + 0x68);
+    if (!ptr2) {
+      error = "Gravity ptr2 is null.";
+      return false;
+    }
+    auto flag = reinterpret_cast<uint8_t *>(ptr2 + 0x1D3);
+    gravity_flag = (*flag) != 0;
+  }
+
+  uintptr_t horse = 0;
+  {
+    uintptr_t module_container = 0;
+    if (safe_read_ptr(player + 0x190, module_container) && module_container) {
+      uintptr_t ride_module = 0;
+      if (safe_read_ptr(module_container + 0xE8, ride_module) && ride_module) {
+        uintptr_t last_mounted = 0;
+        safe_read_ptr(ride_module + 0x18, last_mounted);
+        horse = last_mounted;
+      }
+    }
+  }
+
+  bool horse_collision_flag = false;
+  bool horse_gravity_flag = false;
+  if (horse) {
+    uintptr_t horse_ctrl = 0;
+    if (safe_read_ptr(horse + 0x58, horse_ctrl) && horse_ctrl) {
+      uint32_t flags = 0;
+      if (safe_read_u32(horse_ctrl + 0xF0, flags)) {
+        horse_collision_flag =
+            ((flags & (1 << 2)) != 0) || ((flags & (1 << 3)) != 0);
+      }
+    }
+
+    uintptr_t horse_gravity_ptr1 = 0;
+    uintptr_t ptr2 = 0;
+    if (safe_read_ptr(horse + 0x190, horse_gravity_ptr1) &&
+        horse_gravity_ptr1) {
+      safe_read_ptr(horse_gravity_ptr1 + 0x68, ptr2);
+    }
+    if (ptr2) {
+      uint8_t flag = 0;
+      if (safe_read_u8(ptr2 + 0x1D3, flag)) {
+        horse_gravity_flag = (flag != 0);
+      }
+    }
+  }
+
+  bool new_value = !(map_collision_flag || gravity_flag ||
+                     horse_collision_flag || horse_gravity_flag);
+
+  {
+    auto ptr1 = *reinterpret_cast<uintptr_t *>(world_chr_man + 0x1E508);
+    auto ptr2 = ptr1 ? *reinterpret_cast<uintptr_t *>(ptr1 + 0x58) : 0;
+    if (!ptr2) {
+      error = "Collision flags buffer is null.";
+      return false;
+    }
+    auto flags = reinterpret_cast<uint8_t *>(ptr2 + 0xF0);
+    if (new_value) {
+      *flags |= (1 << 3);
+    } else {
+      *flags &= static_cast<uint8_t>(~(1 << 3));
+    }
+  }
+
+  {
+    auto ptr1 = *reinterpret_cast<uintptr_t *>(player + 0x190);
+    auto ptr2 = ptr1 ? *reinterpret_cast<uintptr_t *>(ptr1 + 0x68) : 0;
+    if (!ptr2) {
+      error = "Gravity buffer is null.";
+      return false;
+    }
+    auto flag = reinterpret_cast<uint8_t *>(ptr2 + 0x1D3);
+    *flag = new_value ? 1 : 0;
+  }
+
+  if (horse) {
+    uintptr_t horse_ctrl = 0;
+    if (safe_read_ptr(horse + 0x58, horse_ctrl) && horse_ctrl) {
+      uint32_t flags = 0;
+      if (safe_read_u32(horse_ctrl + 0xF0, flags)) {
+        uint32_t new_flags = flags;
+        if (new_value) {
+          new_flags |= (1 << 2);
+          new_flags |= (1 << 3);
+        } else {
+          new_flags &= ~(1 << 2);
+          new_flags &= ~(1 << 3);
+        }
+        safe_write_u32(horse_ctrl + 0xF0, new_flags);
+      }
+    }
+
+    uintptr_t horse_gravity_ptr1 = 0;
+    uintptr_t ptr2 = 0;
+    if (safe_read_ptr(horse + 0x190, horse_gravity_ptr1) &&
+        horse_gravity_ptr1) {
+      safe_read_ptr(horse_gravity_ptr1 + 0x68, ptr2);
+    }
+    if (ptr2) {
+      safe_write_u8(ptr2 + 0x1D3, new_value ? 1 : 0);
+    }
+  }
+
+  enabled = new_value;
+  return true;
+}
+
 struct ItemTask {
   int item_id = 0;
   int quantity = 0;
@@ -575,6 +787,15 @@ std::string handle_command(const std::string &command) {
         return "Failed: " + error;
       }
       return enabled ? "God mode: on" : "God mode: off";
+    }
+
+    if (verb_lower == "tcl") {
+      bool enabled = false;
+      std::string error;
+      if (!toggle_no_clip(&g_game_addrs, enabled, error)) {
+        return "Failed: " + error;
+      }
+      return enabled ? "NoClip: on" : "NoClip: off";
     }
   }
 
