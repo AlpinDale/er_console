@@ -79,6 +79,7 @@ struct ImGuiIO {
   ImVec2 DisplaySize;
   struct ImFontAtlas *Fonts = nullptr;
   float MouseWheel = 0.0f;
+  bool KeyShift = false;
 };
 struct ImFontAtlas {
   void *AddFontFromFileTTF(const char *, float) { return nullptr; }
@@ -243,6 +244,7 @@ bool g_request_focus = false;
 bool g_input_blocked = false;
 HMODULE g_module_handle = nullptr;
 bool g_scroll_to_bottom = true;
+bool g_console_paused = false;
 size_t g_last_log_size = 0;
 std::string g_input;
 std::string g_last_command;
@@ -583,10 +585,29 @@ bool init_imgui_dx11(IDXGISwapChain *swapchain) {
 
 void render_console() {
   if (ImGui::IsKeyPressed(ImGuiKey_GraveAccent)) {
+    bool was_open = g_console_open;
     g_console_open = !g_console_open;
+    ImGuiIO &io = ImGui::GetIO();
+    bool wants_pause = io.KeyShift;
+
     if (g_console_open) {
       g_request_focus = true;
+      if (!was_open && wants_pause) {
+        std::string error;
+        if (set_game_paused(&g_game_addrs, true, error)) {
+          g_console_paused = true;
+        } else {
+          log_line("Pause failed: %s", error.c_str());
+        }
+      }
+    } else if (g_console_paused) {
+      std::string error;
+      if (!set_game_paused(&g_game_addrs, false, error)) {
+        log_line("Unpause failed: %s", error.c_str());
+      }
+      g_console_paused = false;
     }
+
     if (g_console_open && !g_input_blocked) {
       BlockInput(TRUE);
       g_input_blocked = true;

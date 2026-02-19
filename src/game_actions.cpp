@@ -38,6 +38,8 @@ bool resolve_game_addrs(GameAddrs *addrs) {
                                              0x00, 0x0F, 0x85, 0x00, 0x00, 0x00,
                                              0x00, 0x32, 0xC0, 0x48};
   const char chr_dbg_flags_mask[] = "xx????xxx????xxx";
+  const unsigned char pause_game_pat[] = {0x80, 0xBB, 0x28, 0x01, 0x00,
+                                          0x00, 0x00, 0x0F, 0x84};
 
   uintptr_t world_chr_man_scan =
       pattern_scan(base, size, world_chr_man_pat, world_chr_man_mask);
@@ -55,6 +57,12 @@ bool resolve_game_addrs(GameAddrs *addrs) {
       pattern_scan(base, size, chr_dbg_flags_pat, chr_dbg_flags_mask);
   if (chr_dbg_flags_scan) {
     addrs->chr_dbg_flags = resolve_relative(chr_dbg_flags_scan, 2, 7);
+  }
+
+  uintptr_t pause_game_scan =
+      pattern_scan_exact(base, size, pause_game_pat, sizeof(pause_game_pat));
+  if (pause_game_scan) {
+    addrs->pause_game_flag = pause_game_scan + 6;
   }
 
   addrs->map_item_man_ptr = base + 0x3d67a50;
@@ -351,5 +359,26 @@ bool toggle_no_clip(GameAddrs *addrs, bool &enabled, std::string &error) {
   }
 
   enabled = new_value;
+  return true;
+}
+
+bool set_game_paused(GameAddrs *addrs, bool paused, std::string &error) {
+  if (!addrs) {
+    error = "Missing game addresses.";
+    return false;
+  }
+  if (!resolve_game_addrs(addrs)) {
+    error = "Failed to resolve game addresses.";
+    return false;
+  }
+  if (!addrs->pause_game_flag) {
+    error = "Pause flag not found.";
+    return false;
+  }
+
+  if (!safe_write_u8(addrs->pause_game_flag, paused ? 1 : 0)) {
+    error = "Failed to write pause flag.";
+    return false;
+  }
   return true;
 }
