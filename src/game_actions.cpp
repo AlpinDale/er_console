@@ -2,6 +2,8 @@
 
 #include "memory_utils.h"
 
+#include <cwchar>
+
 namespace {
 
 LogFn g_log_fn = nullptr;
@@ -380,5 +382,130 @@ bool set_game_paused(GameAddrs *addrs, bool paused, std::string &error) {
     error = "Failed to write pause flag.";
     return false;
   }
+  return true;
+}
+
+bool spawn_npc(GameAddrs *addrs, int npc_id, std::string &error) {
+  if (!addrs) {
+    error = "Missing game addresses.";
+    return false;
+  }
+  if (npc_id <= 0) {
+    error = "NPC id must be positive.";
+    return false;
+  }
+  if (!resolve_game_addrs(addrs)) {
+    error = "Failed to resolve game addresses.";
+    return false;
+  }
+  if (!addrs->world_chr_man) {
+    error = "WorldChrMan not found.";
+    return false;
+  }
+
+  auto world_chr_man = *reinterpret_cast<uintptr_t *>(addrs->world_chr_man);
+  if (!world_chr_man) {
+    error = "WorldChrMan is null.";
+    return false;
+  }
+
+  auto player_list = *reinterpret_cast<uintptr_t *>(world_chr_man + 0x10EF8);
+  if (!player_list) {
+    error = "Player list is null.";
+    return false;
+  }
+
+  auto player = *reinterpret_cast<uintptr_t *>(player_list);
+  if (!player) {
+    error = "Player is null.";
+    return false;
+  }
+
+  uintptr_t coords_ptr1 = 0;
+  if (!safe_read_ptr(player + 0x190, coords_ptr1) || !coords_ptr1) {
+    error = "Failed to read player coordinates.";
+    return false;
+  }
+
+  uintptr_t coords_ptr2 = 0;
+  if (!safe_read_ptr(coords_ptr1 + 0x68, coords_ptr2) || !coords_ptr2) {
+    error = "Failed to read player coordinates.";
+    return false;
+  }
+
+  float player_x = 0.0f;
+  float player_y = 0.0f;
+  float player_z = 0.0f;
+  if (!safe_read_f32(coords_ptr2 + 0x70, player_x) ||
+      !safe_read_f32(coords_ptr2 + 0x74, player_z) ||
+      !safe_read_f32(coords_ptr2 + 0x78, player_y)) {
+    error = "Failed to read player coordinates.";
+    return false;
+  }
+
+  uintptr_t debug_creator = 0;
+  if (!safe_read_ptr(world_chr_man + 0x1E648, debug_creator) ||
+      !debug_creator) {
+    error = "Debug creator not found.";
+    return false;
+  }
+
+  constexpr float kSpawnDistance = 2.5f;
+  constexpr float kSpawnLift = 0.5f;
+  float spawn_x = player_x;
+  float spawn_y = player_y + kSpawnLift;
+  float spawn_z = player_z + kSpawnDistance;
+
+  constexpr uintptr_t kDebugCreatorSpawnFlag = 0x44;
+  constexpr uintptr_t kDebugCreatorInitData = 0xB0;
+  constexpr uintptr_t kSpawnPositionOffset = 0x0;
+  constexpr uintptr_t kSpawnRotationOffset = 0x10;
+  constexpr uintptr_t kSpawnScaleOffset = 0x30;
+  constexpr uintptr_t kNpcParamIdOffset = 0x40;
+  constexpr uintptr_t kNpcThinkParamIdOffset = 0x44;
+  constexpr uintptr_t kEventEntityIdOffset = 0x48;
+  constexpr uintptr_t kTalkIdOffset = 0x4C;
+  constexpr uintptr_t kNameOffset = 0x50;
+  constexpr uintptr_t kCharaInitParamIdOffset = 0xCC;
+
+  uintptr_t init_data = debug_creator + kDebugCreatorInitData;
+
+  if (!safe_write_f32(init_data + kSpawnPositionOffset + 0x0, spawn_x) ||
+      !safe_write_f32(init_data + kSpawnPositionOffset + 0x4, spawn_z) ||
+      !safe_write_f32(init_data + kSpawnPositionOffset + 0x8, spawn_y) ||
+      !safe_write_f32(init_data + kSpawnPositionOffset + 0xC, 0.0f)) {
+    error = "Failed to write spawn position.";
+    return false;
+  }
+
+  safe_write_f32(init_data + kSpawnRotationOffset + 0x0, 0.0f);
+  safe_write_f32(init_data + kSpawnRotationOffset + 0x4, 0.0f);
+  safe_write_f32(init_data + kSpawnRotationOffset + 0x8, 0.0f);
+  safe_write_f32(init_data + kSpawnRotationOffset + 0xC, 0.0f);
+
+  safe_write_f32(init_data + kSpawnScaleOffset + 0x0, 1.0f);
+  safe_write_f32(init_data + kSpawnScaleOffset + 0x4, 1.0f);
+  safe_write_f32(init_data + kSpawnScaleOffset + 0x8, 1.0f);
+  safe_write_f32(init_data + kSpawnScaleOffset + 0xC, 1.0f);
+
+  safe_write_i32(init_data + kNpcParamIdOffset, npc_id);
+  safe_write_i32(init_data + kNpcThinkParamIdOffset, npc_id);
+  safe_write_i32(init_data + kEventEntityIdOffset, 0);
+  safe_write_i32(init_data + kTalkIdOffset, 0);
+  safe_write_i32(init_data + kCharaInitParamIdOffset, npc_id);
+
+  wchar_t name[0x20] = {};
+  _snwprintf_s(name, _TRUNCATE, L"c%04d", npc_id);
+  if (!safe_write_bytes(init_data + kNameOffset, name, sizeof(name))) {
+    error = "Failed to write spawn name.";
+    return false;
+  }
+
+  safe_write_u8(debug_creator + kDebugCreatorSpawnFlag, 0);
+  if (!safe_write_u8(debug_creator + kDebugCreatorSpawnFlag, 1)) {
+    error = "Failed to trigger spawn.";
+    return false;
+  }
+
   return true;
 }

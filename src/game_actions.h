@@ -14,3 +14,4 @@ bool add_item_impl(GameAddrs *addrs, int item_id, int quantity,
 bool toggle_god_mode(GameAddrs *addrs, bool &enabled, std::string &error);
 bool toggle_no_clip(GameAddrs *addrs, bool &enabled, std::string &error);
 bool set_game_paused(GameAddrs *addrs, bool paused, std::string &error);
+bool spawn_npc(GameAddrs *addrs, int npc_id, std::string &error);

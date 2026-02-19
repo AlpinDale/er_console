@@ -50,6 +50,19 @@ std::string normalize(const std::string &s) {
   return out;
 }
 
+std::string trim(std::string s) {
+  size_t start = 0;
+  while (start < s.size() &&
+         std::isspace(static_cast<unsigned char>(s[start]))) {
+    ++start;
+  }
+  size_t end = s.size();
+  while (end > start && std::isspace(static_cast<unsigned char>(s[end - 1]))) {
+    --end;
+  }
+  return s.substr(start, end - start);
+}
+
 int levenshtein(const std::string &a, const std::string &b) {
   const size_t n = a.size();
   const size_t m = b.size();
@@ -105,8 +118,8 @@ std::vector<std::string> parse_csv_line(const std::string &line) {
 
 int find_name_column(const std::vector<std::string> &header) {
   for (size_t i = 0; i < header.size(); ++i) {
-    auto col = to_lower(header[i]);
-    if (col == "name" || col == "english") {
+    auto col = to_lower(trim(header[i]));
+    if (col == "name" || col == "english" || col == "npc") {
       return static_cast<int>(i);
     }
   }
@@ -158,12 +171,12 @@ bool load_resource_csv(int resource_id, const std::string &category) {
 
     int id = 0;
     try {
-      id = std::stoi(cols[0]);
+      id = std::stoi(trim(cols[0]));
     } catch (...) {
       continue;
     }
 
-    std::string name = cols[name_col];
+    std::string name = trim(cols[name_col]);
     if (name.empty())
       continue;
     g_state.entries.push_back({id, name, category});
@@ -185,6 +198,8 @@ void ensure_loaded() {
   load_resource_csv(IDR_CSV_DLC_TALISMANS, "talisman");
   load_resource_csv(IDR_CSV_GOODS, "goods");
   load_resource_csv(IDR_CSV_DLC_ITEMS, "goods");
+  load_resource_csv(IDR_CSV_NPCS, "npc");
+  load_resource_csv(IDR_CSV_DLC_NPCS, "npc");
 }
 
 std::string extract_quoted(const std::string &input) {
@@ -207,7 +222,25 @@ std::string handle_search_command(CommandContext &, const std::string &input) {
 
   std::string query = extract_quoted(input);
   if (query.empty()) {
-    return "Usage: search \"name\"";
+    return "Usage: search \"name\" [type]";
+  }
+
+  std::string filter = "all";
+  {
+    size_t last_quote = input.find('"', input.find('"') + 1);
+    if (last_quote != std::string::npos) {
+      std::string tail = input.substr(last_quote + 1);
+      std::istringstream tail_stream(tail);
+      std::string token;
+      if (tail_stream >> token) {
+        filter = to_lower(token);
+      }
+    }
+  }
+
+  if (filter != "all" && filter != "weapon" && filter != "armor" &&
+      filter != "talisman" && filter != "goods" && filter != "npc") {
+    return "Usage: search \"name\" [type]";
   }
 
   std::string qnorm = normalize(query);
@@ -218,6 +251,9 @@ std::string handle_search_command(CommandContext &, const std::string &input) {
   std::vector<Match> matches;
 
   for (const auto &entry : g_state.entries) {
+    if (filter != "all" && entry.category != filter) {
+      continue;
+    }
     std::string name_norm = normalize(entry.name);
     int score = 1000;
     if (name_norm == qnorm) {
@@ -259,8 +295,9 @@ std::string handle_search_command(CommandContext &, const std::string &input) {
 CommandInfo build_search_command() {
   CommandInfo info;
   info.name = "search";
-  info.usage = "search \"name\"";
-  info.description = "Fuzzy search item IDs by name.";
+  info.usage = "search \"name\" [type]";
+  info.description =
+      "Fuzzy search IDs by name (type: weapon, armor, talisman, goods, npc).";
   info.handler = handle_search_command;
   return info;
 }

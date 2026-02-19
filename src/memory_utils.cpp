@@ -116,3 +116,21 @@ bool safe_write_f32(uintptr_t addr, float value) {
     return false;
   }
 }
+
+bool safe_write_i32(uintptr_t addr, int32_t value) {
+  __try {
+    *reinterpret_cast<int32_t *>(addr) = value;
+    return true;
+  } __except (EXCEPTION_EXECUTE_HANDLER) {
+    return false;
+  }
+}
+
+bool safe_write_bytes(uintptr_t addr, const void *data, size_t size) {
+  __try {
+    std::memcpy(reinterpret_cast<void *>(addr), data, size);
+    return true;
+  } __except (EXCEPTION_EXECUTE_HANDLER) {
+    return false;
+  }
+}

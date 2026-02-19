@@ -17,3 +17,5 @@ bool safe_read_f32(uintptr_t addr, float &out);
 bool safe_write_u8(uintptr_t addr, uint8_t value);
 bool safe_write_u32(uintptr_t addr, uint32_t value);
 bool safe_write_f32(uintptr_t addr, float value);
+bool safe_write_i32(uintptr_t addr, int32_t value);
+bool safe_write_bytes(uintptr_t addr, const void *data, size_t size);

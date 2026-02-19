@@ -5,6 +5,7 @@
 #include "commands/coords.h"
 #include "commands/help.h"
 #include "commands/items.h"
+#include "commands/npc_spawn.h"
 #include "commands/runes.h"
 #include "commands/search.h"
 #include "commands/teleport.h"
@@ -75,6 +76,7 @@ void ensure_commands_registered(CommandRegistry &registry) {
   register_command(registry, build_help_command());
   register_command(registry, build_coords_command());
   register_command(registry, build_teleport_command());
+  register_command(registry, build_npc_spawn_command());
   register_command(registry, build_runes_command());
   register_command(registry, build_items_command());
   register_command(registry, build_search_command());
