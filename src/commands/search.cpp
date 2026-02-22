@@ -193,7 +193,8 @@ struct JsonReader {
     if (input[pos] == '-') {
       ++pos;
     }
-    if (pos >= input.size() || !std::isdigit(static_cast<unsigned char>(input[pos]))) {
+    if (pos >= input.size() ||
+        !std::isdigit(static_cast<unsigned char>(input[pos]))) {
       pos = start;
       return false;
     }
@@ -317,8 +318,8 @@ bool parse_entries_array(JsonReader &reader, std::string &name_out) {
   }
 }
 
-bool parse_entry_object(JsonReader &reader, int &id_out,
-                        std::string &name_out, bool &has_id_out) {
+bool parse_entry_object(JsonReader &reader, int &id_out, std::string &name_out,
+                        bool &has_id_out) {
   if (!reader.consume('{')) {
     return false;
   }
@@ -537,9 +538,8 @@ std::string handle_search_command(CommandContext &, const std::string &input) {
   }
 
   size_t last_quote = input.find('"', input.find('"', pos) + 1);
-  size_t tail_pos = (last_quote == std::string::npos)
-                        ? input.size()
-                        : last_quote + 1;
+  size_t tail_pos =
+      (last_quote == std::string::npos) ? input.size() : last_quote + 1;
   std::string page_token;
   int page = 1;
   if (read_token(input, tail_pos, page_token)) {
@@ -607,17 +607,16 @@ std::string handle_search_command(CommandContext &, const std::string &input) {
   size_t start = (static_cast<size_t>(page) - 1) * page_size;
   size_t end = std::min(start + page_size, total);
   std::string out = "Matches (" + std::to_string(total) + " total) page " +
-                    std::to_string(page) + "/" +
-                    std::to_string(total_pages) + ":";
+                    std::to_string(page) + "/" + std::to_string(total_pages) +
+                    ":";
   for (size_t i = start; i < end; ++i) {
     const auto &m = matches[i].entry;
     out += "\n" + m.name + " | " + std::to_string(m.id) + " | " + m.category;
   }
   if (total > end) {
     out += "\n";
-    out += "...and " + std::to_string(total - end) +
-           " more. Try: search " + filter + " \"" + query + "\" " +
-           std::to_string(page + 1);
+    out += "...and " + std::to_string(total - end) + " more. Try: search " +
+           filter + " \"" + query + "\" " + std::to_string(page + 1);
   }
   return out;
 }
