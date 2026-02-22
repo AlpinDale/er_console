@@ -17,3 +17,6 @@ Clone the repo and run:
 cmake -S . -B build -G "Visual Studio 18 2026" -A x64
 cmake --build build --config Release
 ```
+
+## Acknowledgements
+- [Smithbox](https://github.com/vawser/Smithbox) for param IDs
