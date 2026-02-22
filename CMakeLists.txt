@@ -45,6 +45,10 @@ add_library(imgui STATIC
   ${imgui_SOURCE_DIR}/misc/cpp/imgui_stdlib.cpp
 )
 
+set_target_properties(imgui PROPERTIES
+  ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib
+)
+
 target_include_directories(imgui PUBLIC
   ${imgui_SOURCE_DIR}
   ${imgui_SOURCE_DIR}/backends
@@ -58,6 +62,10 @@ add_library(kiero STATIC
   ${kiero_SOURCE_DIR}/minhook/src/trampoline.c
   ${kiero_SOURCE_DIR}/minhook/src/hde/hde32.c
   ${kiero_SOURCE_DIR}/minhook/src/hde/hde64.c
+)
+
+set_target_properties(kiero PROPERTIES
+  ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib
 )
 
 target_include_directories(kiero PUBLIC
